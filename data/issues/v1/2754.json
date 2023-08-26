@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2754",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2754/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2754/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2754/events",
+  "html_url": "https://github.com/shap/shap/issues/2754",
+  "id": 1442296356,
+  "node_id": "I_kwDOBHDcK85V97Ik",
+  "number": 2754,
+  "title": "NameError: name 'shap_values' is not defined. Did you mean: 'shap_value'?",
+  "user": {
+    "login": "arilwan",
+    "id": 42409395,
+    "node_id": "MDQ6VXNlcjQyNDA5Mzk1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/42409395?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/arilwan",
+    "html_url": "https://github.com/arilwan",
+    "followers_url": "https://api.github.com/users/arilwan/followers",
+    "following_url": "https://api.github.com/users/arilwan/following{/other_user}",
+    "gists_url": "https://api.github.com/users/arilwan/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/arilwan/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/arilwan/subscriptions",
+    "organizations_url": "https://api.github.com/users/arilwan/orgs",
+    "repos_url": "https://api.github.com/users/arilwan/repos",
+    "events_url": "https://api.github.com/users/arilwan/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/arilwan/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2022-11-09T15:23:57Z",
+  "updated_at": "2023-07-22T15:11:51Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "How to reproduce:\r\n```\r\nexplainer = shap.TreeExplainer(model)  # model is random forest model\r\nshap_values = explainer.shap_values(Xtest)\r\nshap.summary_plot(shap_values, Xtest)\r\n\r\n# error\r\nNameError: name 'shap_values' is not defined. Did you mean: 'shap_value'?\r\n```",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2754/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2754/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

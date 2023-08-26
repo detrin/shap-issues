@@ -1,0 +1,6 @@
+polars
+pandas
+numpy
+openai
+tqdm
+python-dotenv

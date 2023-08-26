@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2255",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2255/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2255/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2255/events",
+  "html_url": "https://github.com/shap/shap/issues/2255",
+  "id": 1046040242,
+  "node_id": "I_kwDOBHDcK84-WU6y",
+  "number": 2255,
+  "title": "Waterfall plot (from website example) breaks with sklearn.ensemble.RandomForestRegressor",
+  "user": {
+    "login": "oygo",
+    "id": 86785290,
+    "node_id": "MDQ6VXNlcjg2Nzg1Mjkw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/86785290?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/oygo",
+    "html_url": "https://github.com/oygo",
+    "followers_url": "https://api.github.com/users/oygo/followers",
+    "following_url": "https://api.github.com/users/oygo/following{/other_user}",
+    "gists_url": "https://api.github.com/users/oygo/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/oygo/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/oygo/subscriptions",
+    "organizations_url": "https://api.github.com/users/oygo/orgs",
+    "repos_url": "https://api.github.com/users/oygo/repos",
+    "events_url": "https://api.github.com/users/oygo/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/oygo/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2021-11-05T16:40:34Z",
+  "updated_at": "2023-06-17T12:20:10Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Drawing a waterfall plot - using the [Tree Ensemble example](https://github.com/slundberg/shap#tree-ensemble-example-xgboostlightgbmcatboostscikit-learnpyspark-models) - fails when using the RandomForestRegressor:\r\n\r\n```python\r\n# Reproducible error, code taken from: https://github.com/slundberg/shap with modification in line 6\r\n\r\nimport sklearn\r\nimport xgboost\r\nimport shap\r\n\r\n# train a Random Forest model\r\nX, y = shap.datasets.boston()\r\n# model = xgboost.XGBRegressor().fit(X, y) # ORIGINAL EXAMPLE\r\nmodel = sklearn.ensemble.RandomForestRegressor().fit(X, y) # RANDOM FOREST REGRESSOR\r\n\r\n# explain the model's predictions using SHAP\r\n# (same syntax works for LightGBM, CatBoost, scikit-learn, transformers, Spark, etc.)\r\nexplainer = shap.Explainer(model)\r\nshap_values = explainer(X)\r\n\r\n# visualize the first prediction's explanation\r\nshap.plots.waterfall(shap_values[0])\r\n```\r\n\r\nThis produces the error: \r\n```\r\n---------------------------------------------------------------------------\r\nException                                 Traceback (most recent call last)\r\n/tmp/ipykernel_37/3127424203.py in <module>\r\n     17 #shap_values\r\n     18 # visualize the first prediction's explanation\r\n---> 19 shap.plots.waterfall(shap_values[0])\r\n\r\n/opt/conda/lib/python3.7/site-packages/shap/plots/_waterfall.py in waterfall(shap_values, max_display, show)\r\n     54     # make sure we only have a single output to explain\r\n     55     if (type(base_values) == np.ndarray and len(base_values) > 0) or type(base_values) == list:\r\n---> 56         raise Exception(\"waterfall_plot requires a scalar base_values of the model output as the first \" \\\r\n     57                         \"parameter, but you have passed an array as the first parameter! \" \\\r\n     58                         \"Try shap.waterfall_plot(explainer.base_values[0], values[0], X[0]) or \" \\\r\n\r\nException: waterfall_plot requires a scalar base_values of the model output as the first parameter, but you have passed an array as the first parameter! Try shap.waterfall_plot(explainer.base_values[0], values[0], X[0]) or for multi-output models try shap.waterfall_plot(explainer.base_values[0], values[0][0], X[0]).\r\n```\r\n\r\n\r\n**Further explanation:** \r\nThe problem might be that for the Random Forest, shap_values.base_values[0] is a numpy array (of size 1), while Shap expects a number only (which it gets for XGBoost). Look at the last two lines in each case to see the difference.\r\n\r\n*XGBoost (from the working example)*:\r\n```python\r\nmodel = xgboost.XGBRegressor().fit(X, y) # ORIGINAL EXAMPLE\r\nexplainer = shap.Explainer(model)\r\nshap_values = explainer(X)\r\n​\r\nprint(shap_values[0])\r\nprint(shap_values[0].base_values)\r\nprint(type(shap_values.base_values[0]))\r\n```\r\nOutput:\r\n```\r\n.values =\r\narray([-4.2850167e-01, -6.6636719e-02,  7.7860229e-02, -1.5295845e-03,\r\n       -7.2922713e-01, -2.1700280e+00,  1.9213372e-01, -4.1425934e-01,\r\n       -4.9156108e-01, -4.7296646e-01,  2.5669456e-01, -5.3907130e-02,\r\n        5.7883248e+00], dtype=float32)\r\n\r\n.base_values =\r\n22.532942\r\n\r\n.data =\r\narray([6.320e-03, 1.800e+01, 2.310e+00, 0.000e+00, 5.380e-01, 6.575e+00,\r\n       6.520e+01, 4.090e+00, 1.000e+00, 2.960e+02, 1.530e+01, 3.969e+02,\r\n       4.980e+00])\r\n22.532942\r\n<class 'numpy.float32'>\r\n```\r\n\r\n*Random Forest Regressor (from the failing example)*:\r\n```python\r\nmodel = sklearn.ensemble.RandomForestRegressor().fit(X, y)\r\nexplainer = shap.Explainer(model)\r\nshap_values = explainer(X)\r\n​\r\nprint(shap_values[0])\r\nprint(shap_values[0].base_values)\r\nprint(type(shap_values.base_values[0]))\r\n\r\n```\r\n```\r\n.values =\r\narray([ 0.10307071, -0.0303413 ,  0.09707358, -0.00572019, -0.16674241,\r\n       -1.53239688, -0.06641675, -0.20920796, -0.19404617, -0.17280302,\r\n        0.3969092 ,  0.02818953,  4.53953443])\r\n\r\n.base_values =\r\narray([22.47789723])\r\n\r\n.data =\r\narray([6.320e-03, 1.800e+01, 2.310e+00, 0.000e+00, 5.380e-01, 6.575e+00,\r\n       6.520e+01, 4.090e+00, 1.000e+00, 2.960e+02, 1.530e+01, 3.969e+02,\r\n       4.980e+00])\r\n[22.47789723]\r\n<class 'numpy.ndarray'>\r\n```\r\n\r\nI've tried things like\r\n```python\r\nshap_values.base_values = shap_values.base_values.ravel()\r\n```\r\nbefore running shap.plots.waterfall(shap_values[0]), but I think I'm breaking the object shap_values with that. I've tried the advice from the error message, but don't fully understand it. \r\n\r\nI'm using Kaggle, which has \r\nxgboost==1.5.0\r\nshap==0.40.0\r\nscikit-learn==0.23.2\r\npandas==1.3.3\r\nnumpy==1.19.5\r\n\r\nMy apologies in case this has been answered already (or I just messed up). I've searched the forum but didn't find the same issue open or resolved.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2255/reactions",
+    "total_count": 2,
+    "+1": 2,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2255/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

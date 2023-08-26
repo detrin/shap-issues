@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3209",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3209/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3209/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3209/events",
+  "html_url": "https://github.com/shap/shap/pull/3209",
+  "id": 1860410445,
+  "node_id": "PR_kwDOBHDcK85YcT8l",
+  "number": 3209,
+  "title": "Enh: deprecate legacy plots and code",
+  "user": {
+    "login": "arshiaar",
+    "id": 69202571,
+    "node_id": "MDQ6VXNlcjY5MjAyNTcx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/69202571?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/arshiaar",
+    "html_url": "https://github.com/arshiaar",
+    "followers_url": "https://api.github.com/users/arshiaar/followers",
+    "following_url": "https://api.github.com/users/arshiaar/following{/other_user}",
+    "gists_url": "https://api.github.com/users/arshiaar/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/arshiaar/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/arshiaar/subscriptions",
+    "organizations_url": "https://api.github.com/users/arshiaar/orgs",
+    "repos_url": "https://api.github.com/users/arshiaar/repos",
+    "events_url": "https://api.github.com/users/arshiaar/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/arshiaar/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2023-08-22T01:52:05Z",
+  "updated_at": "2023-08-22T18:44:51Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/3209",
+    "html_url": "https://github.com/shap/shap/pull/3209",
+    "diff_url": "https://github.com/shap/shap/pull/3209.diff",
+    "patch_url": "https://github.com/shap/shap/pull/3209.patch",
+    "merged_at": null
+  },
+  "body": "## Overview\r\n\r\nPart of #3156  \r\n\r\nDescription of the changes proposed in this pull request:\r\n* Added deprecation decorators using sklearn deprecated since its an existing dependency. \r\n* Decorators added to: bar_legacy, summary_legacy, dependence_legacy, waterfall_legacy\r\n* Added unit tests for dependence_legacy, summary_legacy, and waterfall_legacy. \r\n* Added decorator for kmeans in utils/._legacy.py\r\n\r\nPotentially could create own decorator using the python warnings module. \r\nDid not include unit tests for bar_legacy as function is breaking outside of decorator. \r\n\r\n## Checklist\r\n\r\n- [x] All [pre-commit checks](https://pre-commit.com/#install) pass.\r\n- [x] Unit tests added (if fixing a bug or adding a new feature)\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3209/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3209/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

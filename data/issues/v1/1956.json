@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1956",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1956/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1956/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1956/events",
+  "html_url": "https://github.com/shap/shap/issues/1956",
+  "id": 866255559,
+  "node_id": "MDU6SXNzdWU4NjYyNTU1NTk=",
+  "number": 1956,
+  "title": "`shap.Explanation` lacks documentation",
+  "user": {
+    "login": "banderlog",
+    "id": 2557965,
+    "node_id": "MDQ6VXNlcjI1NTc5NjU=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2557965?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/banderlog",
+    "html_url": "https://github.com/banderlog",
+    "followers_url": "https://api.github.com/users/banderlog/followers",
+    "following_url": "https://api.github.com/users/banderlog/following{/other_user}",
+    "gists_url": "https://api.github.com/users/banderlog/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/banderlog/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/banderlog/subscriptions",
+    "organizations_url": "https://api.github.com/users/banderlog/orgs",
+    "repos_url": "https://api.github.com/users/banderlog/repos",
+    "events_url": "https://api.github.com/users/banderlog/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/banderlog/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2021-04-23T16:18:03Z",
+  "updated_at": "2023-07-03T00:29:39Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "The latest docs: https://shap.readthedocs.io/en/latest/generated/shap.Explanation.html#shap.Explanation\r\n\r\nAll attributes are empty.\r\n\r\n+ `data` is just copy of data on which explainer was called?\r\n+ `values` are actual shap values?\r\n+ `base_values` what are they?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1956/reactions",
+    "total_count": 4,
+    "+1": 4,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1956/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

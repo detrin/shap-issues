@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1002",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1002/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1002/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1002/events",
+  "html_url": "https://github.com/shap/shap/issues/1002",
+  "id": 551955781,
+  "node_id": "MDU6SXNzdWU1NTE5NTU3ODE=",
+  "number": 1002,
+  "title": "Comments needed: Using Boosting Algorithms with SHAP to make Sociological Explanations.",
+  "user": {
+    "login": "tugberkcapraz",
+    "id": 34861636,
+    "node_id": "MDQ6VXNlcjM0ODYxNjM2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/34861636?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tugberkcapraz",
+    "html_url": "https://github.com/tugberkcapraz",
+    "followers_url": "https://api.github.com/users/tugberkcapraz/followers",
+    "following_url": "https://api.github.com/users/tugberkcapraz/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tugberkcapraz/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tugberkcapraz/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tugberkcapraz/subscriptions",
+    "organizations_url": "https://api.github.com/users/tugberkcapraz/orgs",
+    "repos_url": "https://api.github.com/users/tugberkcapraz/repos",
+    "events_url": "https://api.github.com/users/tugberkcapraz/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tugberkcapraz/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2020-01-19T17:36:53Z",
+  "updated_at": "2020-01-21T21:08:34Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hello all, \r\n\r\nBefore posing my question, I would like to thank all the contributors of the package. Great work!\r\n\r\nI am coming from non-ML background(Sociology). In my field, researchers mostly rely on linear/logistic regression models due to their easily explainable nature. For sociologists, predictions mostly do not matter. The main focus is on story telling by commenting about the coefficients of the variables. What matters for us are the p-values.  I believe this is really restrictive methodology for the following reasons:\r\n\r\n1) To my best knowledge, statistical modelling requires a researcher to pre-specify the suspected interaction effects and non linearities beforehand. As the social data -due to the factors like social transformations, group level differences, cohort effects, individual choices etc- are too complex, I don't think any researcher can have such in depth theoretical knowledge to pre-specify a model which can account for all existing interaction effects and non-linearities. Deductive approach restricts us learning from the data.\r\n\r\n2) In the standard practice models are trained on all dataset. There is no test data to check the out of sample performance. I am really suspecting that most of the times the models are either overfitting because of p-hacking or just underfitting because of poor specification. \r\n \r\n3) Like number 2 , the researchers using logistic regression to explain any phenomena in social sciences do not have any concern over the imbalanced dependent variables. If I am not mistaken this increases the bias. I don't know the impact of this on the trustworthiness of the explanations we make. \r\n\r\n I just tried to summarise the standard social research methodology and its weaknesses. The above mentioned problems of non-linearity, interaction effects, goodness of fit and bias can be solved by applying ML framework that you guys use. However, algorithms like Xgboost, catboost etc, by themselves, are not making us enable to tell the background story. I understand SHAP package as a tool enabling us to use those high performing algorithms to make scientific explanations which are more comprehensive than the ones we get from Logistic/Linear regression. What are your thoughts about it? Am I being too ambitious?\r\n\r\nI briefly mentioned about SHAP to my professors at FU Berlin Sociology department and one of them already asked me to present it in a master's colloquium. Before making false claims and spreading false information, I just wanted to have a reality check. I am really looking forward to read your comments. \r\n\r\nBest Regards,\r\nTugberk\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1002/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1002/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

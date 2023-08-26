@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2076",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2076/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2076/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2076/events",
+  "html_url": "https://github.com/shap/shap/issues/2076",
+  "id": 936691293,
+  "node_id": "MDU6SXNzdWU5MzY2OTEyOTM=",
+  "number": 2076,
+  "title": "Shap Explainer Segmentation Fault",
+  "user": {
+    "login": "zkhalid123",
+    "id": 61536890,
+    "node_id": "MDQ6VXNlcjYxNTM2ODkw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/61536890?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/zkhalid123",
+    "html_url": "https://github.com/zkhalid123",
+    "followers_url": "https://api.github.com/users/zkhalid123/followers",
+    "following_url": "https://api.github.com/users/zkhalid123/following{/other_user}",
+    "gists_url": "https://api.github.com/users/zkhalid123/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/zkhalid123/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/zkhalid123/subscriptions",
+    "organizations_url": "https://api.github.com/users/zkhalid123/orgs",
+    "repos_url": "https://api.github.com/users/zkhalid123/repos",
+    "events_url": "https://api.github.com/users/zkhalid123/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/zkhalid123/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 15,
+  "created_at": "2021-07-05T05:05:17Z",
+  "updated_at": "2023-07-09T06:18:33Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "@slundberg \r\nWhile using SHAP explainer for a regression model, I am getting a \"Segmentation Fault\" and python process dies after this. After digging around a bit, I explored the Dump Core file using Linux gdb debugger.\r\n\r\n> Traceback (bt):\r\n> #0  0x00007f17d42881c5 in dgetrf_parallel ()\r\n>    from /root/anaconda3/envs/pyspark_env/lib/python3.6/site-packages/numpy/core/../.libs/libopenblasp-r0-2ecf47d5.3.7.dev.so\r\n> #1  0x00007f17d4288377 in dgetrf_parallel ()\r\n>    from /root/anaconda3/envs/pyspark_env/lib/python3.6/site-packages/numpy/core/../.libs/libopenblasp-r0-2ecf47d5.3.7.dev.so\r\n> #2  0x00007f17d406ec7b in dgesv_ () from /root/anaconda3/envs/pyspark_env/lib/python3.6/site-packages/numpy/core/../.libs/libopenblasp-r0-2ecf47d5.3.7.dev.so\r\n> #3  0x00007f17cbb234ba in call_dgesv (params=0x7fffe73c0590) at numpy/linalg/umath_linalg.c.src:1567\r\n> #4  DOUBLE_inv (args=0x7f17778ffc88, dimensions=<optimized out>, steps=<optimized out>, __NPY_UNUSED_TAGGEDfunc=<optimized out>)\r\n>     at numpy/linalg/umath_linalg.c.src:1712\r\n> #5  0x00007f17d5f9422e in PyUFunc_GeneralizedFunction (op=0x55d020cccb70, kwds=<optimized out>, args=<optimized out>, ufunc=0x0)\r\n>     at numpy/core/src/umath/ufunc_object.c:3007\r\n> #6  PyUFunc_GenericFunction (ufunc=ufunc@entry=0x55d01b5de9a0, args=args@entry=(<numpy.ndarray at remote 0x7f17778998f0>,),\r\n>     kwds=kwds@entry={'signature': 'd->d', 'extobj': [8192, 1536, <function at remote 0x7f17cbfb6510>]}, op=op@entry=0x7fffe73c1f80)\r\n>     at numpy/core/src/umath/ufunc_object.c:3142\r\n> \r\n\r\n    \r\n Python Traceback from gdb (py-bt)\r\n\r\n> Traceback (most recent call first):\r\n>   (frame information optimized out)\r\n>   (frame information optimized out)\r\n>   File \"/root/anaconda3/envs/pyspark_env/lib/python3.6/site-packages/shap/explainers/_kernel.py\", line 374, in explain\r\n>     vphi, vphi_var = self.solve(self.nsamples / self.max_samples, d)\r\n>   File \"/root/anaconda3/envs/pyspark_env/lib/python3.6/site-packages/shap/explainers/_kernel.py\", line 178, in shap_values\r\n>     explanations.append(self.explain(data, **kwargs))\r\n>   (frame information optimized out)\r\n>   (frame information optimized out)\r\n\r\n  \r\n  \r\n I am stuck at this point. Can someone please guide me how I can explore further and reach the root cause for this issue?\r\n Is it a version issue or what?\r\n I am using\r\n```\r\n shap==0.36.0\r\nnumpy==1.16.5\r\n\r\n```\r\nPlease let me know if you need any other information.\r\n\r\nregards",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2076/reactions",
+    "total_count": 5,
+    "+1": 4,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 1,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2076/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

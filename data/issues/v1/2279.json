@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2279",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2279/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2279/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2279/events",
+  "html_url": "https://github.com/shap/shap/issues/2279",
+  "id": 1059215108,
+  "node_id": "I_kwDOBHDcK84_IlcE",
+  "number": 2279,
+  "title": "Clustering not working with beeswarm plot",
+  "user": {
+    "login": "CausalTruth",
+    "id": 34031349,
+    "node_id": "MDQ6VXNlcjM0MDMxMzQ5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/34031349?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/CausalTruth",
+    "html_url": "https://github.com/CausalTruth",
+    "followers_url": "https://api.github.com/users/CausalTruth/followers",
+    "following_url": "https://api.github.com/users/CausalTruth/following{/other_user}",
+    "gists_url": "https://api.github.com/users/CausalTruth/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/CausalTruth/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/CausalTruth/subscriptions",
+    "organizations_url": "https://api.github.com/users/CausalTruth/orgs",
+    "repos_url": "https://api.github.com/users/CausalTruth/repos",
+    "events_url": "https://api.github.com/users/CausalTruth/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/CausalTruth/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2021-11-20T19:38:48Z",
+  "updated_at": "2023-07-19T00:27:43Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi, \r\nI was playing around with hclustering and using it in different plots. It works beautifully in the shap.plots.bar function but, I am getting thrown the following error when using the beeswarm plot with clustering\r\n\r\n`shap.plots.beeswarm(shap_xgb_values_train, clustering=clustering)`\r\n\r\n```\r\n---------------------------------------------------------------------------\r\nValueError                                Traceback (most recent call last)\r\n<ipython-input-97-4d83431bd269> in <module>\r\n----> 1 shap.plots.beeswarm(shap_xgb_values_train,clustering=clustering)\r\n\r\n~\\anaconda3\\lib\\site-packages\\shap\\plots\\_beeswarm.py in beeswarm(shap_values, max_display, order, clustering, cluster_threshold, color, axis_color, alpha, show, log_scale, color_bar, plot_size, color_bar_label)\r\n    231 \r\n    232             # compute the leaf order if we were to show (and so have the ordering respect) the whole partition tree\r\n--> 233             clust_order = sort_inds(partition_tree, np.abs(values))\r\n    234 \r\n    235             # now relax the requirement to match the parition tree ordering for connections above cluster_threshold\r\n\r\n~\\anaconda3\\lib\\site-packages\\shap\\plots\\_utils.py in sort_inds(partition_tree, leaf_values, pos, inds)\r\n    207 \r\n    208     if pos is None:\r\n--> 209         partition_tree = fill_internal_max_values(partition_tree, leaf_values)\r\n    210         pos = partition_tree.shape[0]-1\r\n    211 \r\n\r\n~\\anaconda3\\lib\\site-packages\\shap\\plots\\_utils.py in fill_internal_max_values(partition_tree, leaf_values)\r\n    169         if new_tree[i,0] < M:\r\n    170             ind = int(new_tree[i,0])\r\n--> 171             val = max(val, np.abs(leaf_values[ind]))\r\n    172         else:\r\n    173             ind = int(new_tree[i,0])-M\r\n\r\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\r\n```\r\nLooking at the implementation in both codes, I think I might have found the mistake.\r\nIn **shap.plots.bar** you correctly take the mean of the shap.values when using the sort_ind function: \r\nline 132: `clust_order = sort_inds(partition_tree, np.abs(values).mean(0))`\r\nHowever, in **shap.plots.beeswarm** you are using all the values and not just the mean for sorting.\r\nline 233:  `clust_order = sort_inds(partition_tree, np.abs(values))`\r\n\r\nIf that is really the problem, could you please fix it, so clustering also works in the beeswarm plot?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2279/reactions",
+    "total_count": 3,
+    "+1": 3,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2279/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

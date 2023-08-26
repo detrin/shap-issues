@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/451",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/451/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/451/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/451/events",
+  "html_url": "https://github.com/shap/shap/issues/451",
+  "id": 412362139,
+  "node_id": "MDU6SXNzdWU0MTIzNjIxMzk=",
+  "number": 451,
+  "title": "Explicit handling of categorical variables in KernelExplainer",
+  "user": {
+    "login": "jklaise",
+    "id": 13080878,
+    "node_id": "MDQ6VXNlcjEzMDgwODc4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/13080878?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jklaise",
+    "html_url": "https://github.com/jklaise",
+    "followers_url": "https://api.github.com/users/jklaise/followers",
+    "following_url": "https://api.github.com/users/jklaise/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jklaise/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jklaise/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jklaise/subscriptions",
+    "organizations_url": "https://api.github.com/users/jklaise/orgs",
+    "repos_url": "https://api.github.com/users/jklaise/repos",
+    "events_url": "https://api.github.com/users/jklaise/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jklaise/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-02-20T10:49:44Z",
+  "updated_at": "2022-01-14T09:54:45Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "body": "First of all, great work on the library! I've been working on implementing  a wrapper around it to provide SHAP explanations for productionised models but have run into some issues concerning categorical variables and would like to know your thoughts.\r\n\r\nI have a concern about the handling of categorical variables in the model-agnostic algorithm of KernelExplainer. The way I see it it is not actually explicitly supported, but there are examples with categorical variables (e.g. https://slundberg.github.io/shap/notebooks/Census%20income%20classification%20with%20scikit-learn.html) that are handled implicitly but can be quite misleading.\r\n\r\nMy point is that handling categorical variables will depend on the specific encoding and the choice of a background dataset (what does it mean to be non-informative for a categorical variable?). In the example above the categorical variables are encoded as ordinals and the background is the median on the training set. This does not make much sense to me for variables that should not conform to an ordinal encoding (e.g. relationship status, race). The above example has additional issues in that it uses a KNN on a mixed variable dataset and applies scaling to said ordinal encodings of the categorical variables.\r\n\r\nI think there should be an explicit disclaimer for using KernelExplainer with categorical variables. If they are ordinally encoded, it probably doesn't make sense to take the mean or the median as the background dataset (unless the ordinal encoding can be argued to be consistent with the meaning of the variable, e.g. education level). This is especially important because by default KernelExplainer calculates the background dataset as the mean across features.\r\n\r\nOn the topic of one-hot-encoded categorical variables, the median would not work well as it would just pick 0 for all values of a categorical variable which are <50% in the training set. The mean in this case actually works well but with the caveat that the value would be out-of-distribution (real number in [0,1] rather than a discrete value in {0,1}).\r\n\r\nWith this in mind, there are some options of explicitly handling the non-informativeness of categorical variables, albeit this might require some research:\r\n * LIME-style sampling from the prior category distribution (this could similarly be applied to numerical variables as well instead of just going with the mean). However, this may require multiple samples to reduce the variance of the value of the \"missing\" variables.\r\n * The mode could be a better option in specific cases rather than the mean/median of an ordinally encoded variable.\r\n\r\nApart from ordinal and one-hot there are many other encoding of categorical variables which may require further thought, but I think we should handle the simpler cases first.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/451/reactions",
+    "total_count": 4,
+    "+1": 4,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/451/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

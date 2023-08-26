@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2807",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2807/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2807/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2807/events",
+  "html_url": "https://github.com/shap/shap/pull/2807",
+  "id": 1502753190,
+  "node_id": "PR_kwDOBHDcK85Fxbmi",
+  "number": 2807,
+  "title": "#2806 waterfall color customisation",
+  "user": {
+    "login": "surbhi-gupta-drishya",
+    "id": 87317600,
+    "node_id": "MDQ6VXNlcjg3MzE3NjAw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/87317600?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/surbhi-gupta-drishya",
+    "html_url": "https://github.com/surbhi-gupta-drishya",
+    "followers_url": "https://api.github.com/users/surbhi-gupta-drishya/followers",
+    "following_url": "https://api.github.com/users/surbhi-gupta-drishya/following{/other_user}",
+    "gists_url": "https://api.github.com/users/surbhi-gupta-drishya/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/surbhi-gupta-drishya/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/surbhi-gupta-drishya/subscriptions",
+    "organizations_url": "https://api.github.com/users/surbhi-gupta-drishya/orgs",
+    "repos_url": "https://api.github.com/users/surbhi-gupta-drishya/repos",
+    "events_url": "https://api.github.com/users/surbhi-gupta-drishya/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/surbhi-gupta-drishya/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2022-12-19T11:11:30Z",
+  "updated_at": "2023-01-03T12:25:37Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2807",
+    "html_url": "https://github.com/shap/shap/pull/2807",
+    "diff_url": "https://github.com/shap/shap/pull/2807.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2807.patch",
+    "merged_at": null
+  },
+  "body": null,
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2807/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2807/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

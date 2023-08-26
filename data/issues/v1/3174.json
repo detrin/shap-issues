@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3174",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3174/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3174/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3174/events",
+  "html_url": "https://github.com/shap/shap/issues/3174",
+  "id": 1831584480,
+  "node_id": "I_kwDOBHDcK85tK8Lg",
+  "number": 3174,
+  "title": "BUG: Strange base value of exact explainer",
+  "user": {
+    "login": "mayer79",
+    "id": 16206095,
+    "node_id": "MDQ6VXNlcjE2MjA2MDk1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/16206095?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mayer79",
+    "html_url": "https://github.com/mayer79",
+    "followers_url": "https://api.github.com/users/mayer79/followers",
+    "following_url": "https://api.github.com/users/mayer79/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mayer79/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mayer79/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mayer79/subscriptions",
+    "organizations_url": "https://api.github.com/users/mayer79/orgs",
+    "repos_url": "https://api.github.com/users/mayer79/repos",
+    "events_url": "https://api.github.com/users/mayer79/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mayer79/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2023-08-01T15:57:47Z",
+  "updated_at": "2023-08-17T06:15:50Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "### Issue Description\r\n\r\nI expect the baseline of the exact explainer to equal the average prediction on the background data (masker). However, there are cases where this is not true, see example.\r\n\r\n### Minimal Reproducible Example\r\n\r\n```python\r\nimport numpy as np\r\nimport pandas as pd\r\nimport shap\r\n\r\nn = 101\r\nx = np.arange(n)\r\nX = pd.DataFrame(dict(x1=x, x2=np.flip(x)))\r\nprint(X.x1.mean())  # 50\r\nX.head()\r\n\r\ndef true_model(X):\r\n    return X.x1\r\n\r\nex = shap.Explainer(true_model, masker=X, algorithm=\"exact\")\r\n\r\nps = ex(X[0:3])\r\nps\r\n\r\n# Output\r\n#.values =\r\n#array([[-50.06,   0.  ],\r\n#       [-49.06,   0.  ],\r\n#       [-48.06,   0.  ]])\r\n#\r\n#.base_values =\r\n#array([50.06, 50.06, 50.06])\r\n#\r\n#.data =\r\n#array([[  0, 100],\r\n#       [  1,  99],\r\n#       [  2,  98]])\r\n```\r\n\r\n### Expected Behavior\r\n\r\nThe average of 0, ..., 100 is 50, so I'd expect the baseline to equal 50.\r\n\r\nRunning above example with `n = 100` gives a baseline of 49.5 (as expected).\r\n\r\n### Bug report checklist\r\n\r\n- [X] I have checked that this issue has not already been reported.\r\n- [X] I have confirmed this bug exists on the [latest release](https://github.com/shap/shap/releases) of shap.\r\n- [X] I have confirmed this bug exists on the [master branch](https://github.com/shap/shap/blob/master/CONTRIBUTING.md#installing-from-the-master-branch) of shap.\r\n- [ ] I'd be interested in making a PR to fix this bug\r\n\r\n### Installed Versions\r\n\r\n0.42.1",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3174/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3174/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

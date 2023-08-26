@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/943",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/943/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/943/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/943/events",
+  "html_url": "https://github.com/shap/shap/issues/943",
+  "id": 536755371,
+  "node_id": "MDU6SXNzdWU1MzY3NTUzNzE=",
+  "number": 943,
+  "title": "Documentation of TF Deep Explainer",
+  "user": {
+    "login": "farh33n",
+    "id": 13518407,
+    "node_id": "MDQ6VXNlcjEzNTE4NDA3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/13518407?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/farh33n",
+    "html_url": "https://github.com/farh33n",
+    "followers_url": "https://api.github.com/users/farh33n/followers",
+    "following_url": "https://api.github.com/users/farh33n/following{/other_user}",
+    "gists_url": "https://api.github.com/users/farh33n/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/farh33n/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/farh33n/subscriptions",
+    "organizations_url": "https://api.github.com/users/farh33n/orgs",
+    "repos_url": "https://api.github.com/users/farh33n/repos",
+    "events_url": "https://api.github.com/users/farh33n/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/farh33n/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-12-12T04:49:32Z",
+  "updated_at": "2020-03-02T18:59:42Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I would really appreciate if documentation of TF Deep Explainer could be made more detailed. I am having a difficult time understanding the linearity and non linearity handlers and also I couldn't figure out where are the shap values actually computed. How is this tf.gradient different from the regular gradient? I would truly appreciate if some one could help me with it\r\nP.S. I have read both Shap and Deep Lift papers.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/943/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/943/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

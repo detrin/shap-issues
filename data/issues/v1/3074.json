@@ -1,0 +1,81 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3074",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3074/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3074/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3074/events",
+  "html_url": "https://github.com/shap/shap/pull/3074",
+  "id": 1794860333,
+  "node_id": "PR_kwDOBHDcK85U_SMn",
+  "number": 3074,
+  "title": "chore: Add a Jupyter style guide and supporting infra",
+  "user": {
+    "login": "thatlittleboy",
+    "id": 30731072,
+    "node_id": "MDQ6VXNlcjMwNzMxMDcy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/30731072?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/thatlittleboy",
+    "html_url": "https://github.com/thatlittleboy",
+    "followers_url": "https://api.github.com/users/thatlittleboy/followers",
+    "following_url": "https://api.github.com/users/thatlittleboy/following{/other_user}",
+    "gists_url": "https://api.github.com/users/thatlittleboy/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/thatlittleboy/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/thatlittleboy/subscriptions",
+    "organizations_url": "https://api.github.com/users/thatlittleboy/orgs",
+    "repos_url": "https://api.github.com/users/thatlittleboy/repos",
+    "events_url": "https://api.github.com/users/thatlittleboy/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/thatlittleboy/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2023-07-08T09:28:28Z",
+  "updated_at": "2023-07-21T09:44:23Z",
+  "closed_at": null,
+  "author_association": "COLLABORATOR",
+  "active_lock_reason": null,
+  "draft": true,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/3074",
+    "html_url": "https://github.com/shap/shap/pull/3074",
+    "diff_url": "https://github.com/shap/shap/pull/3074.diff",
+    "patch_url": "https://github.com/shap/shap/pull/3074.patch",
+    "merged_at": null
+  },
+  "body": "## Overview\r\n\r\nThis PR is in support and born out of PR #3037. The idea is to use this thread to discuss how we should handle Jupyter notebooks so that we can receive better quality contributions for #3036.\r\n\r\nMany of the changes here are inspired by https://www.pymc.io/projects/docs/en/stable/contributing/jupyter_style.html.\r\n\r\n### Discussions w.r.t. style guide\r\n\r\n1. Using sphinx cross-references rather than URLs to refer to docstrings or other notebooks  \\[**Status**: Under discussion\\]\r\n1. Add pre-commit to enforce notebook styles  \\[**Status**: Under discussion\\]\r\n    - `ruff` linting in code cells via `nbqa-ruff`\r\n    - `black` formatting in code cells via `black-jupyter` (instead of `nbqa` so that when we eventually apply black to the code-base, we can automatically ensure the black version applied to both `.py` and `.ipynb` is the same).\r\n    - pygrep check for `watermark` extension (inspired from pymc docs)\r\n1. Add [watermark](https://github.com/rasbt/watermark) cell to the notebooks. (enforced by pre-commit)\r\n2. Using `nb-clean` to clear notebook metadata (TBD)\r\n\r\n\r\n### Outside the scope of this PR\r\n\r\nI propose the following scopes to be **outside** of the initial style guide + the efforts over at #3036 (at least, initially). These should probably be their own issues.\r\n\r\n- [ ] Integrating MyST: I propose that this should be a separate effort on its own, and not be lumped together with #3036. It's a pretty large structural change on its own, and detracts from the main objective of #3036, which is to ensure the notebooks are runnable and updated. That said, I do like MyST and would be happy to transition to MyST in the medium term.\r\n- [ ] Executing notebooks in CI/CD rather than committing in the notebook outputs. The idea of this is to reduce merge conflicts and diffs by only committing in the notebook source. Then the notebooks are executed in CI/CD in a controlled environment, before we run sphinx. This makes sure that the notebooks are always up-to-date, and errors if we change the API but forget to change the notebook examples. Again, this is nice-to-have, but I think is outside the scope.\r\n\r\n\r\n## Checklist\r\n\r\n- [X] Supports #3036.  <!--Replace xxxx with the GitHub issue number-->\r\n- [X] All [pre-commit checks](https://pre-commit.com/#install) pass.\r\n- [X] Unit tests added (if fixing a bug or adding a new feature)\r\n- [ ] Added entry to `CHANGELOG.md` (if changes will affect users)\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3074/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3074/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

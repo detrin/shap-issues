@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2812",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2812/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2812/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2812/events",
+  "html_url": "https://github.com/shap/shap/pull/2812",
+  "id": 1504618971,
+  "node_id": "PR_kwDOBHDcK85F3ty_",
+  "number": 2812,
+  "title": "Pytorch DeepExplainer register_full_backward_hook fix",
+  "user": {
+    "login": "helgehr",
+    "id": 38046421,
+    "node_id": "MDQ6VXNlcjM4MDQ2NDIx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/38046421?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/helgehr",
+    "html_url": "https://github.com/helgehr",
+    "followers_url": "https://api.github.com/users/helgehr/followers",
+    "following_url": "https://api.github.com/users/helgehr/following{/other_user}",
+    "gists_url": "https://api.github.com/users/helgehr/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/helgehr/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/helgehr/subscriptions",
+    "organizations_url": "https://api.github.com/users/helgehr/orgs",
+    "repos_url": "https://api.github.com/users/helgehr/repos",
+    "events_url": "https://api.github.com/users/helgehr/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/helgehr/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2022-12-20T14:07:02Z",
+  "updated_at": "2022-12-20T14:07:02Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2812",
+    "html_url": "https://github.com/shap/shap/pull/2812",
+    "diff_url": "https://github.com/shap/shap/pull/2812.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2812.patch",
+    "merged_at": null
+  },
+  "body": "I got the following warning for computing the `shap_values` with a pytorch model:\r\n```\r\nUsing a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.\r\n```\r\nChanging `register_backward_hook` to the `register_full_backward_hook` method fixed this warning and should now receive all `grad_input`.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2812/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2812/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

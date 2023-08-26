@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2869",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2869/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2869/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2869/events",
+  "html_url": "https://github.com/shap/shap/issues/2869",
+  "id": 1610292494,
+  "node_id": "I_kwDOBHDcK85f-x0O",
+  "number": 2869,
+  "title": "question to tensorflow decision forests",
+  "user": {
+    "login": "Arnold1",
+    "id": 3844226,
+    "node_id": "MDQ6VXNlcjM4NDQyMjY=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/3844226?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Arnold1",
+    "html_url": "https://github.com/Arnold1",
+    "followers_url": "https://api.github.com/users/Arnold1/followers",
+    "following_url": "https://api.github.com/users/Arnold1/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Arnold1/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Arnold1/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Arnold1/subscriptions",
+    "organizations_url": "https://api.github.com/users/Arnold1/orgs",
+    "repos_url": "https://api.github.com/users/Arnold1/repos",
+    "events_url": "https://api.github.com/users/Arnold1/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Arnold1/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    },
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2023-03-05T17:40:59Z",
+  "updated_at": "2023-06-16T17:57:40Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "hi,\r\n\r\nare there plans to support https://github.com/tensorflow/decision-forests?\r\n\r\nwould like to plot a Layered violin plot as shown here:\r\nhttps://shap.readthedocs.io/en/latest/example_notebooks/tabular_examples/tree_based_models/Scatter%20Density%20vs.%20Violin%20Plot%20Comparison.html#Layered-violin-plot",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2869/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2869/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

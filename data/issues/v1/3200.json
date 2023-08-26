@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3200",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3200/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3200/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3200/events",
+  "html_url": "https://github.com/shap/shap/pull/3200",
+  "id": 1858605697,
+  "node_id": "PR_kwDOBHDcK85YWH6V",
+  "number": 3200,
+  "title": "DOCS: Remove boston dataset from the README",
+  "user": {
+    "login": "dsgibbons",
+    "id": 82195909,
+    "node_id": "MDQ6VXNlcjgyMTk1OTA5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/82195909?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dsgibbons",
+    "html_url": "https://github.com/dsgibbons",
+    "followers_url": "https://api.github.com/users/dsgibbons/followers",
+    "following_url": "https://api.github.com/users/dsgibbons/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dsgibbons/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dsgibbons/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dsgibbons/subscriptions",
+    "organizations_url": "https://api.github.com/users/dsgibbons/orgs",
+    "repos_url": "https://api.github.com/users/dsgibbons/repos",
+    "events_url": "https://api.github.com/users/dsgibbons/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dsgibbons/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 5,
+  "created_at": "2023-08-21T05:19:45Z",
+  "updated_at": "2023-08-26T02:50:36Z",
+  "closed_at": null,
+  "author_association": "COLLABORATOR",
+  "active_lock_reason": null,
+  "draft": true,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/3200",
+    "html_url": "https://github.com/shap/shap/pull/3200",
+    "diff_url": "https://github.com/shap/shap/pull/3200.diff",
+    "patch_url": "https://github.com/shap/shap/pull/3200.patch",
+    "merged_at": null
+  },
+  "body": "## Overview\r\n\r\nCloses https://github.com/dsgibbons/shap/issues/8 and resolves the issues noted in https://github.com/dsgibbons/shap/issues/8#issuecomment-1545567370\r\n\r\nRelated to #2322\r\n\r\nUpdating the README required the following additional changes:\r\n\r\n- Return `pl.gcf()` when `show=False` for `bar`, `beeswarm` and `scatter`. I needed this to export the PNGs referenced in the README.\r\n- Use relative paths for README images instead of URLs tied to master.\r\n- Add `plt.rcParams['figure.constrained_layout.use'] = True` to `shap.plots.__init__.py` to prevent labels from being cutoff (before this change, the waterfall diagram has its y-axis labels cut off when changed from `boston` to `california`).\r\n- HTML plots generated inside a notebook, rendered in Chrome, and then screenshotted. There is no obvious way to convert the HTML straight to an image, as it requires JS - unless @connortann or @thatlittleboy know of a better way to convert `shap` HTML to PNG? I've tried several different HTML to PNG converters, but I keep getting a `shap` error saying JS needs initialising.\r\n\r\n## Checklist\r\n\r\n- [x] All [pre-commit checks](https://pre-commit.com/#install) pass.\r\n- [ ] Unit tests added (if fixing a bug or adding a new feature)\r\n\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3200/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3200/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

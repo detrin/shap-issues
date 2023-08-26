@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/292",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/292/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/292/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/292/events",
+  "html_url": "https://github.com/shap/shap/issues/292",
+  "id": 372588855,
+  "node_id": "MDU6SXNzdWUzNzI1ODg4NTU=",
+  "number": 292,
+  "title": "Interaction Error with LightGBM",
+  "user": {
+    "login": "BrianMiner",
+    "id": 8807554,
+    "node_id": "MDQ6VXNlcjg4MDc1NTQ=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/8807554?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/BrianMiner",
+    "html_url": "https://github.com/BrianMiner",
+    "followers_url": "https://api.github.com/users/BrianMiner/followers",
+    "following_url": "https://api.github.com/users/BrianMiner/following{/other_user}",
+    "gists_url": "https://api.github.com/users/BrianMiner/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/BrianMiner/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/BrianMiner/subscriptions",
+    "organizations_url": "https://api.github.com/users/BrianMiner/orgs",
+    "repos_url": "https://api.github.com/users/BrianMiner/repos",
+    "events_url": "https://api.github.com/users/BrianMiner/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/BrianMiner/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2018-10-22T16:14:07Z",
+  "updated_at": "2018-11-02T23:26:12Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I am seeing that the following works fine: \r\n\r\nshap_values=explainer.shap_values(X)\r\n\r\nbut \r\n\r\nshap_valuesINT =explainer.shap_interaction_values(X)\r\n\r\nproduces the following error:\r\n\r\nAny sense of what could cause this issue?\r\n---------------------------------------------------------------------------\r\nValueError                                Traceback (most recent call last)\r\n<ipython-input-23-2c339fe9b80d> in <module>()\r\n----> 1 shap_valuesINT =explainer.shap_interaction_values(X)\r\n      2 #explainer.shap_values(X)\r\n      3 shap_valuesINT\r\n\r\n~/anaconda3/lib/python3.6/site-packages/shap/explainers/tree.py in shap_interaction_values(self, X, tree_limit, **kwargs)\r\n    247             if self.model_type == \"lightgbm\" and self.trees is None:\r\n    248                 tree_info = self.model.dump_model()[\"tree_info\"]\r\n--> 249                 self.trees = [Tree(e, scaling=len(tree_info)) for e in tree_info]\r\n    250 \r\n    251             if str(type(X)).endswith(\"pandas.core.series.Series'>\"):\r\n\r\n~/anaconda3/lib/python3.6/site-packages/shap/explainers/tree.py in <listcomp>(.0)\r\n    247             if self.model_type == \"lightgbm\" and self.trees is None:\r\n    248                 tree_info = self.model.dump_model()[\"tree_info\"]\r\n--> 249                 self.trees = [Tree(e, scaling=len(tree_info)) for e in tree_info]\r\n    250 \r\n    251             if str(type(X)).endswith(\"pandas.core.series.Series'>\"):\r\n\r\n~/anaconda3/lib/python3.6/site-packages/shap/explainers/tree.py in __init__(self, tree, normalize, scaling)\r\n    432                             self.children_default[vertex['split_index']] = self.children_right[vertex['split_index']]\r\n    433                         self.features[vertex['split_index']] = vertex['split_feature']\r\n--> 434                         self.thresholds[vertex['split_index']] = vertex['threshold']\r\n    435                         self.values[vertex['split_index']] = [vertex['internal_value']]\r\n    436                         self.node_sample_weight[vertex['split_index']] = vertex['internal_count']\r\n\r\nValueError: could not convert string to float: '2||4||5||6'",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/292/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/292/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

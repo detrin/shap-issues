@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1062",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1062/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1062/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1062/events",
+  "html_url": "https://github.com/shap/shap/pull/1062",
+  "id": 569680120,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0Mzc4ODQ2MTA3",
+  "number": 1062,
+  "title": "QoL change. Takes into account default 'objective' param in LightGBM,",
+  "user": {
+    "login": "ggmblr",
+    "id": 43810946,
+    "node_id": "MDQ6VXNlcjQzODEwOTQ2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/43810946?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ggmblr",
+    "html_url": "https://github.com/ggmblr",
+    "followers_url": "https://api.github.com/users/ggmblr/followers",
+    "following_url": "https://api.github.com/users/ggmblr/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ggmblr/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ggmblr/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ggmblr/subscriptions",
+    "organizations_url": "https://api.github.com/users/ggmblr/orgs",
+    "repos_url": "https://api.github.com/users/ggmblr/repos",
+    "events_url": "https://api.github.com/users/ggmblr/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ggmblr/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2020-02-24T07:32:38Z",
+  "updated_at": "2022-10-04T16:31:00Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1062",
+    "html_url": "https://github.com/shap/shap/pull/1062",
+    "diff_url": "https://github.com/shap/shap/pull/1062.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1062.patch",
+    "merged_at": null
+  },
+  "body": "Hi, I just added a preliminary check to see if the params dictionary for a model in LightGBM has its 'objective' key populated. Since when not defining an objective its default value is 'regression' ( as can be seen here: [https://lightgbm.readthedocs.io/en/latest/Parameters.html#objective](url) ). But this does not create an 'objective' entry in the params dictionary unless explicitly specified. Thus when trying to run TreeExplainer(...).shap_values(...) it throws a KeyError, as seen below:\r\n\r\n![shap_keyError](https://user-images.githubusercontent.com/43810946/75134843-cfaae280-56df-11ea-9a42-4555421edb47.png)\r\n\r\nThis is just a QoL change to avoid that anyone else has to dig into why this happens, and allow a more fluid workflow.\r\n\r\nP.S. This is my first PR and first time interacting in the open source environment. If there is something else i should have done, considered, please let me know.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1062/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1062/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

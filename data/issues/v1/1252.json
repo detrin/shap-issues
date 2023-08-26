@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1252",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1252/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1252/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1252/events",
+  "html_url": "https://github.com/shap/shap/issues/1252",
+  "id": 631390599,
+  "node_id": "MDU6SXNzdWU2MzEzOTA1OTk=",
+  "number": 1252,
+  "title": "Difference between shap_values[0] and shap_values[1]?",
+  "user": {
+    "login": "Dseal95",
+    "id": 63999160,
+    "node_id": "MDQ6VXNlcjYzOTk5MTYw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/63999160?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Dseal95",
+    "html_url": "https://github.com/Dseal95",
+    "followers_url": "https://api.github.com/users/Dseal95/followers",
+    "following_url": "https://api.github.com/users/Dseal95/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Dseal95/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Dseal95/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Dseal95/subscriptions",
+    "organizations_url": "https://api.github.com/users/Dseal95/orgs",
+    "repos_url": "https://api.github.com/users/Dseal95/repos",
+    "events_url": "https://api.github.com/users/Dseal95/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Dseal95/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901334,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzQ=",
+      "url": "https://api.github.com/repos/shap/shap/labels/question",
+      "name": "question",
+      "color": "cc317c",
+      "default": true,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 10,
+  "created_at": "2020-06-05T07:53:40Z",
+  "updated_at": "2023-07-03T15:48:56Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi, \r\n\r\nI am using SHAP to add some feature importance to the end of a classification model on the titanic dataset. I am using a random forest fitted to X_train_df and y_train_df and the output is predicting is an observation survived or not. When I run the shap_values (below) I get a list. The list is a list of two lists each of the two lists containing arrays, each array being (I assume) the SHAP Values for the observation and the number of arrays = the number of training samples. For example, using the following:\r\n\r\nshap_values = explainer.shap_values(X_train_df) \r\n\r\nI return shap_values with the following conditions:\r\n\r\nshap_values[0][j] where j is in [0,1.....n] where n is number of samples \r\n\r\nand \r\n\r\nshap_values[1][j] where j is in [0,1.....n].\r\n\r\nWhat is the difference in the shap_values[0] and shap_values[1]? apologies if it is a silly Q but I cannot figure it out!\r\n\r\nAlso, when doing the explainer.expected_value where my explainer object is:\r\n\r\nexplainer = shap.TreeExplainer(forest_clf_opt_df, feature_perturbation='tree_path_dependent') and the model is forest_clf_opt_df, I get a 2 element array like this:\r\n\r\narray([n1, n2]) where n1 and n2 are just numbers. What does this mean? Is it in relation to the shap_values[0] and shap_values[1]?\r\n\r\nLastly, as I am not sure of the above, even though I can plot the following graph, changing the i and j's changes it drastically for each observation and I am not sure what parameters to use. If I was to plot the features each contributing to push the model output from the base value (the average model output over the training dataset we passed) for observation x0 (the first observation), is the following code correct: .\r\n\r\nshap.force_plot(explainer.expected_value[0], shap_values[0][0], X_train_df.iloc[0,:])\r\n\r\nFor this I take the first element of the explainer.expected_value, the first list of shap_values and then the first array of that list and then take the first observation of my training data. It plots as expected but I get confused because If I plot, \r\n\r\nshap.force_plot(explainer.expected_value[0], shap_values[1][0], X_train_df.iloc[0,:])\r\n\r\nor \r\n\r\nshap.force_plot(explainer.expected_value[1], shap_values[0][0], X_train_df.iloc[0,:])\r\n\r\nI get completely different values for the same observation. \r\n\r\nany guidance here would be really appreciated. \r\n\r\nPlots (in pdf):\r\n\r\n[SHAP Values.pdf](https://github.com/slundberg/shap/files/4734689/SHAP.Values.pdf)\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1252/reactions",
+    "total_count": 5,
+    "+1": 5,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1252/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

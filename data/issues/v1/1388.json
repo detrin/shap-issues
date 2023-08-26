@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1388",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1388/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1388/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1388/events",
+  "html_url": "https://github.com/shap/shap/issues/1388",
+  "id": 688379990,
+  "node_id": "MDU6SXNzdWU2ODgzNzk5OTA=",
+  "number": 1388,
+  "title": "What I expect as expected value is different than the actual expected value in TreeExplainer",
+  "user": {
+    "login": "ManuelZ",
+    "id": 115771,
+    "node_id": "MDQ6VXNlcjExNTc3MQ==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/115771?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ManuelZ",
+    "html_url": "https://github.com/ManuelZ",
+    "followers_url": "https://api.github.com/users/ManuelZ/followers",
+    "following_url": "https://api.github.com/users/ManuelZ/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ManuelZ/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ManuelZ/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ManuelZ/subscriptions",
+    "organizations_url": "https://api.github.com/users/ManuelZ/orgs",
+    "repos_url": "https://api.github.com/users/ManuelZ/repos",
+    "events_url": "https://api.github.com/users/ManuelZ/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ManuelZ/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 8,
+  "created_at": "2020-08-28T22:06:10Z",
+  "updated_at": "2022-11-09T14:54:23Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I thought that the `expected_value` was calculated by averaging the predictions, but I'm not being able to do it manually.\r\nFully reproducible example below using latest `master`.\r\n\r\n```\r\nimport numpy as np\r\nimport xgboost\r\nimport shap\r\n\r\nX,y = shap.datasets.adult()\r\nmodel = xgboost.XGBClassifier(n_estimators=100, max_depth=2).fit(X, y)\r\n\r\nexplainer = shap.TreeExplainer(model, X[:1000], feature_perturbation='interventional', model_output='probability')                                   \r\n                                     \r\nshap_values = explainer(X[:1000])\r\n\r\nwhat_I_expect_as_base_value_from_labels = model.predict(X[:1000]).astype(int).mean(0)\r\nwhat_I_expect_as_base_value_from_probs = model.predict_proba(X[:1000])[:,1].mean(0)\r\nprint(f'What I expect as base value (from labels): {what_I_expect_as_base_value_from_labels:.3f}')\r\nprint(f'What I expect as base value (from probabilities): {what_I_expect_as_base_value_from_probs:.3f}')\r\nprint(f'Actual base value: {explainer.expected_value:.3f}')\r\n```\r\nOutput:\r\n```\r\nWhat I expect as base value (from labels): 0.186\r\nWhat I expect as base value (from probabilities): 0.234\r\nActual base value: 0.214\r\n```\r\n\r\nxgboost: 1.1.1\r\n\r\nWhy this difference?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1388/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1388/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/785",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/785/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/785/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/785/events",
+  "html_url": "https://github.com/shap/shap/issues/785",
+  "id": 487481615,
+  "node_id": "MDU6SXNzdWU0ODc0ODE2MTU=",
+  "number": 785,
+  "title": "Visualizers in React: this.invLinkFunction may be undefined",
+  "user": {
+    "login": "jaller94",
+    "id": 10872136,
+    "node_id": "MDQ6VXNlcjEwODcyMTM2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/10872136?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jaller94",
+    "html_url": "https://github.com/jaller94",
+    "followers_url": "https://api.github.com/users/jaller94/followers",
+    "following_url": "https://api.github.com/users/jaller94/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jaller94/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jaller94/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jaller94/subscriptions",
+    "organizations_url": "https://api.github.com/users/jaller94/orgs",
+    "repos_url": "https://api.github.com/users/jaller94/repos",
+    "events_url": "https://api.github.com/users/jaller94/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jaller94/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-08-30T13:23:09Z",
+  "updated_at": "2019-09-05T15:43:42Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "body": "## Steps to reproduce\r\n1. Move your mouse over a visualizer before the first draw (comment out draw() or be really fast)\r\n\r\n## Expected\r\nNothing happens.\r\n\r\n## Actual\r\nA JavaScript error gets thrown that this.invLinkFunction is undefined.\r\n\r\n## Explanation\r\n`this.invLinkFunction` is first set in the `draw` methods of `AdditiveForceVisualizer` and `AdditiveForceArrayVisualizer`. The mouseOver listeners are set before draw is executed. Moving the mouse over a graph will spawn an error that invLinkFunction is undefined.\r\n\r\ne.g.\r\nhttps://github.com/slundberg/shap/blob/0c608c5d38e1e2e32d757c7759eee217d0f24af4/javascript/visualizers/AdditiveForceArrayVisualizer.jsx#L226",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/785/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/785/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

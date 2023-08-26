@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/638",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/638/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/638/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/638/events",
+  "html_url": "https://github.com/shap/shap/issues/638",
+  "id": 454309923,
+  "node_id": "MDU6SXNzdWU0NTQzMDk5MjM=",
+  "number": 638,
+  "title": "Support for ONNX models needed",
+  "user": {
+    "login": "jim-meyer",
+    "id": 40723898,
+    "node_id": "MDQ6VXNlcjQwNzIzODk4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/40723898?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jim-meyer",
+    "html_url": "https://github.com/jim-meyer",
+    "followers_url": "https://api.github.com/users/jim-meyer/followers",
+    "following_url": "https://api.github.com/users/jim-meyer/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jim-meyer/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jim-meyer/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jim-meyer/subscriptions",
+    "organizations_url": "https://api.github.com/users/jim-meyer/orgs",
+    "repos_url": "https://api.github.com/users/jim-meyer/repos",
+    "events_url": "https://api.github.com/users/jim-meyer/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jim-meyer/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 6,
+  "created_at": "2019-06-10T18:37:44Z",
+  "updated_at": "2022-07-27T12:10:17Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "[ONNX](https://onnx.ai/) has gained a lot of traction for deploying ML models. But [onnxruntime](https://github.com/microsoft/onnxruntime) does not support returning Shapley values. And looking through this 'shap' package I see no mention of ONNX support.\r\nONNX supports sklearn and LightGBM models by providing a framework-neutral representation of the model not very different from the native representation of those models when serialized by the native framework. So technically shap can support ONNX representations of models too.\r\n\r\nThe ONNX schema for models is based on protobufs and can be found [here](https://github.com/onnx/onnx/tree/master/onnx).\r\n\r\nIs anybody looking at adding ONNX model support to this package?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/638/reactions",
+    "total_count": 6,
+    "+1": 4,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 2
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/638/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

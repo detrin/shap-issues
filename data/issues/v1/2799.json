@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2799",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2799/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2799/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2799/events",
+  "html_url": "https://github.com/shap/shap/pull/2799",
+  "id": 1494295524,
+  "node_id": "PR_kwDOBHDcK85FUqrB",
+  "number": 2799,
+  "title": "add brackets to the shape argument of reshape when calling as np.resh…",
+  "user": {
+    "login": "SomeUserName1",
+    "id": 20174918,
+    "node_id": "MDQ6VXNlcjIwMTc0OTE4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/20174918?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/SomeUserName1",
+    "html_url": "https://github.com/SomeUserName1",
+    "followers_url": "https://api.github.com/users/SomeUserName1/followers",
+    "following_url": "https://api.github.com/users/SomeUserName1/following{/other_user}",
+    "gists_url": "https://api.github.com/users/SomeUserName1/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/SomeUserName1/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/SomeUserName1/subscriptions",
+    "organizations_url": "https://api.github.com/users/SomeUserName1/orgs",
+    "repos_url": "https://api.github.com/users/SomeUserName1/repos",
+    "events_url": "https://api.github.com/users/SomeUserName1/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/SomeUserName1/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2022-12-13T14:00:22Z",
+  "updated_at": "2022-12-13T14:00:22Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2799",
+    "html_url": "https://github.com/shap/shap/pull/2799",
+    "diff_url": "https://github.com/shap/shap/pull/2799.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2799.patch",
+    "merged_at": null
+  },
+  "body": "…ape(a, (x,y)).\r\n\r\nWhen calling `np.reshape(a, shape)`, the shape argument needs to be in brackets, otherwise the second dimension of the shape argument is interpreted as thrid argument which is actually order (i.e. specifying how the array is indexed).\r\n\r\n```\r\nFile \"/opt/miniconda3/envs/xai/lib/python3.10/site-packages/shap/plots/_scatter.py\", line 559, in dependence_legacy\r\n    shap_values = np.reshape(shap_values, len(shap_values), 1)         # here we are missing brackets\r\n  File \"<__array_function__ internals>\", line 180, in reshape\r\n  File \"/opt/miniconda3/envs/xai/lib/python3.10/site-packages/numpy/core/fromnumeric.py\", line 298, in reshape\r\n    return _wrapfunc(a, 'reshape', newshape, order=order)                # Causing newshape to be a single int and the second dimension gets interpreted as order\r\n  File \"/opt/miniconda3/envs/xai/lib/python3.10/site-packages/numpy/core/fromnumeric.py\", line 54, in _wrapfunc\r\n    return _wrapit(obj, method, *args, **kwds)\r\n  File \"/opt/miniconda3/envs/xai/lib/python3.10/site-packages/numpy/core/fromnumeric.py\", line 43, in _wrapit\r\n    result = getattr(asarray(obj), method)(*args, **kwds)\r\nTypeError: order must be str, not int                                                 # Causing this error\r\n\r\n```\r\n\r\nThe fix is to add brackets:\r\nshap_values = np.reshape(shap_values, (len(shap_values), 1))",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2799/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2799/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

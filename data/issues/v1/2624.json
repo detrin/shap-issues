@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2624",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2624/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2624/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2624/events",
+  "html_url": "https://github.com/shap/shap/pull/2624",
+  "id": 1309320482,
+  "node_id": "PR_kwDOBHDcK847pAM1",
+  "number": 2624,
+  "title": "MAINT refactor feature_perturbation in Tree explainers",
+  "user": {
+    "login": "glemaitre",
+    "id": 7454015,
+    "node_id": "MDQ6VXNlcjc0NTQwMTU=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/7454015?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/glemaitre",
+    "html_url": "https://github.com/glemaitre",
+    "followers_url": "https://api.github.com/users/glemaitre/followers",
+    "following_url": "https://api.github.com/users/glemaitre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/glemaitre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/glemaitre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/glemaitre/subscriptions",
+    "organizations_url": "https://api.github.com/users/glemaitre/orgs",
+    "repos_url": "https://api.github.com/users/glemaitre/repos",
+    "events_url": "https://api.github.com/users/glemaitre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/glemaitre/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2022-07-19T10:35:07Z",
+  "updated_at": "2022-07-19T13:04:02Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2624",
+    "html_url": "https://github.com/shap/shap/pull/2624",
+    "diff_url": "https://github.com/shap/shap/pull/2624.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2624.patch",
+    "merged_at": null
+  },
+  "body": "The switch between `\"interventional\"` to `\"tree_path_dependent\"` being silent is quite surprising.\r\n\r\nInstead, I would propose to have an `\"auto\"` method that would switch to the method depending if the background dataset provided.\r\n\r\nThen when providing a specific algorithm, we will in the future raise an error if the conditions are not met to run the algorithm. For the moment, I propose to raise a `FutureWarning` to ask the user to change to `\"auto\"` if this is really what they want (and therefore keep the code backward compatible).\r\n\r\nI find this way more explicit, knowing that `\"tree_path_depedent\"` might have an important impact on the symmetric axiom expected by the users.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2624/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2624/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

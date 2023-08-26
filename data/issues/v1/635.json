@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/635",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/635/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/635/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/635/events",
+  "html_url": "https://github.com/shap/shap/issues/635",
+  "id": 453697864,
+  "node_id": "MDU6SXNzdWU0NTM2OTc4NjQ=",
+  "number": 635,
+  "title": "Interpreting dispersion in main effect values",
+  "user": {
+    "login": "CanML",
+    "id": 35773945,
+    "node_id": "MDQ6VXNlcjM1NzczOTQ1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/35773945?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/CanML",
+    "html_url": "https://github.com/CanML",
+    "followers_url": "https://api.github.com/users/CanML/followers",
+    "following_url": "https://api.github.com/users/CanML/following{/other_user}",
+    "gists_url": "https://api.github.com/users/CanML/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/CanML/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/CanML/subscriptions",
+    "organizations_url": "https://api.github.com/users/CanML/orgs",
+    "repos_url": "https://api.github.com/users/CanML/repos",
+    "events_url": "https://api.github.com/users/CanML/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/CanML/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-06-07T21:19:38Z",
+  "updated_at": "2019-06-21T15:27:07Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "In most papers, blogs, etc. I have seen, people attribute the dispersion of SHAP values for a particular feature to the presence of interaction effects. However, in many datasets I've tried, there is still significant dispersion in the \"main effect\" values for a given feature value.\r\n\r\nSomeone asked me what this represents, and my gut feeling is that it is simply the scatter/noise/uncertainty, but I thought I'd ask the question here to confirm or get other points of view.\r\n\r\n![Untitled](https://user-images.githubusercontent.com/35773945/59134126-66a7f280-8937-11e9-8474-7179d89dd77a.png)\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/635/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/635/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

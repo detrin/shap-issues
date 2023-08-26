@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/559",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/559/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/559/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/559/events",
+  "html_url": "https://github.com/shap/shap/issues/559",
+  "id": 435788662,
+  "node_id": "MDU6SXNzdWU0MzU3ODg2NjI=",
+  "number": 559,
+  "title": "Multi-input CNN architecture",
+  "user": {
+    "login": "johnnypetr",
+    "id": 49875519,
+    "node_id": "MDQ6VXNlcjQ5ODc1NTE5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/49875519?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/johnnypetr",
+    "html_url": "https://github.com/johnnypetr",
+    "followers_url": "https://api.github.com/users/johnnypetr/followers",
+    "following_url": "https://api.github.com/users/johnnypetr/following{/other_user}",
+    "gists_url": "https://api.github.com/users/johnnypetr/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/johnnypetr/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/johnnypetr/subscriptions",
+    "organizations_url": "https://api.github.com/users/johnnypetr/orgs",
+    "repos_url": "https://api.github.com/users/johnnypetr/repos",
+    "events_url": "https://api.github.com/users/johnnypetr/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/johnnypetr/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 19,
+  "created_at": "2019-04-22T16:25:40Z",
+  "updated_at": "2021-07-04T16:33:06Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hello,\r\nI tried to use SHAP for a multi-input (single output) classification architecture consisting of three CNN branches. However, I wasn't very successful with the code as I couldn't find a similar case.\r\n\r\nThe closest scenario seems to be here (due to the fact that a list of image can be parsed into the interpretation model): https://github.com/slundberg/shap/blob/master/notebooks/gradient_explainer/Explain%20an%20Intermediate%20Layer%20of%20VGG16%20on%20ImageNet%20(PyTorch).ipynb\r\n\r\nHowever, the idea behind the classification is very different as my architecture aims to predict a class (0/1 - non-churning customer/churning customer) based on three sets of data (demographic data, transactional data and behavioral data) all represented in heatmaps.\r\n\r\nHence my question: is it possible to use SHAP for a multi-input CNN architecture?\r\n\r\nThe architecture looks like as follows: https://pasteboard.co/IbkV0lO.png\r\n \r\nThank you.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/559/reactions",
+    "total_count": 2,
+    "+1": 2,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/559/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

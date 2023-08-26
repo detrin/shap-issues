@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/515",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/515/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/515/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/515/events",
+  "html_url": "https://github.com/shap/shap/issues/515",
+  "id": 425536174,
+  "node_id": "MDU6SXNzdWU0MjU1MzYxNzQ=",
+  "number": 515,
+  "title": "SHAP with tensorflow only",
+  "user": {
+    "login": "Krissy93",
+    "id": 19330329,
+    "node_id": "MDQ6VXNlcjE5MzMwMzI5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19330329?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Krissy93",
+    "html_url": "https://github.com/Krissy93",
+    "followers_url": "https://api.github.com/users/Krissy93/followers",
+    "following_url": "https://api.github.com/users/Krissy93/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Krissy93/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Krissy93/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Krissy93/subscriptions",
+    "organizations_url": "https://api.github.com/users/Krissy93/orgs",
+    "repos_url": "https://api.github.com/users/Krissy93/repos",
+    "events_url": "https://api.github.com/users/Krissy93/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Krissy93/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 8,
+  "created_at": "2019-03-26T16:54:59Z",
+  "updated_at": "2019-04-08T18:28:05Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hello,\r\nI'm trying to visualize SHAP explainations of a tensorflow model. I'm using as reference the GradientExplainer, but I don't get how to use it on a tensorflow model (the example uses Keras).\r\nBy reading \"[gradient.py](https://github.com/slundberg/shap/blob/master/shap/explainers/gradient.py)\" I understand that I need two tf.Operations to define my model.\r\nIn the notebook `model.layers[7].input` and `model.layers[-1].output` are used, so I imagine that I have to extract from my tf graph an input layer I want to use and the corresponding output layer by using the `get_operation_by_name` function.\r\nWhat about the data, though? How can I define the correct form?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/515/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/515/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

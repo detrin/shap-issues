@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1285",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1285/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1285/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1285/events",
+  "html_url": "https://github.com/shap/shap/pull/1285",
+  "id": 644112124,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NDM4NzkyNDgw",
+  "number": 1285,
+  "title": "Add LogLink for decision plot's link parameter",
+  "user": {
+    "login": "Ludecan",
+    "id": 17169248,
+    "node_id": "MDQ6VXNlcjE3MTY5MjQ4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/17169248?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Ludecan",
+    "html_url": "https://github.com/Ludecan",
+    "followers_url": "https://api.github.com/users/Ludecan/followers",
+    "following_url": "https://api.github.com/users/Ludecan/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Ludecan/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Ludecan/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Ludecan/subscriptions",
+    "organizations_url": "https://api.github.com/users/Ludecan/orgs",
+    "repos_url": "https://api.github.com/users/Ludecan/repos",
+    "events_url": "https://api.github.com/users/Ludecan/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Ludecan/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2020-06-23T20:08:40Z",
+  "updated_at": "2020-06-23T20:08:40Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1285",
+    "html_url": "https://github.com/shap/shap/pull/1285",
+    "diff_url": "https://github.com/shap/shap/pull/1285.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1285.patch",
+    "merged_at": null
+  },
+  "body": "Very minor change to add a Log link function to decision plots.\r\n\r\nOur models had their targets pre transformed using logarithms so the explainer.shap_values function couldn't pick on that from the models objective.\r\n\r\nI added this link function to be able to apply the inverse transform, and show exponentiated targets at the decision plot level.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1285/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1285/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3147",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3147/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3147/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3147/events",
+  "html_url": "https://github.com/shap/shap/issues/3147",
+  "id": 1825936966,
+  "node_id": "I_kwDOBHDcK85s1ZZG",
+  "number": 3147,
+  "title": "BUG: Exception: The passed model is not callable and cannot be analyzed directly with the given masker! Model: GBTClassificationModel (uid=GBTClassifier_c6502ed2671a) with 100 trees",
+  "user": {
+    "login": "mriomoreno",
+    "id": 140796546,
+    "node_id": "U_kgDOCGRigg",
+    "avatar_url": "https://avatars.githubusercontent.com/u/140796546?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mriomoreno",
+    "html_url": "https://github.com/mriomoreno",
+    "followers_url": "https://api.github.com/users/mriomoreno/followers",
+    "following_url": "https://api.github.com/users/mriomoreno/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mriomoreno/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mriomoreno/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mriomoreno/subscriptions",
+    "organizations_url": "https://api.github.com/users/mriomoreno/orgs",
+    "repos_url": "https://api.github.com/users/mriomoreno/repos",
+    "events_url": "https://api.github.com/users/mriomoreno/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mriomoreno/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 16,
+  "created_at": "2023-07-28T08:14:47Z",
+  "updated_at": "2023-08-20T14:55:23Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "### Issue Description\r\n\r\nI`ve loaded a GBTCLassifierModel from hdfs, and I get the folling exception:\r\n\r\n```bash\r\n---------------------------------------------------------------------------\r\nException                                 Traceback (most recent call last)\r\n*/shaply.py in ()\r\n----> 1 explainer=shap.Explainer(model)\r\n\r\n/opt/cloudera/parcels/Anaconda3/lib/python3.7/site-packages/shap/explainers/_explainer.py in __init__(self, model, masker, link, algorithm, output_names, feature_names, **kwargs)\r\n    128                 # if we get here then we don't know how to handle what was given to us\r\n    129                 else:\r\n--> 130                     raise Exception(\"The passed model is not callable and cannot be analyzed directly with the given masker! Model: \" + str(model))\r\n    131 \r\n    132             # build the right subclass\r\n\r\nException: The passed model is not callable and cannot be analyzed directly with the given masker! Model: GBTClassificationModel (uid=GBTClassifier_c6502ed2671a) with 100 trees\r\n```\r\n\r\n### Minimal Reproducible Example\r\n\r\n```python\r\npipeline=PipelineModel.load(ruta_pipeline_hdfs)\r\nmodel=pipeline.stages[-1]\r\n\r\nexplainer=shap.Explainer(model)\r\n```\r\n\r\n\r\n### Expected Behavior\r\n\r\nIt should works as I train GBTClassifierModel without saving of loading and it works.\r\n\r\n### Bug report checklist\r\n\r\n- [X] I have checked that this issue has not already been reported.\r\n- [X] I have confirmed this bug exists on the [latest release](https://github.com/shap/shap/releases) of shap.\r\n- [X] I have confirmed this bug exists on the [master branch](https://github.com/shap/shap/blob/master/CONTRIBUTING.md#installing-from-the-master-branch) of shap.\r\n- [x] I'd be interested in making a PR to fix this bug\r\n\r\n### Installed Versions\r\n\r\nLatest",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3147/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3147/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

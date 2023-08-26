@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/129",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/129/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/129/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/129/events",
+  "html_url": "https://github.com/shap/shap/pull/129",
+  "id": 335045439,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0MTk2ODY1NTY1",
+  "number": 129,
+  "title": "solr json draft",
+  "user": {
+    "login": "alessandrobenedetti",
+    "id": 513195,
+    "node_id": "MDQ6VXNlcjUxMzE5NQ==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/513195?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/alessandrobenedetti",
+    "html_url": "https://github.com/alessandrobenedetti",
+    "followers_url": "https://api.github.com/users/alessandrobenedetti/followers",
+    "following_url": "https://api.github.com/users/alessandrobenedetti/following{/other_user}",
+    "gists_url": "https://api.github.com/users/alessandrobenedetti/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/alessandrobenedetti/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/alessandrobenedetti/subscriptions",
+    "organizations_url": "https://api.github.com/users/alessandrobenedetti/orgs",
+    "repos_url": "https://api.github.com/users/alessandrobenedetti/repos",
+    "events_url": "https://api.github.com/users/alessandrobenedetti/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/alessandrobenedetti/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 7,
+  "created_at": "2018-06-22T23:28:02Z",
+  "updated_at": "2018-06-29T11:53:47Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/129",
+    "html_url": "https://github.com/shap/shap/pull/129",
+    "diff_url": "https://github.com/shap/shap/pull/129.diff",
+    "patch_url": "https://github.com/shap/shap/pull/129.patch",
+    "merged_at": null
+  },
+  "body": "Hi Shap community,\r\nFirst of all, apologies for the quality of the PR, it is just a draft though.\r\nI am completely new to Python and Shap, so I would like to verify if this is the right direction.\r\nThank you in advance for your patience ( long description follows)\r\n\r\n**Assumption** : Apache Solr is a search engine that implements support for Learning To Rank[1].\r\nIt is not a library to train a model, you are expected to train a model with the known libraries, convert the output model to a standard Solr Json format and push it to Solr to be used at re-ranking.\r\n\r\nThis assumption means that you may be able to run TreeShap **before** you convert the tree model in the Solr Json format ( which is much simpler than the output of machine learning libraries)\r\n\r\nThe reason for this patch is to enable a developer to run TreeShap from the Solr Json model as well ( let's assume the source model is not available anymore or it is in some complex legacy format and you want to explain it anyway)\r\n\r\nI have few questions as well : \r\n\r\n1) \r\nDo we need this bit for the Solr Json Model as well ? In the tree constructor ?\r\nassert have_cext, \"C extension was not built during install!\" + str(have_cext)\r\nself.max_depth = _cext.compute_expectations(\r\n    self.children_left, self.children_right, self.node_sample_weight,\r\n    self.values\r\n)\r\n\r\n2)  at :  shap/explainers/tree.py:125\r\nI do : phi = self.trees.predict(X, ntree_limit=tree_limit, pred_contribs=True)\r\nThis doesn't work, as no predict is available.\r\nDo I need to implement it ( basically navigating the tree) or I can use some auxiliary function already available after you have parsed the model ?\r\n\r\n3) In the tree constructor I see a paramter called scaling ( which is initialized for the other tree based model to : scaling=len(tree_info)) which is the number of trees.\r\nIn the Solr Json each tree has a weight.\r\nI assumed the weight should go to the scaling param, please correct me if I have been incorrect.\r\n\r\nThank you very much again, I would happy to work more on this contribution and make treeShap available for an easy use for the Solr audience :)",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/129/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/129/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

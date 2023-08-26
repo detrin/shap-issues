@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2290",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2290/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2290/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2290/events",
+  "html_url": "https://github.com/shap/shap/pull/2290",
+  "id": 1063316618,
+  "node_id": "PR_kwDOBHDcK84vAZcx",
+  "number": 2290,
+  "title": "SHAP on converted models from onnx-tensorflow",
+  "user": {
+    "login": "cwmeijer",
+    "id": 6087314,
+    "node_id": "MDQ6VXNlcjYwODczMTQ=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6087314?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/cwmeijer",
+    "html_url": "https://github.com/cwmeijer",
+    "followers_url": "https://api.github.com/users/cwmeijer/followers",
+    "following_url": "https://api.github.com/users/cwmeijer/following{/other_user}",
+    "gists_url": "https://api.github.com/users/cwmeijer/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/cwmeijer/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/cwmeijer/subscriptions",
+    "organizations_url": "https://api.github.com/users/cwmeijer/orgs",
+    "repos_url": "https://api.github.com/users/cwmeijer/repos",
+    "events_url": "https://api.github.com/users/cwmeijer/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/cwmeijer/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2021-11-25T08:59:20Z",
+  "updated_at": "2022-03-23T00:21:06Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": true,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2290",
+    "html_url": "https://github.com/shap/shap/pull/2290",
+    "diff_url": "https://github.com/shap/shap/pull/2290.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2290.patch",
+    "merged_at": null
+  },
+  "body": "We want to run SHAP on models that were converted from onnx using [onnx-tensorflow](https://github.com/onnx/onnx-tensorflow). Using this draft PR, we hope to be able to test against the CI setup from the original slundberg/shap repo.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2290/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2290/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

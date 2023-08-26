@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/843",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/843/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/843/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/843/events",
+  "html_url": "https://github.com/shap/shap/issues/843",
+  "id": 504074055,
+  "node_id": "MDU6SXNzdWU1MDQwNzQwNTU=",
+  "number": 843,
+  "title": "Using SHAP with a PMML",
+  "user": {
+    "login": "AbdealiLoKo",
+    "id": 2200743,
+    "node_id": "MDQ6VXNlcjIyMDA3NDM=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2200743?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/AbdealiLoKo",
+    "html_url": "https://github.com/AbdealiLoKo",
+    "followers_url": "https://api.github.com/users/AbdealiLoKo/followers",
+    "following_url": "https://api.github.com/users/AbdealiLoKo/following{/other_user}",
+    "gists_url": "https://api.github.com/users/AbdealiLoKo/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/AbdealiLoKo/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/AbdealiLoKo/subscriptions",
+    "organizations_url": "https://api.github.com/users/AbdealiLoKo/orgs",
+    "repos_url": "https://api.github.com/users/AbdealiLoKo/repos",
+    "events_url": "https://api.github.com/users/AbdealiLoKo/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/AbdealiLoKo/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    },
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-10-08T14:19:05Z",
+  "updated_at": "2022-04-20T08:41:24Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "body": "Hi, I have a model which has been serialized into a PMML file.\r\nI'm trying to figure out how can I use SHAP on this.\r\nIs there any documentation for this ?\r\n\r\nThe PMML files are generated through various means: H2O, SAS, etc.\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/843/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/843/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

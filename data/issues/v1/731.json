@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/731",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/731/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/731/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/731/events",
+  "html_url": "https://github.com/shap/shap/issues/731",
+  "id": 477432789,
+  "node_id": "MDU6SXNzdWU0Nzc0MzI3ODk=",
+  "number": 731,
+  "title": "numpy 1.16.4 not supported due to scikit-image use of _validate_lengths in versions below 0.15!",
+  "user": {
+    "login": "shsab",
+    "id": 3591686,
+    "node_id": "MDQ6VXNlcjM1OTE2ODY=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/3591686?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/shsab",
+    "html_url": "https://github.com/shsab",
+    "followers_url": "https://api.github.com/users/shsab/followers",
+    "following_url": "https://api.github.com/users/shsab/following{/other_user}",
+    "gists_url": "https://api.github.com/users/shsab/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/shsab/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/shsab/subscriptions",
+    "organizations_url": "https://api.github.com/users/shsab/orgs",
+    "repos_url": "https://api.github.com/users/shsab/repos",
+    "events_url": "https://api.github.com/users/shsab/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/shsab/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2019-08-06T14:58:57Z",
+  "updated_at": "2019-08-06T17:56:07Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "SHAP is not working with numpy 1.16.4 due to the removal of the _validate_lengths in the new numpy. \r\nI have upgraded the scikit-image and it is working! So probably should enforce the scikit-image version.\r\n\r\nHere is the error:\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"/home/ssabzevari/anaconda3/envs/test/lib/python3.7/site-packages/shap/__init__.py\", line 11, in <module>\r\n    from .plots.summary import summary_plot\r\n  File \"/home/ssabzevari/anaconda3/envs/test/lib/python3.7/site-packages/shap/plots/summary.py\", line 15, in <module>\r\n    from . import colors\r\n  File \"/home/ssabzevari/anaconda3/envs/test/lib/python3.7/site-packages/shap/plots/colors.py\", line 7, in <module>\r\n    import skimage.color\r\n  File \"/home/ssabzevari/anaconda3/envs/test/lib/python3.7/site-packages/skimage/__init__.py\", line 157, in <module>\r\n    from .util.dtype import *\r\n  File \"/home/ssabzevari/anaconda3/envs/test/lib/python3.7/site-packages/skimage/util/__init__.py\", line 8, in <module>\r\n    from .arraycrop import crop\r\n  File \"/home/ssabzevari/anaconda3/envs/test/lib/python3.7/site-packages/skimage/util/arraycrop.py\", line 8, in <module>\r\n    from numpy.lib.arraypad import _validate_lengths\r\nImportError: cannot import name '_validate_lengths' from 'numpy.lib.arraypad' (/home/ssabzevari/anaconda3/envs/test/lib/python3.7/site-packages/numpy/lib/arraypad.py)",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/731/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/731/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

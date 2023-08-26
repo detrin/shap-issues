@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1370",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1370/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1370/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1370/events",
+  "html_url": "https://github.com/shap/shap/pull/1370",
+  "id": 680369683,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NDY4OTQxNzA4",
+  "number": 1370,
+  "title": "ENH `plots._summary.summary_plot`: Added functionality to plot categoric features with separate markers",
+  "user": {
+    "login": "JoElfner",
+    "id": 38665102,
+    "node_id": "MDQ6VXNlcjM4NjY1MTAy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/38665102?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/JoElfner",
+    "html_url": "https://github.com/JoElfner",
+    "followers_url": "https://api.github.com/users/JoElfner/followers",
+    "following_url": "https://api.github.com/users/JoElfner/following{/other_user}",
+    "gists_url": "https://api.github.com/users/JoElfner/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/JoElfner/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/JoElfner/subscriptions",
+    "organizations_url": "https://api.github.com/users/JoElfner/orgs",
+    "repos_url": "https://api.github.com/users/JoElfner/repos",
+    "events_url": "https://api.github.com/users/JoElfner/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/JoElfner/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 9,
+  "created_at": "2020-08-17T16:41:11Z",
+  "updated_at": "2020-10-06T16:45:58Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1370",
+    "html_url": "https://github.com/shap/shap/pull/1370",
+    "diff_url": "https://github.com/shap/shap/pull/1370.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1370.patch",
+    "merged_at": null
+  },
+  "body": "I added the funcitonality to plot categoric features (single, multiple, arbitrary number of value combinations) to `summary_plot`. Scanning #58 shortly, this could be a fix for the issue (didn't go into detail while looking at the requested functionality).\r\n\r\nTo enable marking values of a categoric feature with separate markers, set `categoric=feat_name`, where `feat_name` can be:\r\n- str or list/tuple of str for `isinstance(features, pd.DataFrame)`\r\n- int or list/tuple of int for all types\r\n- None (default) to disable categoric plotting\r\n\r\nThis should work with `pd.DataFrame` and `np.ndarray` inputs. The `dtype` can be anything, also `str` values in columns are supported.\r\n\r\n`categoric_names` allows specifying the names of the categoric features when no `pd.DataFrame` is given.\r\n`cat_legend` controls whether to display a legend with the categoric combinations.\r\n`markers` specifies the markers to use for the categorics. Since `linewidth=0` is the default plotting style, only \"thick\" markers will be displayed. I didn't want to change this default, but of course this should be an easy task.\r\n\r\nThis works only for `plot_type in ('dot', 'compact_dot)`.\r\n\r\nAll changes specific to this PR are in `plots._summary.py`. Other changed files are actually part of #1368 .\r\n\r\nAny remarks, objections etc?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1370/reactions",
+    "total_count": 1,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 1,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1370/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

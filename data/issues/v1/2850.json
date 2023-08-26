@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2850",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2850/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2850/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2850/events",
+  "html_url": "https://github.com/shap/shap/issues/2850",
+  "id": 1571688389,
+  "node_id": "I_kwDOBHDcK85drg_F",
+  "number": 2850,
+  "title": "Using Shapely package with feedforward keras neural network",
+  "user": {
+    "login": "Akshar521",
+    "id": 124538116,
+    "node_id": "U_kgDOB2xNBA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/124538116?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Akshar521",
+    "html_url": "https://github.com/Akshar521",
+    "followers_url": "https://api.github.com/users/Akshar521/followers",
+    "following_url": "https://api.github.com/users/Akshar521/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Akshar521/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Akshar521/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Akshar521/subscriptions",
+    "organizations_url": "https://api.github.com/users/Akshar521/orgs",
+    "repos_url": "https://api.github.com/users/Akshar521/repos",
+    "events_url": "https://api.github.com/users/Akshar521/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Akshar521/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2023-02-06T00:30:12Z",
+  "updated_at": "2023-06-17T01:12:13Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I'm making a keras model and trying to use Shapley values to analyze the weightage of the different input features (there are 1598 of them total). The code is copied here: \r\n```\r\nfrom tensorflow.keras.layers import Dropout\r\nfrom tensorflow.keras import layers\r\nfrom tensorflow.keras import regularizers\r\nfrom tensorflow.keras import constraints\r\nfrom tensorflow.keras.layers import InputLayer\r\n\r\nfilename = os.path.join(mod_path, 'CL_MOD_ANN.regulizer_all=l2,input,valid_split = 0.15,kernel intializer,batchnorm moved,small,activation=elu,relu,constraint-->last, lr=0.00005,dropout=0.05-->moved,epoch = 30.h5')\r\n\r\nif mod_check(filename):\r\n    print('WARNING: Load from the existing model.')\r\n    mod_ann = keras.models.load_model(filename)\r\nelse:\r\n    constraint = tf.keras.constraints.MinMaxNorm(min_value=-5, \r\n                                                 max_value=5, \r\n                                                 rate=1.0, axis=0)\r\n    mod_ann = keras.models.Sequential([\r\n        InputLayer(input_shape=(1599, )),\r\n        keras.layers.Dense(300, \r\n                           activation='elu', \r\n                           kernel_initializer='glorot_uniform'),\r\n        keras.layers.Dense(200,\r\n                           activation='relu',\r\n                           kernel_initializer='glorot_uniform',\r\n                           kernel_regularizer='l2'), \r\n        Dropout(0.05),\r\n        keras.layers.BatchNormalization(),\r\n        keras.layers.Dense(100, \r\n                           activation='relu',\r\n                           kernel_initializer='glorot_uniform',\r\n                           kernel_regularizer='l2'), \r\n        keras.layers.Dense(80,\r\n                           activation='relu',\r\n                           kernel_initializer='glorot_uniform',\r\n                           kernel_regularizer='l2'),\r\n        keras.layers.Dense(50, \r\n                           activation='relu',\r\n                           kernel_initializer='glorot_uniform',\r\n                           kernel_constraint = constraint,\r\n                           kernel_regularizer='l2'),\r\n    ])\r\n    \r\n    \r\n    mod_ann.add(keras.layers.Dense(1, activation='sigmoid', kernel_initializer='glorot_uniform'))\r\n    \r\n    run_logdir = get_run_logdir()\r\n    \r\n    checkpoint_cb = keras.callbacks.ModelCheckpoint(filename, save_best_only=True)\r\n    \r\n    logger_cb = keras.callbacks.CSVLogger(filename + '.log', separator=',', append=False)\r\n\r\n    mod_ann.compile(optimizer=keras.optimizers.Nadam(lr=0.00005, beta_1 = 0.995, beta_2 = 0.999),\r\n                    loss='binary_crossentropy',\r\n                    metrics=['accuracy'])\r\n    mod_ann.fit(X_train_std, y_train, epochs= 30, shuffle='true', \r\n                validation_split=0.15,\r\n                callbacks=[checkpoint_cb,logger_cb])\r\n```\r\nIts a very energy intensive model since it is interpreting over 100,000 images. When I try to get the input features/shapely values for them my ram on google collar just can't hold it all and I have a runtime error. The model works with an xgb boost but not with neural network. \r\n\r\nMy code to get Shapley values is simply this: \r\n```\r\nexplainer = shap.Explainer(mod_ann.predict, X)\r\nbatch_size = 16\r\nshap_values = explainer(X, batch_size=batch_size, max_evals=3199)\r\n```\r\nAnyone have a suggestion?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2850/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2850/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

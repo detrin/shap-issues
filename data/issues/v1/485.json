@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/485",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/485/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/485/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/485/events",
+  "html_url": "https://github.com/shap/shap/issues/485",
+  "id": 419180517,
+  "node_id": "MDU6SXNzdWU0MTkxODA1MTc=",
+  "number": 485,
+  "title": "dependence_plot for data with multiple labels error",
+  "user": {
+    "login": "BoredGeo",
+    "id": 42913686,
+    "node_id": "MDQ6VXNlcjQyOTEzNjg2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/42913686?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/BoredGeo",
+    "html_url": "https://github.com/BoredGeo",
+    "followers_url": "https://api.github.com/users/BoredGeo/followers",
+    "following_url": "https://api.github.com/users/BoredGeo/following{/other_user}",
+    "gists_url": "https://api.github.com/users/BoredGeo/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/BoredGeo/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/BoredGeo/subscriptions",
+    "organizations_url": "https://api.github.com/users/BoredGeo/orgs",
+    "repos_url": "https://api.github.com/users/BoredGeo/repos",
+    "events_url": "https://api.github.com/users/BoredGeo/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/BoredGeo/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2019-03-10T12:35:45Z",
+  "updated_at": "2020-11-04T22:29:51Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I am plotting the dependence of two variables for one label in a multi-label dataset.\r\nThe offensive code is:\r\n`shap.dependence_plot('SOME_VALUE', shap_values[cls][idx_cls, :], X.iloc[idx_cls])`\r\n\r\n`cls` is the index of the class (an int) and `idx_cls` is an array of indices where the label was `cls`.\r\n\r\nNow, there is an output plot, but without any labels, and the cell throws an `IndexError`. Here's the full error:\r\n\r\n```---------------------------------------------------------------------------\r\nIndexError                                Traceback (most recent call last)\r\n<ipython-input-47-b3e2be1f755c> in <module>\r\n      4 \r\n      5 shap.dependence_plot('SOME_VALUE', shap_values[cls][idx_cls, :], \r\n----> 6                      X.iloc[idx_cls])\r\n\r\n~/anaconda3/envs/valley/lib/python3.7/site-packages/shap/plots/dependence.py in dependence_plot(ind, shap_values, features, feature_names, display_features, interaction_index, color, axis_color, dot_size, x_jitter, alpha, title, xmin, xmax, show)\r\n    242             xlim[0] * np.ones(xv_nan.sum()), s[xv_nan], marker=1,\r\n    243             linewidth=2, c=cvals_imp[xv_nan], cmap=colors.red_blue, alpha=alpha,\r\n--> 244             vmin=clow, vmax=chigh\r\n    245         )\r\n    246         p.set_array(cvals[xv_nan])\r\n\r\n~/anaconda3/envs/valley/lib/python3.7/site-packages/matplotlib/pyplot.py in scatter(x, y, s, c, marker, cmap, norm, vmin, vmax, alpha, linewidths, verts, edgecolors, data, **kwargs)\r\n   2862         vmin=vmin, vmax=vmax, alpha=alpha, linewidths=linewidths,\r\n   2863         verts=verts, edgecolors=edgecolors, **({\"data\": data} if data\r\n-> 2864         is not None else {}), **kwargs)\r\n   2865     sci(__ret)\r\n   2866     return __ret\r\n\r\n~/anaconda3/envs/valley/lib/python3.7/site-packages/matplotlib/__init__.py in inner(ax, data, *args, **kwargs)\r\n   1803                         \"the Matplotlib list!)\" % (label_namer, func.__name__),\r\n   1804                         RuntimeWarning, stacklevel=2)\r\n-> 1805             return func(ax, *args, **kwargs)\r\n   1806 \r\n   1807         inner.__doc__ = _add_data_doc(inner.__doc__,\r\n\r\n~/anaconda3/envs/valley/lib/python3.7/site-packages/matplotlib/axes/_axes.py in scatter(self, x, y, s, c, marker, cmap, norm, vmin, vmax, alpha, linewidths, verts, edgecolors, **kwargs)\r\n   4193                 isinstance(c, str) or\r\n   4194                 (isinstance(c, collections.Iterable) and\r\n-> 4195                     isinstance(c[0], str))):\r\n   4196             c_array = None\r\n   4197         else:\r\n\r\nIndexError: index 0 is out of bounds for axis 0 with size 0\r\n```\r\n\r\nIt looks like a matplotlib problem but I cannot figure our what it is.\r\nThanks",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/485/reactions",
+    "total_count": 1,
+    "+1": 1,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/485/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

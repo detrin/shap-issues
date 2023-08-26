@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/838",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/838/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/838/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/838/events",
+  "html_url": "https://github.com/shap/shap/issues/838",
+  "id": 499956083,
+  "node_id": "MDU6SXNzdWU0OTk5NTYwODM=",
+  "number": 838,
+  "title": "Questions about TreeExplainer runtime speed",
+  "user": {
+    "login": "aamster",
+    "id": 5454341,
+    "node_id": "MDQ6VXNlcjU0NTQzNDE=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5454341?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/aamster",
+    "html_url": "https://github.com/aamster",
+    "followers_url": "https://api.github.com/users/aamster/followers",
+    "following_url": "https://api.github.com/users/aamster/following{/other_user}",
+    "gists_url": "https://api.github.com/users/aamster/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/aamster/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/aamster/subscriptions",
+    "organizations_url": "https://api.github.com/users/aamster/orgs",
+    "repos_url": "https://api.github.com/users/aamster/repos",
+    "events_url": "https://api.github.com/users/aamster/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/aamster/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901334,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzQ=",
+      "url": "https://api.github.com/repos/shap/shap/labels/question",
+      "name": "question",
+      "color": "cc317c",
+      "default": true,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 12,
+  "created_at": "2019-09-29T19:01:08Z",
+  "updated_at": "2023-06-20T16:09:38Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I have tried running shap on a lightgbm model which has a training set size of 40k with 400 features and a test set of 90k. I have not yet been able to get output from shap because it seems prohibitively slow. I have let it run for hours and still it did not complete. I have made great efforts to reduce both training set size and feature size in order to get shap to run in reasonable amount of time. I'm wondering if\r\n\r\n1) it is possible to provide estimated runtime remaining, as it might make waiting easier, so I know it's not going to take years to finish\r\n2) There is a way to speedup computation. Is the \"Independent\" feature_dependence method any quicker or is it slower? I know \"approximate\" should be faster, but it doesn't seem much better than number of splits importance, as both are \"inconsistent\". Is shap runtime more dependent on number of features or sample size, and is it the training set or the test set which runtime is more dependent on? \r\n\r\nThanks,\r\nAdam",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/838/reactions",
+    "total_count": 8,
+    "+1": 8,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/838/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

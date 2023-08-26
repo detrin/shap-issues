@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/213",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/213/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/213/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/213/events",
+  "html_url": "https://github.com/shap/shap/issues/213",
+  "id": 349818507,
+  "node_id": "MDU6SXNzdWUzNDk4MTg1MDc=",
+  "number": 213,
+  "title": "Shap for RNN models",
+  "user": {
+    "login": "hcthorsen",
+    "id": 30860976,
+    "node_id": "MDQ6VXNlcjMwODYwOTc2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/30860976?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/hcthorsen",
+    "html_url": "https://github.com/hcthorsen",
+    "followers_url": "https://api.github.com/users/hcthorsen/followers",
+    "following_url": "https://api.github.com/users/hcthorsen/following{/other_user}",
+    "gists_url": "https://api.github.com/users/hcthorsen/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/hcthorsen/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/hcthorsen/subscriptions",
+    "organizations_url": "https://api.github.com/users/hcthorsen/orgs",
+    "repos_url": "https://api.github.com/users/hcthorsen/repos",
+    "events_url": "https://api.github.com/users/hcthorsen/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/hcthorsen/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 33,
+  "created_at": "2018-08-12T14:51:30Z",
+  "updated_at": "2023-03-17T13:16:12Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi, \r\n\r\nThank you for this great work. Do you have any plans to make it possible to explain RNN/LSTM models? Right now I have to make the explanation with LIME and then I plot it with force_plot.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/213/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/213/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

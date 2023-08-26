@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/935",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/935/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/935/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/935/events",
+  "html_url": "https://github.com/shap/shap/issues/935",
+  "id": 535003826,
+  "node_id": "MDU6SXNzdWU1MzUwMDM4MjY=",
+  "number": 935,
+  "title": "DeepExplainer Shap_values should have an higher verbosity",
+  "user": {
+    "login": "Arakkun",
+    "id": 14127489,
+    "node_id": "MDQ6VXNlcjE0MTI3NDg5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/14127489?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Arakkun",
+    "html_url": "https://github.com/Arakkun",
+    "followers_url": "https://api.github.com/users/Arakkun/followers",
+    "following_url": "https://api.github.com/users/Arakkun/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Arakkun/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Arakkun/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Arakkun/subscriptions",
+    "organizations_url": "https://api.github.com/users/Arakkun/orgs",
+    "repos_url": "https://api.github.com/users/Arakkun/repos",
+    "events_url": "https://api.github.com/users/Arakkun/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Arakkun/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 6,
+  "created_at": "2019-12-09T15:25:08Z",
+  "updated_at": "2022-01-12T13:25:01Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Since the method itself is really slow, having a way to know at which point the computation of the shap values is would be really useful",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/935/reactions",
+    "total_count": 2,
+    "+1": 2,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/935/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

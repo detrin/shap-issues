@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1897",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1897/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1897/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1897/events",
+  "html_url": "https://github.com/shap/shap/pull/1897",
+  "id": 838320965,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NTk4NTIwNjEz",
+  "number": 1897,
+  "title": "added full batch mode and interaction for permutation explainer",
+  "user": {
+    "login": "sunshinejnjn",
+    "id": 10294017,
+    "node_id": "MDQ6VXNlcjEwMjk0MDE3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/10294017?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/sunshinejnjn",
+    "html_url": "https://github.com/sunshinejnjn",
+    "followers_url": "https://api.github.com/users/sunshinejnjn/followers",
+    "following_url": "https://api.github.com/users/sunshinejnjn/following{/other_user}",
+    "gists_url": "https://api.github.com/users/sunshinejnjn/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/sunshinejnjn/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/sunshinejnjn/subscriptions",
+    "organizations_url": "https://api.github.com/users/sunshinejnjn/orgs",
+    "repos_url": "https://api.github.com/users/sunshinejnjn/repos",
+    "events_url": "https://api.github.com/users/sunshinejnjn/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/sunshinejnjn/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2021-03-23T03:46:35Z",
+  "updated_at": "2022-11-11T18:06:47Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1897",
+    "html_url": "https://github.com/shap/shap/pull/1897",
+    "diff_url": "https://github.com/shap/shap/pull/1897.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1897.patch",
+    "merged_at": null
+  },
+  "body": "added full batch mode and interaction for permutation explainer\r\n\r\npermutation explain only changes:\r\n1. add \"need_interaction=True\" for interaction values.\r\n2. add \"mode='full'\" for running the shape calculation in full batch mode. you can specify \"batch_size=[number of rows]\" to send masked inputs for a number of rows at once to model. requires the model accepts multiple inputs at once (such as a keras model or so).\r\n3. added feature_groups support for full mode of permutation explainer. this would explain shap for group of features. send a feature_groups parameter to explainer to calculate shap. see example below. the feature_groups should be a dictionary with keys for group names each with a value for a list of original feature indexes, such as {\"GRP1\": [0,3,6], \"GRP2\":[1,4,7], \"GRP3\", [2,5,8]}\r\n3. added a function to generate feature groups (for \"full mode\" only) for easy rnn feature grouping. please note that the \"full mode\" accepts single 1D input model only. you need to convert rnn to a single 1D input model first. you can do that with functional API if you are using a keras model. you must know what to do if you are using a raw tensorflow model.\r\nfeature grouping example1: explainer.gen_rnn_feature_groups(shape_in = (2,7), gen_type = \"by_feature\", names =\"FEAT\" ) will group the 14 input features into 2 time sequences of 7 feature groups named \"FEAT-1\" ~ \"FEAT-7\".\r\nfeature grouping example2: explainer.gen_rnn_feature_groups(shape_in = (2,7), gen_type = \"by_sequence\", names =[\"DAY1\", \"DAY2\"] ) will group the 14 input features into 2 time sequence groups of 7 features named \"DAY1\" ~ \"DAY2\".\r\n\r\nThen you can do something like this:\r\nfeature_groups=explainer.gen_rnn_feature_groups(shape_in = (2,7), gen_type = \"by_feature\" )\r\nsv_shap = explainer(x_shap, main_effects=True, need_interactions=True, batch_size=2, mode =\"full\", feature_groups=feature_groups)\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1897/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1897/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

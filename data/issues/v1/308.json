@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/308",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/308/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/308/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/308/events",
+  "html_url": "https://github.com/shap/shap/issues/308",
+  "id": 376526064,
+  "node_id": "MDU6SXNzdWUzNzY1MjYwNjQ=",
+  "number": 308,
+  "title": "force_plot is cut-off from output field in jupyter notebook",
+  "user": {
+    "login": "naefl",
+    "id": 26996526,
+    "node_id": "MDQ6VXNlcjI2OTk2NTI2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/26996526?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/naefl",
+    "html_url": "https://github.com/naefl",
+    "followers_url": "https://api.github.com/users/naefl/followers",
+    "following_url": "https://api.github.com/users/naefl/following{/other_user}",
+    "gists_url": "https://api.github.com/users/naefl/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/naefl/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/naefl/subscriptions",
+    "organizations_url": "https://api.github.com/users/naefl/orgs",
+    "repos_url": "https://api.github.com/users/naefl/repos",
+    "events_url": "https://api.github.com/users/naefl/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/naefl/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2018-11-01T19:00:01Z",
+  "updated_at": "2021-12-07T13:07:17Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi Scott,\r\n\r\nThis package is absolutely awesome!\r\n\r\nI'm having problems with the force_plot though.\r\n\r\n![image](https://user-images.githubusercontent.com/26996526/47873041-76df7880-de10-11e8-808d-7c4bcf50cfeb.png)\r\n\r\nIt's always cut off. \r\n\r\nI tried saving the `<SVG/> `and displaying on a separate page, that didn't seem to work though - it's cut-off at the exact same position.\r\n\r\nThanks a lot for the help.\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/308/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/308/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

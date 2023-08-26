@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2288",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2288/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2288/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2288/events",
+  "html_url": "https://github.com/shap/shap/issues/2288",
+  "id": 1062058694,
+  "node_id": "I_kwDOBHDcK84_TbrG",
+  "number": 2288,
+  "title": "how to use plots.force and plots.text ?",
+  "user": {
+    "login": "hanluxq",
+    "id": 39185458,
+    "node_id": "MDQ6VXNlcjM5MTg1NDU4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/39185458?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/hanluxq",
+    "html_url": "https://github.com/hanluxq",
+    "followers_url": "https://api.github.com/users/hanluxq/followers",
+    "following_url": "https://api.github.com/users/hanluxq/following{/other_user}",
+    "gists_url": "https://api.github.com/users/hanluxq/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/hanluxq/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/hanluxq/subscriptions",
+    "organizations_url": "https://api.github.com/users/hanluxq/orgs",
+    "repos_url": "https://api.github.com/users/hanluxq/repos",
+    "events_url": "https://api.github.com/users/hanluxq/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/hanluxq/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901334,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzQ=",
+      "url": "https://api.github.com/repos/shap/shap/labels/question",
+      "name": "question",
+      "color": "cc317c",
+      "default": true,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2021-11-24T06:42:32Z",
+  "updated_at": "2023-06-03T09:42:05Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "when i want to visualize the text sample ,`shap.plots.force(explainer.expected_value, shap_values)` i got an error:\r\n_---------------------------------------------------------------------------\r\nException                                 Traceback (most recent call last)\r\n~\\AppData\\Local\\Temp/ipykernel_17588/3349770769.py in <module>\r\n----> 1 shap.plots.force(explainer.expected_value, shap_values)\r\n\r\nA:\\anaconda\\envs\\shap\\lib\\site-packages\\shap\\plots\\_force.py in force(base_value, shap_values, features, feature_names, out_names, link, plot_cmap, matplotlib, show, figsize, ordering_keys, ordering_keys_time_format, text_rotation, contribution_threshold)\r\n     97     if (isinstance(base_value, np.ndarray) or type(base_value) == list):\r\n     98         if not isinstance(shap_values, list) or len(shap_values) != len(base_value):\r\n---> 99             raise Exception(\"In v0.20 force_plot now requires the base value as the first parameter! \" \\\r\n    100                             \"Try shap.force_plot(explainer.expected_value, shap_values) or \" \\\r\n    101                             \"for multi-output models try \" \\\r\n\r\nException: In v0.20 force_plot now requires the base value as the first parameter! Try shap.force_plot(explainer.expected_value, shap_values) or for multi-output models try shap.force_plot(explainer.expected_value[0], shap_values[0])._\r\n\r\nand when i input as it `shap.plots.force(explainer.expected_value[0], shap_values[0])` ,another error occurred:\r\n_---------------------------------------------------------------------------\r\nAssertionError                            Traceback (most recent call last)\r\n~\\AppData\\Local\\Temp/ipykernel_17588/1262830726.py in <module>\r\n----> 1 shap.plots.force(explainer.expected_value[0], shap_values[0])\r\n\r\nA:\\anaconda\\envs\\shap\\lib\\site-packages\\shap\\plots\\_force.py in force(base_value, shap_values, features, feature_names, out_names, link, plot_cmap, matplotlib, show, figsize, ordering_keys, ordering_keys_time_format, text_rotation, contribution_threshold)\r\n    108 \r\n    109     if type(shap_values) != np.ndarray:\r\n--> 110         return visualize(shap_values)\r\n    111 \r\n    112     # convert from a DataFrame or other types\r\n\r\nA:\\anaconda\\envs\\shap\\lib\\site-packages\\shap\\plots\\_force.py in visualize(e, plot_cmap, matplotlib, figsize, show, ordering_keys, ordering_keys_time_format, text_rotation, min_perc)\r\n    350             return AdditiveForceArrayVisualizer(e, plot_cmap=plot_cmap, ordering_keys=ordering_keys, ordering_keys_time_format=ordering_keys_time_format)\r\n    351     else:\r\n--> 352         assert False, \"visualize() can only display Explanation objects (or arrays of them)!\"\r\n    353 \r\n    354 class BaseVisualizer:\r\n\r\nAssertionError: visualize() can only display Explanation objects (or arrays of them)!_\r\n\r\n\r\nwhat should i do ?\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2288/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2288/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

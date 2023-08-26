@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2937",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2937/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2937/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2937/events",
+  "html_url": "https://github.com/shap/shap/issues/2937",
+  "id": 1731826843,
+  "node_id": "I_kwDOBHDcK85nOZSb",
+  "number": 2937,
+  "title": "Shap for Large set of data points trained on DNN not working",
+  "user": {
+    "login": "mashirali",
+    "id": 57099739,
+    "node_id": "MDQ6VXNlcjU3MDk5NzM5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/57099739?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mashirali",
+    "html_url": "https://github.com/mashirali",
+    "followers_url": "https://api.github.com/users/mashirali/followers",
+    "following_url": "https://api.github.com/users/mashirali/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mashirali/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mashirali/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mashirali/subscriptions",
+    "organizations_url": "https://api.github.com/users/mashirali/orgs",
+    "repos_url": "https://api.github.com/users/mashirali/repos",
+    "events_url": "https://api.github.com/users/mashirali/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mashirali/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2023-05-30T08:58:58Z",
+  "updated_at": "2023-06-05T23:04:18Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "X.shape, y.shape\r\n((1341026, 81), (1341026,))\r\n\r\n-------------------------------------------------------\r\n\r\nModel: \"sequential\"\r\n_________________________________________________________________\r\n Layer (type)                Output Shape              Param #   \r\n=================================================================\r\n dense (Dense)               (None, 78)                6396      \r\n                                                                 \r\n dense_1 (Dense)             (None, 39)                3081      \r\n                                                                 \r\n dense_2 (Dense)             (None, 19)                760       \r\n                                                                 \r\n dense_3 (Dense)             (None, 8)                 160       \r\n                                                                 \r\n dense_4 (Dense)             (None, 4)                 36        \r\n                                                                 \r\n dense_5 (Dense)             (None, 1)                 5         \r\n                                                                 \r\n=================================================================\r\nTotal params: 10438 (40.77 KB)\r\nTrainable params: 10438 (40.77 KB)\r\nNon-trainable params: 0 (0.00 Byte)\r\n_________________________________________________________________\r\n-------------------------------------------------------\r\n\r\n# Step 1: Create a ShapKernel explainer\r\nshap_kernel = ShapKernel(model, X_train)\r\n\r\n# or in case i want to give few lines -> shap_kernel = ShapKernel(model, X_train[:50])\r\n\r\nshap_local = shap_kernel.explain_local(X[:2],y[:2])\r\n\r\nshow(shap_local, 0)\r\n\r\n---------------------------------------\r\n\r\nThis is giving an error\r\n\r\nIndexError                                Traceback (most recent call last)\r\nCell In[107], line 1\r\n----> 1 shap_local = shap_kernel.explain_local(X[:2],y[:2])\r\n      3 show(shap_local, 0)\r\n\r\nFile c:\\Users\\mashi\\anaconda3\\lib\\site-packages\\interpret\\blackbox\\_shap.py:68, in ShapKernel.explain_local(self, X, y, name, **kwargs)\r\n     55 def explain_local(self, X, y=None, name=None, **kwargs):\r\n     56     \"\"\"Provides local explanations for provided instances.\r\n     57 \r\n     58     Args:\r\n   (...)\r\n     66         for each instance as horizontal bar charts.\r\n     67     \"\"\"\r\n---> 68     return shap_explain_local(self, X, y, name, False, **kwargs)\r\n\r\nFile c:\\Users\\mashi\\anaconda3\\lib\\site-packages\\interpret\\utils\\_shap_common.py:73, in shap_explain_local(explainer, X, y, name, is_treeshap, **kwargs)\r\n     71 perf_dicts = gen_perf_dicts(predictions, y, False, classes)\r\n     72 for i, instance in enumerate(X):\r\n---> 73     shap_values = all_shap_values[i]\r\n     74     perf_dict_obj = None if perf_dicts is None else perf_dicts[i]\r\n     76     perf_list.append(perf_dict_obj)\r\n\r\nIndexError: list index out of range",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2937/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2937/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

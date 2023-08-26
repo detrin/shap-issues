@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3202",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3202/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3202/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3202/events",
+  "html_url": "https://github.com/shap/shap/pull/3202",
+  "id": 1858817578,
+  "node_id": "PR_kwDOBHDcK85YW1iQ",
+  "number": 3202,
+  "title": "FIX: Update parameters to remove AttributeError",
+  "user": {
+    "login": "Tishachhabra",
+    "id": 86090808,
+    "node_id": "MDQ6VXNlcjg2MDkwODA4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/86090808?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Tishachhabra",
+    "html_url": "https://github.com/Tishachhabra",
+    "followers_url": "https://api.github.com/users/Tishachhabra/followers",
+    "following_url": "https://api.github.com/users/Tishachhabra/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Tishachhabra/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Tishachhabra/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Tishachhabra/subscriptions",
+    "organizations_url": "https://api.github.com/users/Tishachhabra/orgs",
+    "repos_url": "https://api.github.com/users/Tishachhabra/repos",
+    "events_url": "https://api.github.com/users/Tishachhabra/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Tishachhabra/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2023-08-21T07:57:02Z",
+  "updated_at": "2023-08-21T07:57:02Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/3202",
+    "html_url": "https://github.com/shap/shap/pull/3202",
+    "diff_url": "https://github.com/shap/shap/pull/3202.diff",
+    "patch_url": "https://github.com/shap/shap/pull/3202.patch",
+    "merged_at": null
+  },
+  "body": "segments_slic() requires image in numpy arrays ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3202/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3202/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

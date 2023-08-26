@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/15",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/15/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/15/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/15/events",
+  "html_url": "https://github.com/shap/shap/issues/15",
+  "id": 288666405,
+  "node_id": "MDU6SXNzdWUyODg2NjY0MDU=",
+  "number": 15,
+  "title": "(Paper): Conditional Expectation Calculation & Inverse Function Questions",
+  "user": {
+    "login": "decodyng",
+    "id": 5902855,
+    "node_id": "MDQ6VXNlcjU5MDI4NTU=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5902855?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/decodyng",
+    "html_url": "https://github.com/decodyng",
+    "followers_url": "https://api.github.com/users/decodyng/followers",
+    "following_url": "https://api.github.com/users/decodyng/following{/other_user}",
+    "gists_url": "https://api.github.com/users/decodyng/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/decodyng/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/decodyng/subscriptions",
+    "organizations_url": "https://api.github.com/users/decodyng/orgs",
+    "repos_url": "https://api.github.com/users/decodyng/repos",
+    "events_url": "https://api.github.com/users/decodyng/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/decodyng/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 805514462,
+      "node_id": "MDU6TGFiZWw4MDU1MTQ0NjI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/paper",
+      "name": "paper",
+      "color": "1e88e5",
+      "default": false,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2018-01-15T17:21:30Z",
+  "updated_at": "2018-01-18T00:20:30Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "\r\nNote: these questions refer to [the paper underlying this method](http://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions.pdf), not directly to the code \r\n\r\n\r\n1) In equation 12, you argue that you can calculate the conditional expectation term by simply calculating the function value using the actual instance values of the features in set S, and the expected value of the features in set S-complement (essentially, it seems, marginalizing over the  features in set S-complement). But, then, in the kernel approach, it's not clear to me how you're calculating this expectation. Is the idea that, for all features in z' that are in set S-complement (that is to say: are set to 0) their corresponding values in the non-simplified vector are set to the overall average (i.e. expected value) of each feature? That seems to be the implication, but I can't find anywhere in the paper where it definitively says so. \r\n\r\n2) In Theorem 2, why is an inverse function of h_x applied to the z' vector? In all prior cases, the mapping function h_x has taken an input of simplified features, and given an output of non-simplified features, suitable for being given to your trained model. Why, in this case, would we be using an inverse of that function when the input we're giving it is a z' simplified feature vector? ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/15/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/15/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2899",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2899/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2899/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2899/events",
+  "html_url": "https://github.com/shap/shap/issues/2899",
+  "id": 1661687047,
+  "node_id": "I_kwDOBHDcK85jC1UH",
+  "number": 2899,
+  "title": "LightGBM categorical feature support for Shap values in probability",
+  "user": {
+    "login": "weisheng4321",
+    "id": 23616859,
+    "node_id": "MDQ6VXNlcjIzNjE2ODU5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/23616859?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/weisheng4321",
+    "html_url": "https://github.com/weisheng4321",
+    "followers_url": "https://api.github.com/users/weisheng4321/followers",
+    "following_url": "https://api.github.com/users/weisheng4321/following{/other_user}",
+    "gists_url": "https://api.github.com/users/weisheng4321/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/weisheng4321/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/weisheng4321/subscriptions",
+    "organizations_url": "https://api.github.com/users/weisheng4321/orgs",
+    "repos_url": "https://api.github.com/users/weisheng4321/repos",
+    "events_url": "https://api.github.com/users/weisheng4321/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/weisheng4321/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2023-04-11T02:52:46Z",
+  "updated_at": "2023-07-13T12:45:28Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Dummy Dataset:\r\n\r\n```python\r\nfeature_1 = ['A'] * 50 + ['B'] * 50 + ['C'] * 50\r\n\r\nX = pd.DataFrame(feature_1, columns=['categorical_feature'])\r\ny = [1] * 50 + [0] * 50 + [1] * 50\r\n\r\nX['categorical_feature'] = X['categorical_feature'].astype('category')\r\n```\r\n\r\nThe evaluation of shap value in probability space works if we encode the categorical features ourselves.\r\n\r\n```python\r\nfrom sklearn.preprocessing import OrdinalEncoder\r\n\r\nX_encoded = X.copy()\r\n\r\nordinal_encoder = OrdinalEncoder()\r\n\r\nordinal_encoder.fit(X_encoded)\r\n\r\nX_encoded['categorical_feature'] = ordinal_encoder.transform(X_encoded)\r\n\r\nmodel = lgb.LGBMClassifier(objective = 'binary')\r\n\r\nmodel.fit(X_encoded, y)\r\n\r\nexplainer = shap.TreeExplainer(model, data = X_encoded,\r\n                               feature_perturbation = \"interventional\",\r\n                               model_output = 'probability')\r\n\r\nshap_values = explainer.shap_values(X_encoded)\r\n```\r\n\r\nHowever, it does not support LightGBM built-in categorical feature.\r\n\r\n```python\r\nmodel = lgb.LGBMClassifier(objective = 'binary', categorical_feature = ['categorical_feature'])\r\n\r\nmodel.fit(X, y)\r\n\r\nexplainer = shap.TreeExplainer(model, data = X,\r\n                               feature_perturbation = \"interventional\",\r\n                               model_output = 'probability')\r\n\r\nshap_values = explainer.shap_values(X)\r\n```\r\n\r\n```python\r\nExplainerError: Currently TreeExplainer can only handle models with categorical splits when feature_perturbation=\"tree_path_dependent\" and no background data is passed. Please try again using shap.TreeExplainer(model, feature_perturbation=\"tree_path_dependent\").\r\n```\r\n\r\nIs there any plan to support `categorical_feature` in future developments? ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2899/reactions",
+    "total_count": 1,
+    "+1": 1,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2899/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

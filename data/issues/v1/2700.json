@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2700",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2700/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2700/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2700/events",
+  "html_url": "https://github.com/shap/shap/pull/2700",
+  "id": 1382794817,
+  "node_id": "PR_kwDOBHDcK84_cnM_",
+  "number": 2700,
+  "title": "Fix PySpark GBT Issue",
+  "user": {
+    "login": "weishengtoh",
+    "id": 95338227,
+    "node_id": "U_kgDOBa6-8w",
+    "avatar_url": "https://avatars.githubusercontent.com/u/95338227?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/weishengtoh",
+    "html_url": "https://github.com/weishengtoh",
+    "followers_url": "https://api.github.com/users/weishengtoh/followers",
+    "following_url": "https://api.github.com/users/weishengtoh/following{/other_user}",
+    "gists_url": "https://api.github.com/users/weishengtoh/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/weishengtoh/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/weishengtoh/subscriptions",
+    "organizations_url": "https://api.github.com/users/weishengtoh/orgs",
+    "repos_url": "https://api.github.com/users/weishengtoh/repos",
+    "events_url": "https://api.github.com/users/weishengtoh/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/weishengtoh/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2022-09-22T17:36:46Z",
+  "updated_at": "2022-09-22T17:44:12Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2700",
+    "html_url": "https://github.com/shap/shap/pull/2700",
+    "diff_url": "https://github.com/shap/shap/pull/2700.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2700.patch",
+    "merged_at": null
+  },
+  "body": "# Fix PySpark GBT Issue [fix #884 , fix #2480 ]\r\n\r\n### ISSUE:  \r\n- Running PySpark GBT models sometimes causes the shap package to fail with the error message:  \r\n```python  \r\nThe background dataset you provided does not cover all the leaves in the model, so TreeExplainer cannot run with the feature_perturbation=\"tree_path_dependent\" option! \" Try providing a larger background dataset, no background dataset, or using feature_perturbation=\"interventional\".\"\r\n```\r\n-  Using `feature_perturbation=\"interventional\"` as suggested does not work with pyspark models as the `predict` function is not implemented for pyspark models  \r\n  ```python\r\n# lines 1082 to 1085 in shap/shap/explainers/_tree.py\r\nif self.model_type == \"pyspark\":\r\n    #import pyspark\r\n    # TODO: support predict for pyspark\r\n     raise NotImplementedError(\"Predict with pyspark isn't implemented. Don't run 'interventional' as feature_perturbation.\")\r\n  ```\r\n- The `feature_perturbation=\"tree_path_dependent\"` is failing due to a check in the code that is meant to ensure that background dataset lands in every leaf. \r\n```python\r\n# lines 1031 to 1033 in shap/shap/explainers/_tree.py\r\n# ensure that the passed background dataset lands in every leaf\r\nif np.min(self.trees[i].node_sample_weight) <= 0:\r\n    self.fully_defined_weighting = False\r\n```  \r\n- This should by right pass in all cases, considering that no background dataset is required for `feature_perturbation=\"tree_path_dependent\"`.  \r\n\r\n- In some cases for pyspark gbt models, `fully_defined_weighting` is incorrectly set to False. `fully_defined_weighting` is determined by the values of `node_sample_weight`, which is determined by the code below:  \r\n```python\r\n# line 1199 in shap/shap/explainers/_tree.py\r\nself.node_sample_weight[index] = node.impurityStats().count() #weighted count of element trough this node\r\n```\r\n- `node.impurityStats()` returns a `GiniCalculator`, and the method `.count()` should return a `float` instead of `int`.   \r\nSee [source](https://github.com/apache/spark/blob/master/mllib/src/main/scala/org/apache/spark/mllib/tree/impurity/Gini.scala)\r\n<img width=\"425\" alt=\"pysparkgbtshapfix\" src=\"https://user-images.githubusercontent.com/95338227/191808499-14b2cb02-ed51-4ba4-870f-0e2c7d322771.png\">   \r\n\r\n- However, if you create a pyspark GBT model and obtain the values for `node.impurityStats().count()`, \r\nyou will notice that the values has been rounded down to `int`.    \r\n- `node.impurityStats().count()` should return the same values as `sum([e for e in node.impurityStats().stats()])` if you follow the image above. It is however rounding down the values, and in some cases values greater than 0 and less than 1 are rounded down to 0.  \r\n- This causes the `self.fully_defined_weighting` to return `False`, even when the values are clearly not zero.  \r\n\r\n### SOLUTION:  \r\n- Avoid using `node.impurityStats().count()`. Replace with `sum([e for e in node.impurityStats().stats()])` which does exactly the same, but retain the value as float.  \r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2700/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2700/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

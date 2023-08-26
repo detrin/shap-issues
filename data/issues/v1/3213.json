@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3213",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3213/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3213/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3213/events",
+  "html_url": "https://github.com/shap/shap/issues/3213",
+  "id": 1862342889,
+  "node_id": "I_kwDOBHDcK85vARjp",
+  "number": 3213,
+  "title": "BUG: Inconsistent Matplot layouts",
+  "user": {
+    "login": "dsgibbons",
+    "id": 82195909,
+    "node_id": "MDQ6VXNlcjgyMTk1OTA5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/82195909?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dsgibbons",
+    "html_url": "https://github.com/dsgibbons",
+    "followers_url": "https://api.github.com/users/dsgibbons/followers",
+    "following_url": "https://api.github.com/users/dsgibbons/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dsgibbons/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dsgibbons/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dsgibbons/subscriptions",
+    "organizations_url": "https://api.github.com/users/dsgibbons/orgs",
+    "repos_url": "https://api.github.com/users/dsgibbons/repos",
+    "events_url": "https://api.github.com/users/dsgibbons/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dsgibbons/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2023-08-22T23:45:16Z",
+  "updated_at": "2023-08-26T05:25:36Z",
+  "closed_at": null,
+  "author_association": "COLLABORATOR",
+  "active_lock_reason": null,
+  "body": "### Issue Description\r\n\r\nWhile removing the Boston dataset in #3200, it was observed that it is difficult to specify the layout of the resulting waterfall plot correctly. Please take a look at the minimal reproducible example below. Three variations have been tried so far. `plt.tight_layout()` would be my natural choice, but it leads to an uncentred plot in fullscreen mode. `plt.rcParams['figure.constrained_layout.use'] = True`  seems to always look good, but @thatlittleboy raised some concerns [here](https://github.com/shap/shap/pull/3200#discussion_r1302016585).\r\n\r\n```python\r\nimport xgboost\r\nimport shap\r\nimport matplotlib.pyplot as plt\r\n\r\nX, y = shap.datasets.california()\r\nmodel = xgboost.XGBRegressor().fit(X, y)\r\nexplainer = shap.Explainer(model)\r\nshap_values = explainer(X)\r\nfig = shap.plots.waterfall(shap_values[0], show=False)\r\n\r\n# Alteration 1\r\n# plt.tight_layout()\r\n\r\n# Alteration 2\r\n# plt.rcParams['figure.constrained_layout.use'] = True\r\n\r\nplt.show()\r\n```\r\n\r\n## No alterations\r\n\r\ny-axis labels are cut off in both regular and fullscreen modes.\r\n\r\n### Regular `plt.show()`\r\n![no_tight_regular](https://github.com/shap/shap/assets/82195909/6fc23e0c-2e48-4ed1-9fb5-a5268beb6db9)\r\n\r\n### Fullscreen\r\n![no_tight_full_screen](https://github.com/shap/shap/assets/82195909/49c5ace9-5a83-483a-acd6-74d54041c315)\r\n\r\n## Alteration 1: `plt.tight_layout()`\r\n\r\nPlot is not centred in fullscreen mode - notice more whitespace on left-hand side.\r\n\r\n### Regular `plt.show()`\r\n![tight_regular](https://github.com/shap/shap/assets/82195909/01203392-601c-4a46-8695-26918afdd406)\r\n\r\n### Fullscreen\r\n![tight_full_screen](https://github.com/shap/shap/assets/82195909/cc24fd28-26af-454c-9c34-822f43658039)\r\n\r\n\r\n## Alteration 2: Constrained (as proposed in #3200) `plt.rcParams['figure.constrained_layout.use'] = True` \r\n\r\nLooks good.\r\n\r\n### Regular `plt.show()`\r\n![constrained_regular](https://github.com/shap/shap/assets/82195909/dd6357fb-32eb-4610-a317-9fa029afaf26)\r\n\r\n### Fullscreen\r\n![constrained_full_screen](https://github.com/shap/shap/assets/82195909/30de07e9-3be6-4b8c-bc98-1531cbd94674)\r\n\r\n\r\n\r\n\r\n\r\n### Minimal Reproducible Example\r\n\r\n```python\r\n...\r\n```\r\n\r\n\r\n### Traceback\r\n\r\n_No response_\r\n\r\n### Expected Behavior\r\n\r\nAlternative ways to achieve plots consistent with `plt.rcParams['figure.constrained_layout.use'] = True`.\r\n\r\n### Bug report checklist\r\n\r\n- [X] I have checked that this issue has not already been reported.\r\n- [X] I have confirmed this bug exists on the [latest release](https://github.com/shap/shap/releases) of shap.\r\n- [X] I have confirmed this bug exists on the [master branch](https://github.com/shap/shap/blob/master/CONTRIBUTING.md#installing-from-the-master-branch) of shap.\r\n- [X] I'd be interested in making a PR to fix this bug\r\n\r\n### Installed Versions\r\n\r\nmaster",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3213/reactions",
+    "total_count": 2,
+    "+1": 2,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3213/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

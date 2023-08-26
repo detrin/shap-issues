@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2877",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2877/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2877/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2877/events",
+  "html_url": "https://github.com/shap/shap/pull/2877",
+  "id": 1624800360,
+  "node_id": "PR_kwDOBHDcK85MEWQw",
+  "number": 2877,
+  "title": "Update _monitoring.py to prevent failure of monitoring_plot when sample size is <50.",
+  "user": {
+    "login": "bhanudaysharma",
+    "id": 55601693,
+    "node_id": "MDQ6VXNlcjU1NjAxNjkz",
+    "avatar_url": "https://avatars.githubusercontent.com/u/55601693?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/bhanudaysharma",
+    "html_url": "https://github.com/bhanudaysharma",
+    "followers_url": "https://api.github.com/users/bhanudaysharma/followers",
+    "following_url": "https://api.github.com/users/bhanudaysharma/following{/other_user}",
+    "gists_url": "https://api.github.com/users/bhanudaysharma/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/bhanudaysharma/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/bhanudaysharma/subscriptions",
+    "organizations_url": "https://api.github.com/users/bhanudaysharma/orgs",
+    "repos_url": "https://api.github.com/users/bhanudaysharma/repos",
+    "events_url": "https://api.github.com/users/bhanudaysharma/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/bhanudaysharma/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2023-03-15T05:49:06Z",
+  "updated_at": "2023-03-15T05:49:06Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2877",
+    "html_url": "https://github.com/shap/shap/pull/2877",
+    "diff_url": "https://github.com/shap/shap/pull/2877.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2877.patch",
+    "merged_at": null
+  },
+  "body": "If the sample size is <50, the 'inc' becomes greater than or equal to len(ys)-inc. As a result, the subsequent 'for loop' does not run. Hence, the list pvals remains empty. As a result, np.min(pvals) fails resulting in the failure of the entire monitoring_plot function. So, I corrected this error by adding a check before the for looop. If (inc < len(ys)-inc), the t-test is skipped and a Warning is produced to prevent the failure of function of monitoring_plot.\r\n\r\nAlso, added 'inc' in the function arguments to allow users to choose 'inc' value at runtime.  Kept the default value of 'inc' as 50 for backward compatibility.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2877/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2877/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

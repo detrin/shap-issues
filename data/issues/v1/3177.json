@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3177",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3177/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3177/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3177/events",
+  "html_url": "https://github.com/shap/shap/issues/3177",
+  "id": 1835091024,
+  "node_id": "I_kwDOBHDcK85tYURQ",
+  "number": 3177,
+  "title": "BUG: TreeExplainer with GradientBoostingClassifier incorrectly returns log odds explanations",
+  "user": {
+    "login": "amir-rahnama",
+    "id": 6009583,
+    "node_id": "MDQ6VXNlcjYwMDk1ODM=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6009583?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/amir-rahnama",
+    "html_url": "https://github.com/amir-rahnama",
+    "followers_url": "https://api.github.com/users/amir-rahnama/followers",
+    "following_url": "https://api.github.com/users/amir-rahnama/following{/other_user}",
+    "gists_url": "https://api.github.com/users/amir-rahnama/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/amir-rahnama/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/amir-rahnama/subscriptions",
+    "organizations_url": "https://api.github.com/users/amir-rahnama/orgs",
+    "repos_url": "https://api.github.com/users/amir-rahnama/repos",
+    "events_url": "https://api.github.com/users/amir-rahnama/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/amir-rahnama/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2023-08-03T13:41:01Z",
+  "updated_at": "2023-08-12T14:04:54Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "### Issue Description\n\nWhen explaining GradientBoostingClassifier, passing 'probability' or 'predict_proba' in the TreeExplainer object returns the log odds explanations and not the probability of the predicted class. The method does have a valid `predict_proba` function. This is against the documentation: \r\n\r\n> If model_output is the name of a supported prediction method on the model object then we explain the output of that model method name. For example model_output=”predict_proba” explains the result of calling model.predict_proba. If “probability” then we explain the output of the model transformed into probability space (note that this means the SHAP values now sum to the probability output of the model).\r\n\r\nFrom: https://shap-lrjball.readthedocs.io/en/latest/generated/shap.TreeExplainer.html\n\n### Minimal Reproducible Example\n\n```python\nfrom sklearn.ensemble import GradientBoostingClassifier\r\nimport numpy as np\r\n\r\nN = 100\r\nM = 4\r\nX = np.zeros((N,M))\r\nX.shape\r\ny = np.zeros(N)\r\nX[:N//2, 0] = 1\r\ny[:N//2] = 1\r\n\r\n\r\nmodel = GradientBoostingClassifier(max_depth=1)\r\nmodel.fit(X, y)\r\n\r\nprint('Predict_proba exists': model.predict_proba)\r\n\r\nshap_explainer = shap.TreeExplainer(model, X, feature_perturbation=\"interventional\",\r\n                                        model_output='probability')\r\ninstance = X[0]\r\nshap_values = shap_explainer.shap_values(instance, check_additivity=False)\r\n\r\nprint(shap_values)\r\n> array([0.4999781, 0.       , 0.       , 0.       ])\n```\n\n\n### Expected Behavior\n\nYou expect to see that the `shap_values` will be an array of shape `[4, 2]` but it is a vector of shape `[4]`. ,\n\n### Bug report checklist\n\n- [X] I have checked that this issue has not already been reported.\n- [X] I have confirmed this bug exists on the [latest release](https://github.com/shap/shap/releases) of shap.\n- [X] I have confirmed this bug exists on the [master branch](https://github.com/shap/shap/blob/master/CONTRIBUTING.md#installing-from-the-master-branch) of shap.\n- [ ] I'd be interested in making a PR to fix this bug\n\n### Installed Versions\n\nVersion: '0.42.1\r\n Python 3.7.11\r\nUbuntu 22.04.1 LTS",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3177/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3177/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

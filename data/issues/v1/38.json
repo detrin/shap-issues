@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/38",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/38/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/38/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/38/events",
+  "html_url": "https://github.com/shap/shap/issues/38",
+  "id": 301514039,
+  "node_id": "MDU6SXNzdWUzMDE1MTQwMzk=",
+  "number": 38,
+  "title": "A Spark version in plan?",
+  "user": {
+    "login": "richardxy",
+    "id": 2191320,
+    "node_id": "MDQ6VXNlcjIxOTEzMjA=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2191320?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/richardxy",
+    "html_url": "https://github.com/richardxy",
+    "followers_url": "https://api.github.com/users/richardxy/followers",
+    "following_url": "https://api.github.com/users/richardxy/following{/other_user}",
+    "gists_url": "https://api.github.com/users/richardxy/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/richardxy/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/richardxy/subscriptions",
+    "organizations_url": "https://api.github.com/users/richardxy/orgs",
+    "repos_url": "https://api.github.com/users/richardxy/repos",
+    "events_url": "https://api.github.com/users/richardxy/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/richardxy/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 46,
+  "created_at": "2018-03-01T18:38:58Z",
+  "updated_at": "2023-08-16T18:21:10Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Thanks for the great package. Is there a plan to implement/integrate the SHAP method in PySpark? \r\n\r\nOf, if possible, what would be your suggestion to use this technique in Spark?\r\n\r\nthanks,\r\nRichard",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/38/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/38/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

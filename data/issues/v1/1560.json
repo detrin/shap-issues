@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1560",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1560/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1560/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1560/events",
+  "html_url": "https://github.com/shap/shap/pull/1560",
+  "id": 733936941,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NTEzNTk5Njkz",
+  "number": 1560,
+  "title": "Fixed plotting features names+ code cleanup",
+  "user": {
+    "login": "j-adamczyk",
+    "id": 50807718,
+    "node_id": "MDQ6VXNlcjUwODA3NzE4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/50807718?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/j-adamczyk",
+    "html_url": "https://github.com/j-adamczyk",
+    "followers_url": "https://api.github.com/users/j-adamczyk/followers",
+    "following_url": "https://api.github.com/users/j-adamczyk/following{/other_user}",
+    "gists_url": "https://api.github.com/users/j-adamczyk/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/j-adamczyk/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/j-adamczyk/subscriptions",
+    "organizations_url": "https://api.github.com/users/j-adamczyk/orgs",
+    "repos_url": "https://api.github.com/users/j-adamczyk/repos",
+    "events_url": "https://api.github.com/users/j-adamczyk/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/j-adamczyk/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2020-11-01T10:54:52Z",
+  "updated_at": "2020-11-01T10:58:32Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1560",
+    "html_url": "https://github.com/shap/shap/pull/1560",
+    "diff_url": "https://github.com/shap/shap/pull/1560.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1560.patch",
+    "merged_at": null
+  },
+  "body": "1) Code cleanup - a small reformatting for PEP-8 with PyCharm's help in files for plotting, nothing major\r\n2) Replaced a lot of `%` string formatting with `.format()` - string formatting with `%` is discouraged and may be deprecated and removed in the forseeable future. Therefore I changed the `%` formatting to `.format()` where possible; since `.format()` is also extensively used, this also makes code more uniform. It should also be noted that f-strings for formatting are used, which requires Python 3.6+, which should be explicitly stated in the documentation. This is the most desirable form in many cases, I can also replace `.format()` with f-strings, if this is an official decision to transition to 3.6+.\r\n3) Fixed plotting features names - formatting was off or not working for types other than string and numbers; for example, for None values (e.g. from XGBoost) in decision plot errors were thrown, while booleans were displayed as 0.0 or 1.0. For force plots, booleans were not displayed at all. I fixed that with a `is None` and `isinstance()` checks. This should greatly increase user experience for tree-based models like XGBoost, which often use those values.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1560/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1560/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3214",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3214/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3214/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3214/events",
+  "html_url": "https://github.com/shap/shap/pull/3214",
+  "id": 1863270598,
+  "node_id": "PR_kwDOBHDcK85YmD87",
+  "number": 3214,
+  "title": "Replaced Boston dataset with California in Catboost tutorial",
+  "user": {
+    "login": "owenlamont",
+    "id": 12672027,
+    "node_id": "MDQ6VXNlcjEyNjcyMDI3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/12672027?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/owenlamont",
+    "html_url": "https://github.com/owenlamont",
+    "followers_url": "https://api.github.com/users/owenlamont/followers",
+    "following_url": "https://api.github.com/users/owenlamont/following{/other_user}",
+    "gists_url": "https://api.github.com/users/owenlamont/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/owenlamont/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/owenlamont/subscriptions",
+    "organizations_url": "https://api.github.com/users/owenlamont/orgs",
+    "repos_url": "https://api.github.com/users/owenlamont/repos",
+    "events_url": "https://api.github.com/users/owenlamont/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/owenlamont/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2023-08-23T12:49:30Z",
+  "updated_at": "2023-08-26T11:41:16Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/3214",
+    "html_url": "https://github.com/shap/shap/pull/3214",
+    "diff_url": "https://github.com/shap/shap/pull/3214.diff",
+    "patch_url": "https://github.com/shap/shap/pull/3214.patch",
+    "merged_at": null
+  },
+  "body": "## Overview\r\n\r\nDescription of the changes proposed in this pull request:\r\n\r\nThis is another step towards completing [issue 2322](https://github.com/shap/shap/issues/2322).\r\n\r\n## Checklist\r\n\r\n- [x] All [pre-commit checks](https://pre-commit.com/#install) pass.\r\n- [ ] Unit tests added (if fixing a bug or adding a new feature)\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3214/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3214/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

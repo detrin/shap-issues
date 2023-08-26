@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/963",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/963/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/963/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/963/events",
+  "html_url": "https://github.com/shap/shap/issues/963",
+  "id": 540075709,
+  "node_id": "MDU6SXNzdWU1NDAwNzU3MDk=",
+  "number": 963,
+  "title": "How to convert logodds explanations to probabilities?",
+  "user": {
+    "login": "madsthaks",
+    "id": 58012218,
+    "node_id": "MDQ6VXNlcjU4MDEyMjE4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/58012218?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/madsthaks",
+    "html_url": "https://github.com/madsthaks",
+    "followers_url": "https://api.github.com/users/madsthaks/followers",
+    "following_url": "https://api.github.com/users/madsthaks/following{/other_user}",
+    "gists_url": "https://api.github.com/users/madsthaks/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/madsthaks/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/madsthaks/subscriptions",
+    "organizations_url": "https://api.github.com/users/madsthaks/orgs",
+    "repos_url": "https://api.github.com/users/madsthaks/repos",
+    "events_url": "https://api.github.com/users/madsthaks/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/madsthaks/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901334,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzQ=",
+      "url": "https://api.github.com/repos/shap/shap/labels/question",
+      "name": "question",
+      "color": "cc317c",
+      "default": true,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 32,
+  "created_at": "2019-12-19T04:50:25Z",
+  "updated_at": "2023-06-18T13:24:22Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hey there, \r\n\r\nI reviewed [this question](https://github.com/slundberg/shap/issues/350) and I was wondering if I can convert those logodd explanations to probabilities? Essentially, I'd like to see if I can provide insight into how much the probability is influenced by each feature.\r\n\r\nTo do this, I used the following formula:\r\n\r\n`1 + 1 / exp(-logodd)`\r\n\r\nand I would expect that after I convert all of the explanations for a specific prediction to probabilities, the sum should be zero. This ended up not being the case so now i'm a bit stuck. \r\n\r\nAny help would be much appreciated.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/963/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/963/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

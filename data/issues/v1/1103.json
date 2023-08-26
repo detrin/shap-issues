@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1103",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1103/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1103/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1103/events",
+  "html_url": "https://github.com/shap/shap/pull/1103",
+  "id": 582497948,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0Mzg5NDA5NDEx",
+  "number": 1103,
+  "title": "Returning fig and axis for matplotlib force plots to allow for customizations and image exports externally",
+  "user": {
+    "login": "thampiman",
+    "id": 185084,
+    "node_id": "MDQ6VXNlcjE4NTA4NA==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/185084?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/thampiman",
+    "html_url": "https://github.com/thampiman",
+    "followers_url": "https://api.github.com/users/thampiman/followers",
+    "following_url": "https://api.github.com/users/thampiman/following{/other_user}",
+    "gists_url": "https://api.github.com/users/thampiman/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/thampiman/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/thampiman/subscriptions",
+    "organizations_url": "https://api.github.com/users/thampiman/orgs",
+    "repos_url": "https://api.github.com/users/thampiman/repos",
+    "events_url": "https://api.github.com/users/thampiman/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/thampiman/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2020-03-16T17:58:03Z",
+  "updated_at": "2020-04-08T19:57:53Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1103",
+    "html_url": "https://github.com/shap/shap/pull/1103",
+    "diff_url": "https://github.com/shap/shap/pull/1103.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1103.patch",
+    "merged_at": null
+  },
+  "body": "",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1103/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1103/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

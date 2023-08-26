@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2604",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2604/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2604/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2604/events",
+  "html_url": "https://github.com/shap/shap/pull/2604",
+  "id": 1283884948,
+  "node_id": "PR_kwDOBHDcK846UgCI",
+  "number": 2604,
+  "title": "Fix kernel explainer save / load method",
+  "user": {
+    "login": "WeichenXu123",
+    "id": 19235986,
+    "node_id": "MDQ6VXNlcjE5MjM1OTg2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19235986?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/WeichenXu123",
+    "html_url": "https://github.com/WeichenXu123",
+    "followers_url": "https://api.github.com/users/WeichenXu123/followers",
+    "following_url": "https://api.github.com/users/WeichenXu123/following{/other_user}",
+    "gists_url": "https://api.github.com/users/WeichenXu123/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/WeichenXu123/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/WeichenXu123/subscriptions",
+    "organizations_url": "https://api.github.com/users/WeichenXu123/orgs",
+    "repos_url": "https://api.github.com/users/WeichenXu123/repos",
+    "events_url": "https://api.github.com/users/WeichenXu123/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/WeichenXu123/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2022-06-24T15:26:32Z",
+  "updated_at": "2022-06-24T15:26:32Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2604",
+    "html_url": "https://github.com/shap/shap/pull/2604",
+    "diff_url": "https://github.com/shap/shap/pull/2604.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2604.patch",
+    "merged_at": null
+  },
+  "body": "Signed-off-by: Weichen Xu <weichen.xu@databricks.com>\r\n\r\nFix kernel explainer save / load method:\r\n\r\nIssues in original KernelExplainer.save:\r\n\r\n - It saves model by calling model.save, but `shap.utils._legacy.Model` has no save method\r\n - It tries to save \"masker\", but there's no \"masker\" in KernelExplainer\r\n - It does not save \"KernelExplainer.data\" attribute, the attribute is required when loading back\r\n\r\nIssues in original KernelExplainer.load:\r\n\r\n - Use mismatched model loader to load model\r\n - Try to load non-existent \"masker\" attribute\r\n - Don't not load \"data\" attribute and then cause calling \" KernelExplainer\" constructor lack of \"data\" argument.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2604/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2604/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

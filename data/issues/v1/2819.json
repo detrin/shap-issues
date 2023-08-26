@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2819",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2819/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2819/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2819/events",
+  "html_url": "https://github.com/shap/shap/issues/2819",
+  "id": 1516365805,
+  "node_id": "I_kwDOBHDcK85aYeft",
+  "number": 2819,
+  "title": "Front Page DeepExplainer MNIST Example is broken",
+  "user": {
+    "login": "ZviBaratz",
+    "id": 22370149,
+    "node_id": "MDQ6VXNlcjIyMzcwMTQ5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/22370149?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ZviBaratz",
+    "html_url": "https://github.com/ZviBaratz",
+    "followers_url": "https://api.github.com/users/ZviBaratz/followers",
+    "following_url": "https://api.github.com/users/ZviBaratz/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ZviBaratz/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ZviBaratz/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ZviBaratz/subscriptions",
+    "organizations_url": "https://api.github.com/users/ZviBaratz/orgs",
+    "repos_url": "https://api.github.com/users/ZviBaratz/repos",
+    "events_url": "https://api.github.com/users/ZviBaratz/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ZviBaratz/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    },
+    {
+      "id": 5747603641,
+      "node_id": "LA_kwDOBHDcK88AAAABVpV4uQ",
+      "url": "https://api.github.com/repos/shap/shap/labels/good%20first%20issue",
+      "name": "good first issue",
+      "color": "33DC11",
+      "default": true,
+      "description": "This is a fix that might be easier for someone to do as a first contribution"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2023-01-02T12:52:12Z",
+  "updated_at": "2023-07-27T10:44:50Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi maintainers,\r\n\r\nJust wanted to report the \"[Front Page DeepExplainer MNIST Example](https://shap.readthedocs.io/en/latest/example_notebooks/image_examples/image_classification/Front%20Page%20DeepExplainer%20MNIST%20Example.html)\" is broken and showing the following exception:\r\n![image](https://user-images.githubusercontent.com/22370149/210233700-27a1a401-1569-411c-9454-bb970c095c19.png)\r\n\r\nThank you very much for your awesome work on this project!\r\nZvi",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2819/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2819/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1046",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1046/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1046/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1046/events",
+  "html_url": "https://github.com/shap/shap/pull/1046",
+  "id": 564865778,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0Mzc1MDE4MjQ5",
+  "number": 1046,
+  "title": "fix the shap values shape from xgboost to be the same as scikit-learn and lightgbm",
+  "user": {
+    "login": "imatiach-msft",
+    "id": 24683184,
+    "node_id": "MDQ6VXNlcjI0NjgzMTg0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/24683184?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/imatiach-msft",
+    "html_url": "https://github.com/imatiach-msft",
+    "followers_url": "https://api.github.com/users/imatiach-msft/followers",
+    "following_url": "https://api.github.com/users/imatiach-msft/following{/other_user}",
+    "gists_url": "https://api.github.com/users/imatiach-msft/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/imatiach-msft/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/imatiach-msft/subscriptions",
+    "organizations_url": "https://api.github.com/users/imatiach-msft/orgs",
+    "repos_url": "https://api.github.com/users/imatiach-msft/repos",
+    "events_url": "https://api.github.com/users/imatiach-msft/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/imatiach-msft/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2020-02-13T18:18:33Z",
+  "updated_at": "2022-10-27T07:43:06Z",
+  "closed_at": null,
+  "author_association": "COLLABORATOR",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1046",
+    "html_url": "https://github.com/shap/shap/pull/1046",
+    "diff_url": "https://github.com/shap/shap/pull/1046.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1046.patch",
+    "merged_at": null
+  },
+  "body": "fix the shap values shape from xgboost to be the same as scikit-learn and lightgbm for binary classification case",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1046/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1046/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

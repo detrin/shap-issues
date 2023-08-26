@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3194",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3194/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3194/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3194/events",
+  "html_url": "https://github.com/shap/shap/issues/3194",
+  "id": 1853675804,
+  "node_id": "I_kwDOBHDcK85ufNkc",
+  "number": 3194,
+  "title": "ENH: SHAP in PySpark ML models",
+  "user": {
+    "login": "venser12",
+    "id": 89746307,
+    "node_id": "MDQ6VXNlcjg5NzQ2MzA3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/89746307?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/venser12",
+    "html_url": "https://github.com/venser12",
+    "followers_url": "https://api.github.com/users/venser12/followers",
+    "following_url": "https://api.github.com/users/venser12/following{/other_user}",
+    "gists_url": "https://api.github.com/users/venser12/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/venser12/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/venser12/subscriptions",
+    "organizations_url": "https://api.github.com/users/venser12/orgs",
+    "repos_url": "https://api.github.com/users/venser12/repos",
+    "events_url": "https://api.github.com/users/venser12/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/venser12/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2023-08-16T17:53:54Z",
+  "updated_at": "2023-08-16T18:43:00Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "### Problem Description\n\nShap still does not work with PySpark models.\r\n\r\nSklearn will be deprecated soon, as everyone is working in pyspark instead in pandas.\n\n### Alternative Solutions\n\nI propose make shap works with PySpark models, does anyone support me?\n\n### Additional Context\n\n_No response_\n\n### Feature request checklist\n\n- [X] I have checked the issue tracker for duplicate issues.\n- [X] I'd be interested in making a PR to implement this feature",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3194/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3194/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

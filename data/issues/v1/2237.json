@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2237",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2237/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2237/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2237/events",
+  "html_url": "https://github.com/shap/shap/issues/2237",
+  "id": 1034960525,
+  "node_id": "I_kwDOBHDcK849sD6N",
+  "number": 2237,
+  "title": "Minor Suggestions for Improvement of Introductory Notebook",
+  "user": {
+    "login": "susuter",
+    "id": 1902322,
+    "node_id": "MDQ6VXNlcjE5MDIzMjI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1902322?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/susuter",
+    "html_url": "https://github.com/susuter",
+    "followers_url": "https://api.github.com/users/susuter/followers",
+    "following_url": "https://api.github.com/users/susuter/following{/other_user}",
+    "gists_url": "https://api.github.com/users/susuter/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/susuter/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/susuter/subscriptions",
+    "organizations_url": "https://api.github.com/users/susuter/orgs",
+    "repos_url": "https://api.github.com/users/susuter/repos",
+    "events_url": "https://api.github.com/users/susuter/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/susuter/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2021-10-25T10:31:09Z",
+  "updated_at": "2023-06-04T07:54:10Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "This referes to the [notebook](https://github.com/slundberg/shap/blob/master/notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.ipynb).\r\n\r\nWhen first illustrated the beeswarm chart, I would have liked to get a more detailed explanation on how to interpret the chart. E.g., what does the hight of the plotted lines mean and how is such a single line converted to the final SHAP value. For instance, the variable RM has the largest overall negative impact on the outcome, but on the beeswarm chart it also has many red dots. Another question: how is the ordering of the variables (y-axis) chosen?\r\n\r\nI also spoted a few typos:\r\n\r\n* \"One the fundemental properties\" -> \"One **of** the fund**a**mental propoerties\"\r\n* \"This is because a linear logistic regression model NOT additive in the probability space.\" -> \"This is because a linear logistic regression model **is ** NOT additive in the probability space.\"",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2237/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2237/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

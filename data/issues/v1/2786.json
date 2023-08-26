@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2786",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2786/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2786/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2786/events",
+  "html_url": "https://github.com/shap/shap/issues/2786",
+  "id": 1475691335,
+  "node_id": "I_kwDOBHDcK85X9UNH",
+  "number": 2786,
+  "title": "Shap.plots.txt(shap_values) raises error \"integer argument expected, got float\" ",
+  "user": {
+    "login": "grhaonan",
+    "id": 9297622,
+    "node_id": "MDQ6VXNlcjkyOTc2MjI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/9297622?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/grhaonan",
+    "html_url": "https://github.com/grhaonan",
+    "followers_url": "https://api.github.com/users/grhaonan/followers",
+    "following_url": "https://api.github.com/users/grhaonan/following{/other_user}",
+    "gists_url": "https://api.github.com/users/grhaonan/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/grhaonan/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/grhaonan/subscriptions",
+    "organizations_url": "https://api.github.com/users/grhaonan/orgs",
+    "repos_url": "https://api.github.com/users/grhaonan/repos",
+    "events_url": "https://api.github.com/users/grhaonan/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/grhaonan/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    },
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2022-12-05T05:07:18Z",
+  "updated_at": "2023-06-17T01:30:32Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi team,\r\nI was trying to walk through the demo from your doc https://shap.readthedocs.io/en/latest/example_notebooks/text_examples/sentiment_analysis/Emotion%20classification%20multiclass%20example.html#Compute-SHAP-values\r\n\r\nCopy and & paste the same code from your doc but it raises the error \"integer argument expected, got float\"  at the end or run\r\n![Screenshot 2022-12-05 at 4 04 51 pm](https://user-images.githubusercontent.com/9297622/205553623-9906460c-b884-44e7-8e69-0338c36a36fb.png)\r\n\r\n![Screenshot 2022-12-05 at 4 05 59 pm](https://user-images.githubusercontent.com/9297622/205553716-0121b520-ec3c-4254-be54-4aed835d15c8.png)\r\n\r\nSHAP version: 0.40.0\r\nTransformer version: 4.25.1\r\n\r\nWould you please take a look?\r\n\r\nBig thanks\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2786/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2786/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

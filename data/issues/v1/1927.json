@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1927",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1927/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1927/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1927/events",
+  "html_url": "https://github.com/shap/shap/pull/1927",
+  "id": 852341056,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NjEwNjEwNjU5",
+  "number": 1927,
+  "title": "Use full backward hook for compatibility with torch >= 1.8.0.",
+  "user": {
+    "login": "ShokuninSan",
+    "id": 4463800,
+    "node_id": "MDQ6VXNlcjQ0NjM4MDA=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/4463800?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ShokuninSan",
+    "html_url": "https://github.com/ShokuninSan",
+    "followers_url": "https://api.github.com/users/ShokuninSan/followers",
+    "following_url": "https://api.github.com/users/ShokuninSan/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ShokuninSan/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ShokuninSan/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ShokuninSan/subscriptions",
+    "organizations_url": "https://api.github.com/users/ShokuninSan/orgs",
+    "repos_url": "https://api.github.com/users/ShokuninSan/repos",
+    "events_url": "https://api.github.com/users/ShokuninSan/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ShokuninSan/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 5,
+  "created_at": "2021-04-07T12:08:47Z",
+  "updated_at": "2023-06-20T21:05:19Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1927",
+    "html_url": "https://github.com/shap/shap/pull/1927",
+    "diff_url": "https://github.com/shap/shap/pull/1927.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1927.patch",
+    "merged_at": null
+  },
+  "body": "Since torch version 1.8.0 using `register_backward_hook` is deprecated.\r\n\r\nOn adding gradient handles in `PyTorchDeep` using torch 1.8.0, we get the following warning:\r\n`Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.`\r\n\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1927/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1927/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

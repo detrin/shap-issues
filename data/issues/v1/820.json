@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/820",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/820/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/820/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/820/events",
+  "html_url": "https://github.com/shap/shap/pull/820",
+  "id": 496738809,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0MzIwMDE3NDQ5",
+  "number": 820,
+  "title": "Added accuracy and consistency test to kernel explainer.",
+  "user": {
+    "login": "jorgecarleitao",
+    "id": 2772607,
+    "node_id": "MDQ6VXNlcjI3NzI2MDc=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2772607?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jorgecarleitao",
+    "html_url": "https://github.com/jorgecarleitao",
+    "followers_url": "https://api.github.com/users/jorgecarleitao/followers",
+    "following_url": "https://api.github.com/users/jorgecarleitao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jorgecarleitao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jorgecarleitao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jorgecarleitao/subscriptions",
+    "organizations_url": "https://api.github.com/users/jorgecarleitao/orgs",
+    "repos_url": "https://api.github.com/users/jorgecarleitao/repos",
+    "events_url": "https://api.github.com/users/jorgecarleitao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jorgecarleitao/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-09-22T06:18:13Z",
+  "updated_at": "2019-10-22T02:15:55Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/820",
+    "html_url": "https://github.com/shap/shap/pull/820",
+    "diff_url": "https://github.com/shap/shap/pull/820.diff",
+    "patch_url": "https://github.com/shap/shap/pull/820.patch",
+    "merged_at": null
+  },
+  "body": "This commit adds testing of KernelExplainer against the properties on the paper (local accuracy and consistency/monotonicity).\r\n\r\nNote that this currently does not pass, as the KernelExplainer is not guaranteeing consistency as outlined in the paper. Let's figure out why and act accordingly.\r\n\r\nI have validated that the consistency test is correct by writing the brute force version of shapley values (without local approximations), and validating the test against that explainer (with multiple training data and non-linear functions).",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/820/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/820/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

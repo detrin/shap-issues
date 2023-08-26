@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/750",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/750/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/750/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/750/events",
+  "html_url": "https://github.com/shap/shap/issues/750",
+  "id": 481323586,
+  "node_id": "MDU6SXNzdWU0ODEzMjM1ODY=",
+  "number": 750,
+  "title": "Summary Plot for CatBoost MultiClass Shap Values",
+  "user": {
+    "login": "AbhinavanT",
+    "id": 22202715,
+    "node_id": "MDQ6VXNlcjIyMjAyNzE1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/22202715?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/AbhinavanT",
+    "html_url": "https://github.com/AbhinavanT",
+    "followers_url": "https://api.github.com/users/AbhinavanT/followers",
+    "following_url": "https://api.github.com/users/AbhinavanT/following{/other_user}",
+    "gists_url": "https://api.github.com/users/AbhinavanT/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/AbhinavanT/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/AbhinavanT/subscriptions",
+    "organizations_url": "https://api.github.com/users/AbhinavanT/orgs",
+    "repos_url": "https://api.github.com/users/AbhinavanT/repos",
+    "events_url": "https://api.github.com/users/AbhinavanT/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/AbhinavanT/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 8,
+  "created_at": "2019-08-15T20:26:19Z",
+  "updated_at": "2020-10-06T17:15:26Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I'm having a lot of trouble trying to get the summary plot for shap values calculated from my CatBoost model.\r\n\r\nEssentially I had a dataset with 4 classes, 400 features and I'm using the following code to build my model.\r\n\r\n```\r\nfrom catboost import Pool, CatBoostClassifier, EFstrType\r\nimport shap\r\n\r\ndataset = Pool(data=features,\r\n                     label=labels)\r\n\r\nmodel = CatBoostClassifier(iterations=10,\r\n                           learning_rate=1,\r\n                           depth=2,\r\n                           loss_function=\"MultiClass\")\r\n\r\nmodel.fit(dataset, plot=True)\r\n```\r\n\r\nInitially I tried using the shap package as seen in the demo notebooks: \r\n`explainer = shap.TreeExplainer(model)\r\nshap_values = explainer.shap_values(X)`\r\n\r\nBut I encounter the following error: \r\n```\r\n---------------------------------------------------------------------------\r\nValueError                                Traceback (most recent call last)\r\n<ipython-input-124-4f15c13050bc> in <module>\r\n----> 1 explainer = shap.TreeExplainer(model)\r\n      2 shap_values = explainer.shap_values(scaled_features.to_numpy())\r\n\r\n/opt/conda/anaconda/lib/python3.6/site-packages/shap/explainers/tree.py in __init__(self, model, data, model_output, feature_dependence)\r\n     94         self.feature_dependence = feature_dependence\r\n     95         self.expected_value = None\r\n---> 96         self.model = TreeEnsemble(model, self.data, self.data_missing)\r\n     97 \r\n     98         assert feature_dependence in feature_dependence_codes, \"Invalid feature_dependence option!\"\r\n\r\n/opt/conda/anaconda/lib/python3.6/site-packages/shap/explainers/tree.py in __init__(self, model, data, data_missing)\r\n    629             for i in range(ntrees):\r\n    630                 l = len(self.trees[i].features)\r\n--> 631                 self.children_left[i,:l] = self.trees[i].children_left\r\n    632                 self.children_right[i,:l] = self.trees[i].children_right\r\n    633                 self.children_default[i,:l] = self.trees[i].children_default\r\n\r\nValueError: could not broadcast input array from shape (31) into shape (19)\r\n```\r\n\r\nSo instead I used CatBoosts shap value implementation which is simply:\r\n`shap_values = model.get_feature_importance(type=EFstrType.ShapValues, data=dataset)`. The resulting array is of shape: (1458048, 4, 401). CatBoost documentation points out in each row the last value is the **Expected Value of Model Prediction**.\r\n\r\nOf course to exclude expected value I just index this as `shap_values[:, :, :-1]`, however when feeding that array into `shap_values` param it fails. I'm semi-successful in just doing it for a single observation as `shap.summary_plot(shap_values=shap_values[0, :, :-1], features=list(features.columns), plot_type=\"bar\")`  **BUT** it doesn't show the bars for the varying classes, there is only 1 colour.\r\n\r\nThis might be multiple issues - if so, my apologies. I would greatly appreciate any help on the matter.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/750/reactions",
+    "total_count": 2,
+    "+1": 2,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/750/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

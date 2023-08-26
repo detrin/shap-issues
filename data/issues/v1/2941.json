@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2941",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2941/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2941/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2941/events",
+  "html_url": "https://github.com/shap/shap/issues/2941",
+  "id": 1737416532,
+  "node_id": "I_kwDOBHDcK85njt9U",
+  "number": 2941,
+  "title": "AssertionError: The SHAP explanations do not sum up to the model's output!",
+  "user": {
+    "login": "OphirLiu",
+    "id": 45514512,
+    "node_id": "MDQ6VXNlcjQ1NTE0NTEy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/45514512?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/OphirLiu",
+    "html_url": "https://github.com/OphirLiu",
+    "followers_url": "https://api.github.com/users/OphirLiu/followers",
+    "following_url": "https://api.github.com/users/OphirLiu/following{/other_user}",
+    "gists_url": "https://api.github.com/users/OphirLiu/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/OphirLiu/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/OphirLiu/subscriptions",
+    "organizations_url": "https://api.github.com/users/OphirLiu/orgs",
+    "repos_url": "https://api.github.com/users/OphirLiu/repos",
+    "events_url": "https://api.github.com/users/OphirLiu/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/OphirLiu/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2023-06-02T03:49:35Z",
+  "updated_at": "2023-06-04T02:19:15Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "TF version 2.8.2\r\nSHAP version 0.41\r\n\r\nI tried to apply SHAP for my binary classifier of deep residual shrinkage network (DRSN),\r\n\r\nfrom tensorflow.keras import backend as K\r\n\r\ndef abs_backend(inputs):\r\n    return K.abs(inputs)\r\n\r\ndef expand_dim_backend(inputs):\r\n    return K.expand_dims(K.expand_dims(inputs,1),1)\r\n\r\ndef sign_backend(inputs):\r\n    return K.sign(inputs)\r\n\r\ndef pad_backend(inputs, in_channels, out_channels):\r\n    pad_dim = (out_channels - in_channels)//2\r\n    inputs = K.expand_dims(inputs,-1)\r\n    inputs = K.spatial_3d_padding(inputs, ((0,0),(0,0),(pad_dim,pad_dim)), 'channels_last')\r\n    return K.squeeze(inputs, -1)\r\n\r\n# Residual Shrinakge Block(CS)\r\n\r\n    def residual_shrinkage_block(incoming, nb_blocks, out_channels, downsample=False,\r\n                             downsample_strides=2):\r\n    \r\n    residual = incoming\r\n    in_channels = incoming.get_shape().as_list()[-1]\r\n    \r\n    for i in range(nb_blocks):\r\n        \r\n        identity = residual\r\n        \r\n        if not downsample:\r\n            downsample_strides = 1\r\n        \r\n        residual = BatchNormalization()(residual)\r\n        residual = Activation('relu')(residual)\r\n        residual = Conv2D(out_channels, 3, strides=(downsample_strides, downsample_strides), \r\n                          padding='same', kernel_initializer='he_normal', \r\n                          kernel_regularizer=l2(1e-4))(residual)\r\n        \r\n        residual = BatchNormalization()(residual)\r\n        residual = Activation('relu')(residual)\r\n        residual = Conv2D(out_channels, 3, padding='same', kernel_initializer='he_normal', \r\n                          kernel_regularizer=l2(1e-4))(residual)\r\n        \r\n        # Calculate global means\r\n        residual_abs = Lambda(abs_backend)(residual)\r\n        abs_mean = GlobalAveragePooling2D()(residual_abs)\r\n        \r\n        # Calculate scaling coefficients\r\n        scales = Dense(out_channels, activation=None, kernel_initializer='he_normal', \r\n                       kernel_regularizer=l2(1e-4))(abs_mean)\r\n        scales = BatchNormalization()(scales)\r\n        scales = Activation('relu')(scales)\r\n        scales = Dense(out_channels, activation='sigmoid', kernel_regularizer=l2(1e-4))(scales)\r\n        scales = Lambda(expand_dim_backend)(scales)\r\n        \r\n        # Calculate thresholds\r\n        thres = tf.keras.layers.multiply([abs_mean, scales])\r\n        \r\n        # Soft thresholding\r\n        sub = tf.keras.layers.subtract([residual_abs, thres])\r\n        zeros = tf.keras.layers.subtract([sub, sub])\r\n        n_sub = tf.keras.layers.maximum([sub, zeros])\r\n        residual = tf.keras.layers.multiply([Lambda(sign_backend)(residual), n_sub])\r\n        \r\n        # Downsampling using the pooL-size of (1, 1)\r\n        if downsample_strides > 1:\r\n            identity = AveragePooling2D(pool_size=(1,1), strides=(2,2))(identity)\r\n            \r\n        # Zero_padding to match channels\r\n        if in_channels != out_channels:\r\n            identity = Lambda(pad_backend, arguments={'in_channels':in_channels,'out_channels':out_channels})(identity)\r\n        \r\n        residual = tf.keras.layers.add([residual, identity])\r\n    \r\n    return residual\r\n\r\n# define and train a model\r\n#First conv layer\r\ninputs = Input(shape=(3,3,14))\r\nnet = Conv2D(16, 3, 2)(inputs)\r\n#RSBU-CS nets\r\nnet = Conv2D(16, 3, 2, padding='same', kernel_initializer='he_normal', kernel_regularizer=l2(1e-4))(net)\r\nnet = residual_shrinkage_block(net, 1, 16, downsample=True)\r\n\r\n#BN RELU GAP\r\nnet = BatchNormalization()(net)\r\nnet = Activation('relu')(net)\r\n# FC layer\r\nnet = GlobalAveragePooling2D()(net)\r\nnet = Dropout(0.3)(net)\r\noutputs = Dense(2, activation='softmax', kernel_initializer='he_normal', kernel_regularizer=l2(1e-4))(net)\r\n#compile model\r\nDRSN = Model(inputs=inputs, outputs=outputs)\r\nrlrop = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5)\r\nDRSN.compile(loss='binary_crossentropy', \r\n             optimizer=Adam(learning_rate=0.01), \r\n             metrics=['accuracy', tf.keras.metrics.AUC()])\r\n\r\n#SHAP\r\nbackground = X_test[np.random.choice(X_test.shape[0], 1000, replace=False)]# we use the first 1000 examples as our background dataset to integrate over\r\nshap.explainers._deep.deep_tf.op_handlers[\"FusedBatchNormV3\"] = shap.explainers._deep.deep_tf.linearity_1d(0)\r\nshap.explainers._deep.deep_tf.op_handlers[\"AddV2\"] = shap.explainers._deep.deep_tf.passthrough\r\nexplainer = shap.DeepExplainer(DRSN,  background)\r\nshap_values = explainer.shap_values(X_test[:1000])\r\n\r\n but it returned the error with:\r\n\r\nAssertionError: The SHAP explanations do not sum up to the model's output! This is either because of a rounding error or because an operator in your computation graph was not fully supported. If the sum difference of 0.492149 is significant compared the scale of your model outputs please post as a github issue, with a reproducable example if possible so we can debug it.\r\n\r\nAny idea what could be causing this? Thanks.\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2941/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2941/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

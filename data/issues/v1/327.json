@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/327",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/327/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/327/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/327/events",
+  "html_url": "https://github.com/shap/shap/issues/327",
+  "id": 380386820,
+  "node_id": "MDU6SXNzdWUzODAzODY4MjA=",
+  "number": 327,
+  "title": "support for QuantileEstimator for sklearn gradient boosting regressor",
+  "user": {
+    "login": "miladclearmetal",
+    "id": 36553174,
+    "node_id": "MDQ6VXNlcjM2NTUzMTc0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/36553174?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/miladclearmetal",
+    "html_url": "https://github.com/miladclearmetal",
+    "followers_url": "https://api.github.com/users/miladclearmetal/followers",
+    "following_url": "https://api.github.com/users/miladclearmetal/following{/other_user}",
+    "gists_url": "https://api.github.com/users/miladclearmetal/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/miladclearmetal/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/miladclearmetal/subscriptions",
+    "organizations_url": "https://api.github.com/users/miladclearmetal/orgs",
+    "repos_url": "https://api.github.com/users/miladclearmetal/repos",
+    "events_url": "https://api.github.com/users/miladclearmetal/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/miladclearmetal/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2018-11-13T19:29:51Z",
+  "updated_at": "2021-01-13T11:02:26Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi there, awesome package! Any plans to add support for Quantile Estimator for gradient boosting regressor?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/327/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/327/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

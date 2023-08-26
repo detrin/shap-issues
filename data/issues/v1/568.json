@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/568",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/568/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/568/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/568/events",
+  "html_url": "https://github.com/shap/shap/issues/568",
+  "id": 438382879,
+  "node_id": "MDU6SXNzdWU0MzgzODI4Nzk=",
+  "number": 568,
+  "title": "Details of feature_dependence=“independent” in TreeExplainer",
+  "user": {
+    "login": "dvpolyakov",
+    "id": 11911648,
+    "node_id": "MDQ6VXNlcjExOTExNjQ4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/11911648?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dvpolyakov",
+    "html_url": "https://github.com/dvpolyakov",
+    "followers_url": "https://api.github.com/users/dvpolyakov/followers",
+    "following_url": "https://api.github.com/users/dvpolyakov/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dvpolyakov/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dvpolyakov/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dvpolyakov/subscriptions",
+    "organizations_url": "https://api.github.com/users/dvpolyakov/orgs",
+    "repos_url": "https://api.github.com/users/dvpolyakov/repos",
+    "events_url": "https://api.github.com/users/dvpolyakov/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dvpolyakov/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901334,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzQ=",
+      "url": "https://api.github.com/repos/shap/shap/labels/question",
+      "name": "question",
+      "color": "cc317c",
+      "default": true,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2019-04-29T15:45:12Z",
+  "updated_at": "2023-06-23T13:24:43Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hello, @slundberg . \r\nThank you for your papers about SHAP values. \r\n\r\nCould you, please, provide an explanation what is going on exactly when in the TreeExplainer we set `feature_dependence = “independent”`? What properties does the independence assumption give to the data or to the the algorithm?\r\n\r\nI tried to find it out by looking at the core code. As far as I understand, the setting of `feature_dependence = “independent”` leads to calling of `dense_independent` function here:\r\nhttps://github.com/slundberg/shap/blob/master/shap/tree_shap.h#L1115 . But I didn't catch the idea what is exactly going on in the code.\r\nThe documentation https://shap.readthedocs.io/en/latest/ also didn't clarify this tricky question.\r\n\r\nCould you, please, explain or give an idea what is the effect of setting `feature_dependence = “independent”`? Maybe the main SHAP values formula will be different from it's usual one?\r\n\r\nThank you in advance!\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/568/reactions",
+    "total_count": 9,
+    "+1": 9,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/568/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

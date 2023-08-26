@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/529",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/529/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/529/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/529/events",
+  "html_url": "https://github.com/shap/shap/issues/529",
+  "id": 428842219,
+  "node_id": "MDU6SXNzdWU0Mjg4NDIyMTk=",
+  "number": 529,
+  "title": "TreeExplainer.shap_values() incorrect results for model with output vector",
+  "user": {
+    "login": "dave-fernandes",
+    "id": 10029985,
+    "node_id": "MDQ6VXNlcjEwMDI5OTg1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/10029985?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dave-fernandes",
+    "html_url": "https://github.com/dave-fernandes",
+    "followers_url": "https://api.github.com/users/dave-fernandes/followers",
+    "following_url": "https://api.github.com/users/dave-fernandes/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dave-fernandes/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dave-fernandes/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dave-fernandes/subscriptions",
+    "organizations_url": "https://api.github.com/users/dave-fernandes/orgs",
+    "repos_url": "https://api.github.com/users/dave-fernandes/repos",
+    "events_url": "https://api.github.com/users/dave-fernandes/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dave-fernandes/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-04-03T15:44:59Z",
+  "updated_at": "2019-04-19T05:19:28Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I am using a scikit-learn RandomForestClassifier as follows:\r\n\r\n`model = RandomForestClassifier(**parameters)`\r\n`model.fit(X, y)`\r\n\r\n`explainer = shap.TreeExplainer(model)`\r\n`shap_values = explainer.shap_values(X)`\r\n\r\n`y` is Nx2, with each element of the output 2-vector having two possible classes (0 or 1).\r\n\r\nMy plots look like the following:\r\n`shap.summary_plot(shap_values, X, plot_type='bar')`\r\n\r\n![Unknown-3](https://user-images.githubusercontent.com/10029985/55493263-a46e5f00-5606-11e9-8524-31c42858458f.png)\r\n\r\n\r\n\r\nNote that the bars are all divided exactly equally into the two classes. It looks like shap_values[0] and shap_values[1] represent the 0 or 1 classes for only the first component of the output vector rather than the importance for the two components of the vector.\r\n\r\n\r\n`shap.summary_plot(shap_values[0], X, plot_type='layered_violin')`\r\n![Unknown-1](https://user-images.githubusercontent.com/10029985/55492365-16de3f80-5605-11e9-9990-8732aaead8d7.png)\r\n\r\nCompare with the next figure...\r\n\r\n`shap.summary_plot(shap_values[1], X, plot_type='layered_violin')`\r\n![Unknown-2](https://user-images.githubusercontent.com/10029985/55492402-23fb2e80-5605-11e9-94e5-ab7fed189db8.png)\r\n\r\nThis is the exact mirror image of the preceding figure. Again, it looks like shap_values[0] and shap_values[1] represent only one component of the output vector. How do I get the other one?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/529/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/529/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

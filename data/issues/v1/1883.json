@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1883",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1883/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1883/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1883/events",
+  "html_url": "https://github.com/shap/shap/issues/1883",
+  "id": 834390216,
+  "node_id": "MDU6SXNzdWU4MzQzOTAyMTY=",
+  "number": 1883,
+  "title": "Documentation for example force plot needs updating",
+  "user": {
+    "login": "joreynajr",
+    "id": 14253227,
+    "node_id": "MDQ6VXNlcjE0MjUzMjI3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/14253227?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/joreynajr",
+    "html_url": "https://github.com/joreynajr",
+    "followers_url": "https://api.github.com/users/joreynajr/followers",
+    "following_url": "https://api.github.com/users/joreynajr/following{/other_user}",
+    "gists_url": "https://api.github.com/users/joreynajr/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/joreynajr/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/joreynajr/subscriptions",
+    "organizations_url": "https://api.github.com/users/joreynajr/orgs",
+    "repos_url": "https://api.github.com/users/joreynajr/repos",
+    "events_url": "https://api.github.com/users/joreynajr/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/joreynajr/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    },
+    {
+      "id": 5747603641,
+      "node_id": "LA_kwDOBHDcK88AAAABVpV4uQ",
+      "url": "https://api.github.com/repos/shap/shap/labels/good%20first%20issue",
+      "name": "good first issue",
+      "color": "33DC11",
+      "default": true,
+      "description": "This is a fix that might be easier for someone to do as a first contribution"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2021-03-18T04:54:08Z",
+  "updated_at": "2023-07-27T10:44:49Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi, I noticed that the example code is a bit out of date with newer releases of the shap package. It's a small thing but I couldn't figure out what was going on until I dug into the source code and realized is should just try shap_values.values. I'm pasting a picture of the slight code changes below:\r\n\r\n# Loading the basic example data\r\n![image](https://user-images.githubusercontent.com/14253227/111574716-3fb45c80-876a-11eb-94b6-3839959c6d24.png)\r\n\r\n# Trying the tutorial version of force plots\r\n![image](https://user-images.githubusercontent.com/14253227/111574792-68d4ed00-876a-11eb-92f7-426d392fd9e8.png)\r\n\r\n# Adding the expected value which is required in shap 0.39.0\r\n![image](https://user-images.githubusercontent.com/14253227/111574910-95890480-876a-11eb-8846-8bb17e4e0223.png)\r\n\r\n# Since it still didn't work I tweaked around with the code and shap_values.values works\r\n![image](https://user-images.githubusercontent.com/14253227/111574981-bcdfd180-876a-11eb-9275-ba9642d092cb.png)\r\n\r\nI guess I got it to work but it seems to me that there is a bug in the visualize() function. For some reason it's not detecting that the shap_values passed is in fact an Explain object and so it sends the user the message: AssertionError: visualize() can only display Explanation objects (or arrays of them)!\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1883/reactions",
+    "total_count": 3,
+    "+1": 3,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1883/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

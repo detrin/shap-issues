@@ -1,0 +1,91 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3171",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3171/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3171/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3171/events",
+  "html_url": "https://github.com/shap/shap/issues/3171",
+  "id": 1830715828,
+  "node_id": "I_kwDOBHDcK85tHoG0",
+  "number": 3171,
+  "title": "ENH: Documentation : add links between Examples and API Reference",
+  "user": {
+    "login": "Z4K4RI4",
+    "id": 45372115,
+    "node_id": "MDQ6VXNlcjQ1MzcyMTE1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/45372115?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Z4K4RI4",
+    "html_url": "https://github.com/Z4K4RI4",
+    "followers_url": "https://api.github.com/users/Z4K4RI4/followers",
+    "following_url": "https://api.github.com/users/Z4K4RI4/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Z4K4RI4/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Z4K4RI4/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Z4K4RI4/subscriptions",
+    "organizations_url": "https://api.github.com/users/Z4K4RI4/orgs",
+    "repos_url": "https://api.github.com/users/Z4K4RI4/repos",
+    "events_url": "https://api.github.com/users/Z4K4RI4/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Z4K4RI4/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    },
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    },
+    {
+      "id": 5747603641,
+      "node_id": "LA_kwDOBHDcK88AAAABVpV4uQ",
+      "url": "https://api.github.com/repos/shap/shap/labels/good%20first%20issue",
+      "name": "good first issue",
+      "color": "33DC11",
+      "default": true,
+      "description": "This is a fix that might be easier for someone to do as a first contribution"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2023-08-01T08:16:29Z",
+  "updated_at": "2023-08-08T14:30:53Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "body": "### Problem Description\n\nWhen using the documentation, it would be easier for the users to have a direct link between corresponding pages. Most likely in the top of the page.\r\nThis would make it a lot easier than exploring the sidebar tree. Especially knowing that when you try click on a category (API Reference/Example), it will change the page you are on.\n\n### Alternative Solutions\n\n_No response_\n\n### Additional Context\n\n_No response_\n\n### Feature request checklist\n\n- [X] I have checked the issue tracker for duplicate issues.\n- [ ] I'd be interested in making a PR to implement this feature",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3171/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3171/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

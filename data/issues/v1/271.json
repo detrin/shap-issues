@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/271",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/271/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/271/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/271/events",
+  "html_url": "https://github.com/shap/shap/issues/271",
+  "id": 364187199,
+  "node_id": "MDU6SXNzdWUzNjQxODcxOTk=",
+  "number": 271,
+  "title": "keep_dims instead of keepdims in the latest version TF version",
+  "user": {
+    "login": "chrisjcc",
+    "id": 6146345,
+    "node_id": "MDQ6VXNlcjYxNDYzNDU=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6146345?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/chrisjcc",
+    "html_url": "https://github.com/chrisjcc",
+    "followers_url": "https://api.github.com/users/chrisjcc/followers",
+    "following_url": "https://api.github.com/users/chrisjcc/following{/other_user}",
+    "gists_url": "https://api.github.com/users/chrisjcc/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/chrisjcc/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/chrisjcc/subscriptions",
+    "organizations_url": "https://api.github.com/users/chrisjcc/orgs",
+    "repos_url": "https://api.github.com/users/chrisjcc/repos",
+    "events_url": "https://api.github.com/users/chrisjcc/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/chrisjcc/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2018-09-26T20:01:58Z",
+  "updated_at": "2018-09-29T21:49:31Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Thought I'd report an issue, provided below, which I came across while running the shap explainer, concerning reduce_max() function not expecting keyword 'keepdims'.\r\n\r\nAccording to https://github.com/openai/pixel-cnn/issues/29\r\n\r\n\"... according to the TensorFlow docs, the option has to be keep_dims instead of keepdims in the latest version, and Tensorflow 1.4.1 also.\"\r\n\r\nUsing the following library versions: \r\nSHAP version: '0.24.0'\r\nTensorFlow version: '1.4.0'\r\nKeras version: '2.1.3'\r\n\r\n\r\n-------------------------------- Error message -------------------------------------------\r\nTypeError                                 Traceback (most recent call last)\r\n<ipython-input-76-3059aee3c0fa> in <module>()\r\n      1 # explain the model's predictions using SHAP values\r\n      2 explainer = shap.DeepExplainer(model=model, data=X_test)\r\n----> 3 shap_values = explainer.shap_values(X_test)\r\n\r\n/home/chrisjcc/.local/lib/python2.7/site-packages/shap/explainers/deep.pyc in shap_values(self, X, ranked_outputs, output_rank_order)\r\n    290                 # run attribution computation graph\r\n    291                 feature_ind = model_output_ranks[j,i]\r\n--> 292                 sample_phis = self.run(self.phi_symbolic(feature_ind), self.model_inputs, joint_input)\r\n    293 \r\n    294                 # assign the attributions to the right part of the output arrays\r\n\r\n/home/chrisjcc/.local/lib/python2.7/site-packages/shap/explainers/deep.pyc in phi_symbolic(self, i)\r\n    202             try:\r\n    203                 out = self.model_output[:,i] if self.multi_output else self.model_output\r\n--> 204                 self.phi_symbolics[i] = tf.gradients(out, self.model_inputs)\r\n    205 \r\n    206             finally:\r\n\r\n/home/chrisjcc/.local/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.pyc in gradients(ys, xs, grad_ys, name, colocate_gradients_with_ops, gate_gradients, aggregation_method, stop_gradients)\r\n    579                 # functions.\r\n    580                 in_grads = _MaybeCompile(\r\n--> 581                     grad_scope, op, func_call, lambda: grad_fn(op, *out_grads))\r\n    582               else:\r\n    583                 # For function call ops, we add a 'SymbolicGradient'\r\n\r\n/home/chrisjcc/.local/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.pyc in _MaybeCompile(scope, op, func, grad_fn)\r\n    351       xla_scope = op.get_attr(\"_XlaScope\").decode()\r\n    352     except ValueError:\r\n--> 353       return grad_fn()  # Exit early\r\n    354 \r\n    355   if not xla_compile:\r\n\r\n/home/chrisjcc/.local/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.pyc in <lambda>()\r\n    579                 # functions.\r\n    580                 in_grads = _MaybeCompile(\r\n--> 581                     grad_scope, op, func_call, lambda: grad_fn(op, *out_grads))\r\n    582               else:\r\n    583                 # For function call ops, we add a 'SymbolicGradient'\r\n\r\n/home/chrisjcc/.local/lib/python2.7/site-packages/shap/explainers/deep.pyc in custom_grad(self, op, *grads)\r\n    315         \"\"\" Passes a gradient op creation request to the correct handler.\r\n    316         \"\"\"\r\n--> 317         return op_handlers[op.type](self, op, *grads)\r\n    318 \r\n    319 \r\n\r\n/home/chrisjcc/.local/lib/python2.7/site-packages/shap/explainers/deep.pyc in softmax(explainer, op, *grads)\r\n    373     \"\"\"\r\n    374     in0 = op.inputs[0]\r\n--> 375     in0_max = tf.reduce_max(in0, axis=-1, keepdims=True, name=\"in0_max\")\r\n    376     in0_centered = in0 - in0_max\r\n    377     evals = tf.exp(in0_centered, name=\"custom_exp\")\r\n\r\nTypeError: reduce_max() got an unexpected keyword argument 'keepdims'",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/271/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/271/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/265",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/265/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/265/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/265/events",
+  "html_url": "https://github.com/shap/shap/issues/265",
+  "id": 362419639,
+  "node_id": "MDU6SXNzdWUzNjI0MTk2Mzk=",
+  "number": 265,
+  "title": "Future plans for inclusion of scikit_learn.KerasClassifier, PyTorch, Pyro, and C++ implantation version?",
+  "user": {
+    "login": "chrisjcc",
+    "id": 6146345,
+    "node_id": "MDQ6VXNlcjYxNDYzNDU=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6146345?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/chrisjcc",
+    "html_url": "https://github.com/chrisjcc",
+    "followers_url": "https://api.github.com/users/chrisjcc/followers",
+    "following_url": "https://api.github.com/users/chrisjcc/following{/other_user}",
+    "gists_url": "https://api.github.com/users/chrisjcc/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/chrisjcc/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/chrisjcc/subscriptions",
+    "organizations_url": "https://api.github.com/users/chrisjcc/orgs",
+    "repos_url": "https://api.github.com/users/chrisjcc/repos",
+    "events_url": "https://api.github.com/users/chrisjcc/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/chrisjcc/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2018-09-21T00:58:18Z",
+  "updated_at": "2018-10-02T23:46:32Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi Scott,\r\n\r\n    Quite an awesome job by all those involved this project in providing such an interesting tool for model interpretation. I have a few question in mind which I have outline below, and look forward hearing back from anyone much more informed that I on this topic. \r\n\r\n- Are there any plans for the SHAP explainer to run on tf.keras.wrappers.scikit_learn.KerasClassifier objects? I notice when I tried to apply the SHAP explainer on a KerasClassifier object, I recieved a message indicated that it is not currently supported. Such support would make it easier to work with a given platform, i.e. scikit-learn, without needing to switch between them.\r\n\r\n- I was wondering if it is possible run SHAP on PyTorch, or even Pyro models, if these libraries would be compatible? I'm new to these topic, but am quite interested in doing a study with SHAP in the context of probabilistic programming, in particular Bayesian deep neural networks. Mainly study it's general application.\r\n\r\n- On a different note, would there be an easy or straightforward way to port the python SHAP library into C++ version. I at times work with a C++ built ML library, and was curious if there's a possibility to make it compatible with the other library. \r\n\r\nThanks for taking the time to read this comment. ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/265/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/265/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/345",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/345/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/345/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/345/events",
+  "html_url": "https://github.com/shap/shap/pull/345",
+  "id": 386802440,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0MjM1NDM0OTE2",
+  "number": 345,
+  "title": "Enable sum of errors for categorical classes instead of absolute error sum.",
+  "user": {
+    "login": "axsaucedo",
+    "id": 1447507,
+    "node_id": "MDQ6VXNlcjE0NDc1MDc=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1447507?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/axsaucedo",
+    "html_url": "https://github.com/axsaucedo",
+    "followers_url": "https://api.github.com/users/axsaucedo/followers",
+    "following_url": "https://api.github.com/users/axsaucedo/following{/other_user}",
+    "gists_url": "https://api.github.com/users/axsaucedo/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/axsaucedo/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/axsaucedo/subscriptions",
+    "organizations_url": "https://api.github.com/users/axsaucedo/orgs",
+    "repos_url": "https://api.github.com/users/axsaucedo/repos",
+    "events_url": "https://api.github.com/users/axsaucedo/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/axsaucedo/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2018-12-03T12:46:52Z",
+  "updated_at": "2018-12-12T20:34:29Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/345",
+    "html_url": "https://github.com/shap/shap/pull/345",
+    "diff_url": "https://github.com/shap/shap/pull/345.diff",
+    "patch_url": "https://github.com/shap/shap/pull/345.patch",
+    "merged_at": null
+  },
+  "body": "This PR contains a proposed modification in the code that performs the comparison of the classes with an equals match as opposed to an absolute error sum.\r\n\r\nThis change ensures that categorical variables are only compare, and errors are weighted the same for any class mismatch (as opposed to taking the numerical difference between the categorical values which may not make sense).",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/345/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/345/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

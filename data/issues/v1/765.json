@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/765",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/765/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/765/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/765/events",
+  "html_url": "https://github.com/shap/shap/issues/765",
+  "id": 484113682,
+  "node_id": "MDU6SXNzdWU0ODQxMTM2ODI=",
+  "number": 765,
+  "title": "dependence plot not showing the original display features' value",
+  "user": {
+    "login": "VitoDH",
+    "id": 41325720,
+    "node_id": "MDQ6VXNlcjQxMzI1NzIw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/41325720?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/VitoDH",
+    "html_url": "https://github.com/VitoDH",
+    "followers_url": "https://api.github.com/users/VitoDH/followers",
+    "following_url": "https://api.github.com/users/VitoDH/following{/other_user}",
+    "gists_url": "https://api.github.com/users/VitoDH/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/VitoDH/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/VitoDH/subscriptions",
+    "organizations_url": "https://api.github.com/users/VitoDH/orgs",
+    "repos_url": "https://api.github.com/users/VitoDH/repos",
+    "events_url": "https://api.github.com/users/VitoDH/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/VitoDH/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2019-08-22T17:11:23Z",
+  "updated_at": "2019-08-27T04:58:04Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi everyone,\r\nI am trying to come up with a dependence plot for the categorical variable which contains missing values.  The x axis shows 1,2,3(encoding value) instead of \"low\",\"medium\",\"high\".\r\n\r\nFrom the source code, I notice that it shuffles the shap values first by np.random.shuffle(oinds), then use type(xd[0]) == str to examine whether the type of the feature is string or not. However, after shuffling, the missing value of this feature may shift to the top (index 0) with 'float' type instead of 'string'. So it can not construct a name_map and thus I can only see numbers on the x axis instead of the original strings.\r\n\r\nCould you please considering using something like type(xd[~pd.isnull(xd)][0]) == str rather than type(xd[0]) == str? Or is there any other way to avoid this? Thank you in advance!\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/765/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/765/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,91 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3036",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3036/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3036/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3036/events",
+  "html_url": "https://github.com/shap/shap/issues/3036",
+  "id": 1771920670,
+  "node_id": "I_kwDOBHDcK85pnV0e",
+  "number": 3036,
+  "title": "[Meta-issue] Notebooks are outdated / non-runnable",
+  "user": {
+    "login": "thatlittleboy",
+    "id": 30731072,
+    "node_id": "MDQ6VXNlcjMwNzMxMDcy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/30731072?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/thatlittleboy",
+    "html_url": "https://github.com/thatlittleboy",
+    "followers_url": "https://api.github.com/users/thatlittleboy/followers",
+    "following_url": "https://api.github.com/users/thatlittleboy/following{/other_user}",
+    "gists_url": "https://api.github.com/users/thatlittleboy/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/thatlittleboy/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/thatlittleboy/subscriptions",
+    "organizations_url": "https://api.github.com/users/thatlittleboy/orgs",
+    "repos_url": "https://api.github.com/users/thatlittleboy/repos",
+    "events_url": "https://api.github.com/users/thatlittleboy/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/thatlittleboy/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    },
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    },
+    {
+      "id": 5747603641,
+      "node_id": "LA_kwDOBHDcK88AAAABVpV4uQ",
+      "url": "https://api.github.com/repos/shap/shap/labels/good%20first%20issue",
+      "name": "good first issue",
+      "color": "33DC11",
+      "default": true,
+      "description": "This is a fix that might be easier for someone to do as a first contribution"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2023-06-23T18:41:48Z",
+  "updated_at": "2023-08-22T02:17:06Z",
+  "closed_at": null,
+  "author_association": "COLLABORATOR",
+  "active_lock_reason": null,
+  "body": "## Background\r\n\r\nAs we inch towards a release (#2979), we should also make sure that our documentation is kept up to date. (This PR is not meant as a blocker for #2979).\r\n\r\nA scour through the open issues in this repo and also on [StackOverflow](https://stackoverflow.com/questions/tagged/shap) shows that the outdated documentation (or lackthereof) is causing confusion among our users.\r\n\r\nJust some examples: \r\n- https://github.com/slundberg/shap/issues/2786\r\n- https://stackoverflow.com/q/76522186\r\n\r\n---\r\n\r\n## Plan\r\n\r\nThe plan here is to thoroughly go through each and every notebook example that we have, to:\r\n- run the notebook from top-to-bottom and ensure there are no errors\r\n- fix any typos in the prose\r\n- update the prose (where necessary) to provide better clarity\r\n- update the code (where necessary and appropriate) to demonstrate up-to-date API, python features, etc.\r\n  - E.g. replacing the deprecated boston dataset, using the `Explanation` API for plotting\r\n  - E.g. using [debug support in f-strings](https://docs.python.org/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging), etc.\r\n\r\nWhile we're at it, I also propose to clean up the notebook metadata (remove kernel information, etc.) to minimize git conflicts, and also to run linters (ruff) / formatters (black) to keep the notebook code tidy.\r\nI might formalize this in a separate issue later (outside the scope of this meta-issue).\r\n\r\nAn example of such a PR: [#3037](https://github.com/slundberg/shap/pull/3037)\r\n\r\nTo potential contributors (thank you in advance!), please stick to one notebook per PR when contributing.  \r\nAlso, any help in updating the GPU-related notebooks would be very much appreciated.  \r\n\r\n## Checklist\r\n\r\n- notebooks\r\n    - text_examples\r\n        - language_modelling\r\n            - [ ] Language Modeling Explanation Demo.ipynb\r\n        - text_generation\r\n            - [ ] Open Ended GPT2 Text Generation Explanations.ipynb\r\n        - question_answering\r\n            - [ ] Explaining a Question Answering Transformers Model.ipynb\r\n        - translation\r\n            - [ ] Machine Translation Explanations.ipynb\r\n        - summarization\r\n            - [ ] Abstractive Summarization Explanation Demo.ipynb\r\n        - text_entailment\r\n            - [ ] Textual Entailment Explanation Demo.ipynb\r\n        - sentiment_analysis\r\n            - [ ] Using custom functions and tokenizers.ipynb\r\n            - [ ] Emotion classification multiclass example.ipynb\r\n            - [ ] Positive vs. Negative Sentiment Classification.ipynb\r\n            - [ ] Keras LSTM for IMDB Sentiment Classification.ipynb\r\n    - image_examples\r\n        - image_captioning\r\n            - [ ] Image Captioning using Azure Cognitive Services.ipynb\r\n            - [ ] Image Captioning using Open Source.ipynb\r\n        - image_classification\r\n            - [ ] Explain ResNet50 using the Partition explainer.ipynb\r\n            - [ ] PyTorch Deep Explainer MNIST example.ipynb\r\n            - [ ] Explain MobilenetV2 using the Partition explainer (PyTorch).ipynb\r\n            - [ ] Multi-class ResNet50 on ImageNet (TensorFlow)-checkpoint.ipynb\r\n            - [ ] Front Page DeepExplainer MNIST Example.ipynb\r\n            - [ ] Multi-class ResNet50 on ImageNet (TensorFlow).ipynb\r\n            - [ ] Multi-input Gradient Explainer MNIST Example.ipynb\r\n            - [ ] Explain an Intermediate Layer of VGG16 on ImageNet (PyTorch).ipynb\r\n            - [ ] Image Multi Class.ipynb\r\n            - [ ] Explain an Intermediate Layer of VGG16 on ImageNet.ipynb\r\n    - benchmarks\r\n        - tabular\r\n            - [ ] Tabular Prediction Benchmark Demo.ipynb\r\n            - [ ] Benchmark XGBoost explanations.ipynb\r\n        - others\r\n            - [ ] Benchmark Debug Mode.ipynb\r\n        - image\r\n            - [ ] Image Multiclass Classification Benchmark Demo.ipynb\r\n        - text\r\n            - [ ] Machine Translation Benchmark Demo.ipynb\r\n            - [ ] Abstractive Summarization Benchmark Demo.ipynb\r\n            - [ ] Text Emotion Multiclass Classification Benchmark Demo.ipynb\r\n    - overviews\r\n        - [ ] Explaining quantitative measures of fairness.ipynb\r\n        - [x] Be careful when interpreting predictive models in search of causal insights.ipynb\r\n        - [ ] An introduction to explainable AI with Shapley values.ipynb\r\n    - genomic_examples\r\n        - [ ] DeepExplainer Genomics Example.ipynb\r\n    - api_examples\r\n        - maskers\r\n            - [ ] custom.ipynb\r\n        - explainers\r\n            - [ ] Permutation.ipynb\r\n            - [ ] Exact.ipynb\r\n            - [ ] GPUTree.ipynb\r\n        - plots\r\n            - [ ] text.ipynb\r\n            - [ ] decision_plot.ipynb\r\n            - [ ] scatter.ipynb\r\n            - [ ] waterfall.ipynb\r\n            - [ ] beeswarm.ipynb\r\n            - [ ] violin.ipynb\r\n            - [ ] image.ipynb\r\n            - [ ] bar.ipynb\r\n            - [ ] heatmap.ipynb\r\n    - tabular_examples\r\n        - model_agnostic\r\n            - [ ] Squashing Effect.ipynb\r\n            - [ ] Census income classification with scikit-learn.ipynb\r\n            - [ ] Simple Kernel SHAP.ipynb\r\n            - [ ] Multioutput Regression SHAP.ipynb\r\n            - [ ] Iris classification with scikit-learn.ipynb\r\n            - [ ] Diabetes regression.ipynb\r\n            - [ ] Simple Boston Demo.ipynb\r\n        - tree_based_models\r\n            - [ ] League of Legends Win Prediction with XGBoost.ipynb\r\n            - [ ] Understanding Tree SHAP for Simple Models.ipynb\r\n            - [ ] Census income classification with XGBoost.ipynb\r\n            - [ ] Example of loading a custom tree model into SHAP.ipynb\r\n            - [ ] Census income classification with LightGBM.ipynb\r\n            - [ ] Perfomance Comparison.ipynb\r\n            - [ ] NHANES I Survival Model.ipynb\r\n            - [ ] Python Version of Tree SHAP.ipynb\r\n            - [ ] Catboost tutorial.ipynb\r\n            - [ ] Scatter Density vs. Violin Plot Comparison.ipynb\r\n            - [ ] Explaining a simple OR function.ipynb [PR #3037]\r\n            - [ ] Basic SHAP Interaction Value Example in XGBoost.ipynb\r\n            - [ ] Force Plot Colors.ipynb\r\n            - [ ] Fitting a Linear Simulation with XGBoost.ipynb\r\n            - [ ] Front page example (XGBoost).ipynb\r\n            - [ ] Explaining the Loss of a Model.ipynb\r\n        - neural_networks\r\n            - [ ] Census income classification with Keras.ipynb\r\n        - linear_models\r\n            - [ ] Sentiment Analysis with Logistic Regression.ipynb\r\n            - [ ] Explaining a model that uses standardized features.ipynb\r\n            - [ ] Math behind LinearExplainer with correlation feature perturbation.ipynb",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3036/reactions",
+    "total_count": 3,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 3,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3036/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

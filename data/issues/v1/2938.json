@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2938",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2938/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2938/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2938/events",
+  "html_url": "https://github.com/shap/shap/issues/2938",
+  "id": 1733196399,
+  "node_id": "I_kwDOBHDcK85nTnpv",
+  "number": 2938,
+  "title": "Kernel Explainer Very Long Run Time",
+  "user": {
+    "login": "achelm15",
+    "id": 76539507,
+    "node_id": "MDQ6VXNlcjc2NTM5NTA3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/76539507?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/achelm15",
+    "html_url": "https://github.com/achelm15",
+    "followers_url": "https://api.github.com/users/achelm15/followers",
+    "following_url": "https://api.github.com/users/achelm15/following{/other_user}",
+    "gists_url": "https://api.github.com/users/achelm15/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/achelm15/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/achelm15/subscriptions",
+    "organizations_url": "https://api.github.com/users/achelm15/orgs",
+    "repos_url": "https://api.github.com/users/achelm15/repos",
+    "events_url": "https://api.github.com/users/achelm15/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/achelm15/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901334,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzQ=",
+      "url": "https://api.github.com/repos/shap/shap/labels/question",
+      "name": "question",
+      "color": "cc317c",
+      "default": true,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2023-05-31T00:25:29Z",
+  "updated_at": "2023-06-06T08:15:33Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I am attempting to use the KernelExplainer to explain a function that uses 5 separate XGBoost models to determine a final value. The structure of this function looks like this:\r\n\r\n```\r\ndef model_func(data):\r\n    if type(data)==np.ndarray:\r\n        data = pd.DataFrame(data, columns=features).astype(float)\r\n    if type(data)==pd.Series:\r\n        data = data.to_frame().T\r\n    data[count_arr] = data[count_arr].astype(float).round(0)\r\n    data.loc[(data.count_1==1)|(data.count_2==1)|(data.count_3==1)|(data.count_4==1),'joints']=0\r\n    data.loc[(data.count_5==1)|(data.count_6==1)|(data.count_7==1)|(data.count_8==1),'joints']=1\r\n    data.loc[(data.count_9==1)|(data.count_10==1)|(data.count_11==1)|(data.count_12==1),'joints']=2\r\n    ################################# THIS IS FOR EXPLAINER ONLY ####################################\r\n    data.loc[(data.count_1==0)&(data.count_2==0)&(data.count_3==0)&(data.count_4==0)&\r\n             (data.count_5==0)&(data.count_6==0)&(data.count_7==0)&(data.count_8==0)&\r\n             (data.count_9==0)&(data.count_10==0)&(data.count_11==0)&(data.count_12==0), 'joints']=0\r\n    #################################################################################################\r\n    data = data.merge(rv, how='left', on='joints')\r\n    X = data[features]\r\n    swp = xgb_swp.predict_proba(X)[:,1]\r\n    stp = xgb_stp.predict_proba(X)[:,1]\r\n    cop = xgb_cop.predict_proba(X)[:,1]\r\n    ipp = xgb_ipp.predict_proba(X)[:,1]\r\n    xrv = xgb_xrv.predict(X)[:]\r\n\r\n    xRV = ((1-swp)*stp*data['CS']+\r\n           (1-swp)*stp*data['B']+\r\n           swp*cop*data['SS']+\r\n           (1-swp)*cop*ipp*data['F']+\r\n           swp*cop*ipp*xrv)\r\n    return xRV\r\n```\r\n\r\nI have been able to create an explainer for this function however I will need it to run on around 2 million examples. With only 10 examples in the background set made from `shap.kmeans`, each example takes 1.3s, which when run on all examples leads to a less than ideal runtime.  The underlying models already make use of GPUs. They use the sklearn API wrapper. I considered attempting to use the native wrapper which improves inference speed. This was unsuccessful as I need the merge within the function, as the constants added in this merge are not features of the model, yet necessary for the resulting value, so I cannot pass them within the data and I have been unable to merge on the required DMatrix datatype if that is even possible.\r\n\r\nAdditionally, I am unsure if 10 examples even provides reasonable explanations. My dataset consists of around 500,000 examples, with 51 features, so I don't really believe 10 examples is enough for the explainer to explain correctly, although I could be incorrect on that. \r\n\r\nSo my two questions are: \r\n1. How can I improve the speed of the explainer for this function?\r\n2. Is 10 examples enough in the background dataset? How can I be sure? What is the best methodology for determining a background dataset?",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2938/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2938/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

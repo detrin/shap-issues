@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2434",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2434/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2434/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2434/events",
+  "html_url": "https://github.com/shap/shap/issues/2434",
+  "id": 1170082172,
+  "node_id": "I_kwDOBHDcK85Fvgl8",
+  "number": 2434,
+  "title": "Warning with PyTorch model that contains Flatten layer",
+  "user": {
+    "login": "csestili",
+    "id": 10887466,
+    "node_id": "MDQ6VXNlcjEwODg3NDY2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/10887466?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/csestili",
+    "html_url": "https://github.com/csestili",
+    "followers_url": "https://api.github.com/users/csestili/followers",
+    "following_url": "https://api.github.com/users/csestili/following{/other_user}",
+    "gists_url": "https://api.github.com/users/csestili/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/csestili/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/csestili/subscriptions",
+    "organizations_url": "https://api.github.com/users/csestili/orgs",
+    "repos_url": "https://api.github.com/users/csestili/repos",
+    "events_url": "https://api.github.com/users/csestili/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/csestili/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2022-03-15T19:12:32Z",
+  "updated_at": "2023-07-18T23:05:45Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi, I'm trying to use `shap.DeepExplainer` with a PyTorch model.\r\nThe model contains a `torch.nn.Flatten` layer.\r\n`shap.DeepExplainer.shap_values()` gives the warning `Warning: unrecognized nn.Module: Flatten`. However, it still produces values.\r\nDoes this mean I can trust the values returned? Or is this output junk?\r\n\r\nMinimal working example at https://colab.research.google.com/drive/1TFUr-nb9wnQ2vV-fY02YFcd5BSNczrzY?usp=sharing . This example contains one model that doesn't have a `Flatten` layer, which works fine; and a model that does have a `Flatten` layer, which produces the warning.\r\n\r\nThank you!",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2434/reactions",
+    "total_count": 1,
+    "+1": 1,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2434/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

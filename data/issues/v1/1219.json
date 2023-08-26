@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1219",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1219/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1219/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1219/events",
+  "html_url": "https://github.com/shap/shap/pull/1219",
+  "id": 621854102,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NDIwODI1NDE3",
+  "number": 1219,
+  "title": "add AdaBoostClassifier",
+  "user": {
+    "login": "tk27182",
+    "id": 14067153,
+    "node_id": "MDQ6VXNlcjE0MDY3MTUz",
+    "avatar_url": "https://avatars.githubusercontent.com/u/14067153?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tk27182",
+    "html_url": "https://github.com/tk27182",
+    "followers_url": "https://api.github.com/users/tk27182/followers",
+    "following_url": "https://api.github.com/users/tk27182/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tk27182/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tk27182/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tk27182/subscriptions",
+    "organizations_url": "https://api.github.com/users/tk27182/orgs",
+    "repos_url": "https://api.github.com/users/tk27182/repos",
+    "events_url": "https://api.github.com/users/tk27182/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tk27182/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2020-05-20T15:25:31Z",
+  "updated_at": "2020-05-22T16:37:50Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1219",
+    "html_url": "https://github.com/shap/shap/pull/1219",
+    "diff_url": "https://github.com/shap/shap/pull/1219.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1219.patch",
+    "merged_at": null
+  },
+  "body": "I had issues using AdaBoostClassifier with your package, and came across #335 and this [Stack Overflow question and answer](https://stackoverflow.com/questions/60433389/how-to-calculate-shap-values-for-adaboost-model/61108156#61108156). It seemed like the OP never added a pull request, so I figured I'd add it with the updated code that uses `safe_isinstance` instead. \r\n\r\nEdits are in lines 598-610 in the `shap/explainers/tree.py` file.  ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1219/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1219/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

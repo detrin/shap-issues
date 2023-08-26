@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2280",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2280/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2280/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2280/events",
+  "html_url": "https://github.com/shap/shap/pull/2280",
+  "id": 1059701217,
+  "node_id": "PR_kwDOBHDcK84u1C_0",
+  "number": 2280,
+  "title": "modify image_plot",
+  "user": {
+    "login": "jiangxiaolan-ctw",
+    "id": 91711555,
+    "node_id": "U_kgDOBXdoQw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/91711555?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jiangxiaolan-ctw",
+    "html_url": "https://github.com/jiangxiaolan-ctw",
+    "followers_url": "https://api.github.com/users/jiangxiaolan-ctw/followers",
+    "following_url": "https://api.github.com/users/jiangxiaolan-ctw/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jiangxiaolan-ctw/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jiangxiaolan-ctw/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jiangxiaolan-ctw/subscriptions",
+    "organizations_url": "https://api.github.com/users/jiangxiaolan-ctw/orgs",
+    "repos_url": "https://api.github.com/users/jiangxiaolan-ctw/repos",
+    "events_url": "https://api.github.com/users/jiangxiaolan-ctw/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jiangxiaolan-ctw/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2021-11-22T05:14:15Z",
+  "updated_at": "2022-03-23T00:23:36Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2280",
+    "html_url": "https://github.com/shap/shap/pull/2280",
+    "diff_url": "https://github.com/shap/shap/pull/2280.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2280.patch",
+    "merged_at": null
+  },
+  "body": null,
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2280/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2280/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

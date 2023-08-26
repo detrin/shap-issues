@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1136",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1136/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1136/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1136/events",
+  "html_url": "https://github.com/shap/shap/issues/1136",
+  "id": 592807080,
+  "node_id": "MDU6SXNzdWU1OTI4MDcwODA=",
+  "number": 1136,
+  "title": "cannot import name '_cext'  !!",
+  "user": {
+    "login": "statgirl101",
+    "id": 46425204,
+    "node_id": "MDQ6VXNlcjQ2NDI1MjA0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/46425204?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/statgirl101",
+    "html_url": "https://github.com/statgirl101",
+    "followers_url": "https://api.github.com/users/statgirl101/followers",
+    "following_url": "https://api.github.com/users/statgirl101/following{/other_user}",
+    "gists_url": "https://api.github.com/users/statgirl101/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/statgirl101/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/statgirl101/subscriptions",
+    "organizations_url": "https://api.github.com/users/statgirl101/orgs",
+    "repos_url": "https://api.github.com/users/statgirl101/repos",
+    "events_url": "https://api.github.com/users/statgirl101/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/statgirl101/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 16,
+  "created_at": "2020-04-02T17:31:40Z",
+  "updated_at": "2023-07-24T09:36:28Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi there,\r\nI am really struggling to get SHAP to work and was hoping someone might be able to help me. This has been an incredibly painful process.\r\n- So, I start by cloning the repository:\r\n! git clone git://github.com/slundberg/shap.git shap1 \r\n- Then, in order to complete the installation, I went:\r\n ! python setup.py build\r\nHow do you know if the build was successful? Mine starts out ok, but then I get the following issue/warning message halfway through:\r\n\r\nbuilding 'shap._cext' extension\r\ncreating build/temp.linux-x86_64-3.5\r\ncreating build/temp.linux-x86_64-3.5/shap\r\ngcc -pthread -B /usr/local/envs/py3env/compiler_compat -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/envs/py3env/include/python3.5m -I/usr/local/envs/py3env/lib/python3.5/site-packages/numpy/core/include -c shap/_cext.cc -o build/temp.linux-x86_64-3.5/shap/_cext.o\r\n**cc1plus: warning:** command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++\r\ng++ -pthread -shared -L/usr/local/envs/py3env/lib -B /usr/local/envs/py3env/compiler_compat -Wl,-rpath=/usr/local/envs/py3env/lib,--no-as-needed build/temp.linux-x86_64-3.5/shap/_cext.o -o build/lib.linux-x86_64-3.5/shap/_cext.cpython-35m-x86_64-linux-gnu.so\r\n\r\nNotice the cc1plus warning up there - I have no idea what this means or what is going on. I am not sure if the installation has finished, having seen such a message, but I suspect not.\r\n- When I try to run \r\nshapley.TreeExplainer(XGBmodel)\r\nI see this message right at the top (right away): C extension was not built during install!\r\nThen I get the error at the bottom cannot import name '_cext' .\r\n\r\nI am guessing this all has something to do with the cextension not being built, but I have\r\nno idea what is going on and am very frustrated.\r\nAny help or insight would be very much appreciated. \r\nThanks!! \r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1136/reactions",
+    "total_count": 1,
+    "+1": 1,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1136/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

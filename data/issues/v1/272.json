@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/272",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/272/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/272/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/272/events",
+  "html_url": "https://github.com/shap/shap/issues/272",
+  "id": 364660423,
+  "node_id": "MDU6SXNzdWUzNjQ2NjA0MjM=",
+  "number": 272,
+  "title": "shap_interaction_values for DeepExplainer",
+  "user": {
+    "login": "chrisjcc",
+    "id": 6146345,
+    "node_id": "MDQ6VXNlcjYxNDYzNDU=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6146345?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/chrisjcc",
+    "html_url": "https://github.com/chrisjcc",
+    "followers_url": "https://api.github.com/users/chrisjcc/followers",
+    "following_url": "https://api.github.com/users/chrisjcc/following{/other_user}",
+    "gists_url": "https://api.github.com/users/chrisjcc/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/chrisjcc/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/chrisjcc/subscriptions",
+    "organizations_url": "https://api.github.com/users/chrisjcc/orgs",
+    "repos_url": "https://api.github.com/users/chrisjcc/repos",
+    "events_url": "https://api.github.com/users/chrisjcc/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/chrisjcc/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2018-09-27T21:28:41Z",
+  "updated_at": "2021-08-26T08:00:23Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi, I was giving the DeepExplainer a try for estimating the shap interaction value, but received the following error message:\r\n\r\nAttributeError: 'DeepExplainer' object has no attribute 'shap_interaction_values'\r\n\r\nAre there plans to include this feature in the SHAP library, or is there a current limit factor for implementing it? ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/272/reactions",
+    "total_count": 1,
+    "+1": 1,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/272/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

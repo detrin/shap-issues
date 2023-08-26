@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2602",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2602/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2602/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2602/events",
+  "html_url": "https://github.com/shap/shap/pull/2602",
+  "id": 1280843557,
+  "node_id": "PR_kwDOBHDcK846KJQ0",
+  "number": 2602,
+  "title": "update(beeswarm): return figure object if show=False",
+  "user": {
+    "login": "jlarsen-usgs",
+    "id": 19962180,
+    "node_id": "MDQ6VXNlcjE5OTYyMTgw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19962180?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jlarsen-usgs",
+    "html_url": "https://github.com/jlarsen-usgs",
+    "followers_url": "https://api.github.com/users/jlarsen-usgs/followers",
+    "following_url": "https://api.github.com/users/jlarsen-usgs/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jlarsen-usgs/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jlarsen-usgs/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jlarsen-usgs/subscriptions",
+    "organizations_url": "https://api.github.com/users/jlarsen-usgs/orgs",
+    "repos_url": "https://api.github.com/users/jlarsen-usgs/repos",
+    "events_url": "https://api.github.com/users/jlarsen-usgs/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jlarsen-usgs/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2022-06-22T20:30:36Z",
+  "updated_at": "2023-02-18T01:10:46Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2602",
+    "html_url": "https://github.com/shap/shap/pull/2602",
+    "diff_url": "https://github.com/shap/shap/pull/2602.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2602.patch",
+    "merged_at": null
+  },
+  "body": null,
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2602/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2602/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/756",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/756/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/756/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/756/events",
+  "html_url": "https://github.com/shap/shap/issues/756",
+  "id": 481904642,
+  "node_id": "MDU6SXNzdWU0ODE5MDQ2NDI=",
+  "number": 756,
+  "title": "Plot summary_plot as probabilities",
+  "user": {
+    "login": "axelstram",
+    "id": 8026829,
+    "node_id": "MDQ6VXNlcjgwMjY4Mjk=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/8026829?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/axelstram",
+    "html_url": "https://github.com/axelstram",
+    "followers_url": "https://api.github.com/users/axelstram/followers",
+    "following_url": "https://api.github.com/users/axelstram/following{/other_user}",
+    "gists_url": "https://api.github.com/users/axelstram/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/axelstram/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/axelstram/subscriptions",
+    "organizations_url": "https://api.github.com/users/axelstram/orgs",
+    "repos_url": "https://api.github.com/users/axelstram/repos",
+    "events_url": "https://api.github.com/users/axelstram/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/axelstram/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2019-08-17T16:48:00Z",
+  "updated_at": "2019-08-18T00:12:07Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I'm working on a multi-class classification problem using XGBoost, and when I do a summary_plot, the output is expressed as log odds instead of probabilities. I saw that in the force_plot method there is a \"link\" variable that allows to plot the results as probabilities when set to 'logit', but I didn't found anything equivalent in summary_plot. I tried applying the inverse logit function to the shap values but I didn't get an adequate result. Is there a way to do this? Thanks.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/756/reactions",
+    "total_count": 2,
+    "+1": 2,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/756/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

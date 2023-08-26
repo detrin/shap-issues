@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/479",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/479/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/479/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/479/events",
+  "html_url": "https://github.com/shap/shap/issues/479",
+  "id": 418185580,
+  "node_id": "MDU6SXNzdWU0MTgxODU1ODA=",
+  "number": 479,
+  "title": "Support for GradientBoostingClassifier using TreeExplainer",
+  "user": {
+    "login": "SaadAhmed96",
+    "id": 30757857,
+    "node_id": "MDQ6VXNlcjMwNzU3ODU3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/30757857?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/SaadAhmed96",
+    "html_url": "https://github.com/SaadAhmed96",
+    "followers_url": "https://api.github.com/users/SaadAhmed96/followers",
+    "following_url": "https://api.github.com/users/SaadAhmed96/following{/other_user}",
+    "gists_url": "https://api.github.com/users/SaadAhmed96/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/SaadAhmed96/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/SaadAhmed96/subscriptions",
+    "organizations_url": "https://api.github.com/users/SaadAhmed96/orgs",
+    "repos_url": "https://api.github.com/users/SaadAhmed96/repos",
+    "events_url": "https://api.github.com/users/SaadAhmed96/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/SaadAhmed96/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 8,
+  "created_at": "2019-03-07T08:30:50Z",
+  "updated_at": "2022-10-30T18:21:39Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I am trying to use the GradientBoostingClassifier using the sklearn library. I wanted to known if its already supported or am I doing any mistake in implementation?\r\n\r\n![image](https://user-images.githubusercontent.com/30757857/53942633-0fe31080-40dd-11e9-8229-bf944ad853e6.png)\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/479/reactions",
+    "total_count": 1,
+    "+1": 1,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/479/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

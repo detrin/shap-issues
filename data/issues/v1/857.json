@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/857",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/857/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/857/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/857/events",
+  "html_url": "https://github.com/shap/shap/issues/857",
+  "id": 508481962,
+  "node_id": "MDU6SXNzdWU1MDg0ODE5NjI=",
+  "number": 857,
+  "title": "KernelExplainer, Tensorflow / Keras, and multiple inputs",
+  "user": {
+    "login": "grofte",
+    "id": 7976840,
+    "node_id": "MDQ6VXNlcjc5NzY4NDA=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/7976840?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/grofte",
+    "html_url": "https://github.com/grofte",
+    "followers_url": "https://api.github.com/users/grofte/followers",
+    "following_url": "https://api.github.com/users/grofte/following{/other_user}",
+    "gists_url": "https://api.github.com/users/grofte/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/grofte/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/grofte/subscriptions",
+    "organizations_url": "https://api.github.com/users/grofte/orgs",
+    "repos_url": "https://api.github.com/users/grofte/repos",
+    "events_url": "https://api.github.com/users/grofte/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/grofte/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-10-17T13:38:31Z",
+  "updated_at": "2019-12-16T13:22:16Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "When you have multiple input nodes in Keras you pass them as a list. My inputs are one group of numerical features and then a number of features that get passed to an embedding layer. \r\nDeepExplainer handles a list as an input fine but when I try to pass a list to KernelExplainer I get \r\n\r\n`AssertionError: Unknown type passed as data object: <class 'list'>` \r\n\r\nThat doesn't seem completely model agnostic ; ] ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/857/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/857/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/288",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/288/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/288/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/288/events",
+  "html_url": "https://github.com/shap/shap/issues/288",
+  "id": 371010041,
+  "node_id": "MDU6SXNzdWUzNzEwMTAwNDE=",
+  "number": 288,
+  "title": "Stability of Shapley Values and Multicolinearity",
+  "user": {
+    "login": "tadaskrisciunas",
+    "id": 917552,
+    "node_id": "MDQ6VXNlcjkxNzU1Mg==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/917552?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tadaskrisciunas",
+    "html_url": "https://github.com/tadaskrisciunas",
+    "followers_url": "https://api.github.com/users/tadaskrisciunas/followers",
+    "following_url": "https://api.github.com/users/tadaskrisciunas/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tadaskrisciunas/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tadaskrisciunas/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tadaskrisciunas/subscriptions",
+    "organizations_url": "https://api.github.com/users/tadaskrisciunas/orgs",
+    "repos_url": "https://api.github.com/users/tadaskrisciunas/repos",
+    "events_url": "https://api.github.com/users/tadaskrisciunas/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tadaskrisciunas/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901334,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzQ=",
+      "url": "https://api.github.com/repos/shap/shap/labels/question",
+      "name": "question",
+      "color": "cc317c",
+      "default": true,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 11,
+  "created_at": "2018-10-17T10:42:28Z",
+  "updated_at": "2023-06-19T00:31:49Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi,\r\n\r\nFirst of all, thanks for a great product! I've been using Shapley-value-induced black-box model explanations for a few years now, starting with the work of Strumbelj and Kononenko (http://lkm.fri.uni-lj.si/xaigor/slo/pedagosko/dr-ui/JMLR-Strumbelj-Kononenko.pdf). Your improvements in computational efficiency in the case of decision-tree-based algorithms opens up Shapley values to more practical applications.\r\n\r\nMy colleagues and I at Zopa, a UK peer-to-peer lender and challenger bank, are in the process of adding the `shap` package to our production systems. There are a few things we want to clarify before proceeding, and after discussions we decided that contacting you is the best path forward to resolve the issues.\r\n \r\n1. Does **SHAP** assume independent features? To what extent does feature correlation affect it? Is the impact different for different **SHAP** computation/estimation algorithms (e.g. less so in the tailor-made algorithm for tree ensembles)?\r\n2. How sensitive is **SHAP** to marginal changes in the input? Our team recently attended a London DS meetup discussing **SHAP** and the participants struggled to confidently address this question.\r\n3. For **Kernel SHAP** and similar sampling approaches, are there rigorous rules to determine necessary sample sizes and confidence intervals around **SHAP** value estimates? How can one be confident in at least the correctness of feature rankings for each datapoint, if not **SHAP** values? Also, is it the case that sample sizes may depend on the specific feature values in the datapoint?\r\n4. Looking at the **Def. 4** (pg. 6) of Strumbelj et al. (http://lkm.fri.uni-lj.si/xaigor/slo/pedagosko/dr-ui/JMLR-Strumbelj-Kononenko.pdf), each possible feature combination from the feature space enters the sum only once. However, when computing conditional expectations from the training data, two statistically indistinguishable datapoints may enter the sum twice. We think this will not affect **SHAP** value estimates that are obtained significantly, but we wanted to double-check. Are there any implications of this for **SHAP** value sizes, and would you deem them significant?\r\n5. Would you have any reservations about using **SHAP** values for causal inference and user recommendations? I understand this is domain-specific, but from the formulae used to calculate **SHAP** values my impression has been that they are indeed considering counterfactual outcomes via conditional expectations.\r\n\r\nI understand that this is quite a few questions crammed into one GitHub issue, even if they are related, so let me know if you'd prefer me splitting the issue out into multiple ones.\r\n\r\nWe are looking forward to your response!\r\n\r\nBest wishes,\r\nTadas",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/288/reactions",
+    "total_count": 14,
+    "+1": 14,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/288/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2887",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2887/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2887/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2887/events",
+  "html_url": "https://github.com/shap/shap/issues/2887",
+  "id": 1645606276,
+  "node_id": "I_kwDOBHDcK85iFfWE",
+  "number": 2887,
+  "title": "TreeExplainer support for GradientBoostingClassifier in multiclass classification",
+  "user": {
+    "login": "Jose-Verdu-Diaz",
+    "id": 21974160,
+    "node_id": "MDQ6VXNlcjIxOTc0MTYw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/21974160?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Jose-Verdu-Diaz",
+    "html_url": "https://github.com/Jose-Verdu-Diaz",
+    "followers_url": "https://api.github.com/users/Jose-Verdu-Diaz/followers",
+    "following_url": "https://api.github.com/users/Jose-Verdu-Diaz/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Jose-Verdu-Diaz/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Jose-Verdu-Diaz/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Jose-Verdu-Diaz/subscriptions",
+    "organizations_url": "https://api.github.com/users/Jose-Verdu-Diaz/orgs",
+    "repos_url": "https://api.github.com/users/Jose-Verdu-Diaz/repos",
+    "events_url": "https://api.github.com/users/Jose-Verdu-Diaz/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Jose-Verdu-Diaz/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2023-03-29T11:30:48Z",
+  "updated_at": "2023-06-04T03:18:22Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "TreeExplainer does not support GradientBoostingClassifier for multiclass classification. \r\nhttps://github.com/slundberg/shap/blob/45b85c1837283fdaeed7440ec6365a886af4a333/shap/explainers/_tree.py#L776\r\n\r\nI would love to see this feature. Are there any plans to implement it or is anyone working on it?\r\n\r\nThanks!",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2887/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2887/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

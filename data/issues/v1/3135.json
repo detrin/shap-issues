@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3135",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3135/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3135/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3135/events",
+  "html_url": "https://github.com/shap/shap/issues/3135",
+  "id": 1819962028,
+  "node_id": "I_kwDOBHDcK85semqs",
+  "number": 3135,
+  "title": "ENH: Categorical feature not working with `shap.plots.scatter`",
+  "user": {
+    "login": "danieleongari",
+    "id": 25899092,
+    "node_id": "MDQ6VXNlcjI1ODk5MDky",
+    "avatar_url": "https://avatars.githubusercontent.com/u/25899092?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/danieleongari",
+    "html_url": "https://github.com/danieleongari",
+    "followers_url": "https://api.github.com/users/danieleongari/followers",
+    "following_url": "https://api.github.com/users/danieleongari/following{/other_user}",
+    "gists_url": "https://api.github.com/users/danieleongari/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/danieleongari/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/danieleongari/subscriptions",
+    "organizations_url": "https://api.github.com/users/danieleongari/orgs",
+    "repos_url": "https://api.github.com/users/danieleongari/repos",
+    "events_url": "https://api.github.com/users/danieleongari/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/danieleongari/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 5,
+  "created_at": "2023-07-25T09:56:36Z",
+  "updated_at": "2023-08-23T06:08:48Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "body": "### Issue Description\n\nWhen having a categorical feature, the scatter plot fails:\r\n```\r\n---------------------------------------------------------------------------\r\nTypeError                                 Traceback (most recent call last)\r\nFile [c:\\users\\onga1340\\main\\programs\\adex_app\\adex\\utils.py:156](file:///C:/users/onga1340/main/programs/adex_app/adex/utils.py:156), in plot_shap(adex_object, explanation, plot, max_scatter)\r\n    155 try:\r\n--> 156     shap.plots.scatter(explanation[:,feature,itarget], color=explanation[:,feature,itarget])\r\n    157 except TypeError:\r\n\r\nFile [c:\\ProgramData\\Miniconda3\\envs\\adex310\\lib\\site-packages\\shap\\plots\\_scatter.py:195](file:///C:/ProgramData/Miniconda3/envs/adex310/lib/site-packages/shap/plots/_scatter.py:195), in scatter(shap_values, color, hist, axis_color, cmap, dot_size, x_jitter, alpha, title, xmin, xmax, ymin, ymax, overlay, ax, ylabel, show)\r\n    194 for i in range(1,len(vals)):\r\n--> 195     d = vals[i] - vals[i-1]\r\n    196     if d > 1e-8 and d < min_dist:\r\n\r\nTypeError: unsupported operand type(s) for -: 'str' and 'str'\r\n\r\nDuring handling of the above exception, another exception occurred:\r\n\r\nTypeError                                 Traceback (most recent call last)\r\nCell In[8], line 1\r\n----> 1 plot_shap(ao, explanation=e, plot=['scatter'], max_scatter=None)\r\n      2 # NOTE: still not working for categorical variables\r\n\r\nFile [c:\\users\\onga1340\\main\\programs\\adex_app\\adex\\utils.py:158](file:///C:/users/onga1340/main/programs/adex_app/adex/utils.py:158), in plot_shap(adex_object, explanation, plot, max_scatter)\r\n    156             shap.plots.scatter(explanation[:,feature,itarget], color=explanation[:,feature,itarget])\r\n    157         except TypeError:\r\n--> 158             shap.plots.scatter(explanation[:,feature,itarget], color=\"#1E88E5\")\r\n    159             #pass # TODO: can not print categorical data!\r\n    161 if 'summary_bar_plotly' in plot:\r\n\r\nFile [c:\\ProgramData\\Miniconda3\\envs\\adex310\\lib\\site-packages\\shap\\plots\\_scatter.py:195](file:///C:/ProgramData/Miniconda3/envs/adex310/lib/site-packages/shap/plots/_scatter.py:195), in scatter(shap_values, color, hist, axis_color, cmap, dot_size, x_jitter, alpha, title, xmin, xmax, ymin, ymax, overlay, ax, ylabel, show)\r\n    193 min_dist = np.inf\r\n    194 for i in range(1,len(vals)):\r\n--> 195     d = vals[i] - vals[i-1]\r\n    196     if d > 1e-8 and d < min_dist:\r\n    197         min_dist = d\r\n\r\nTypeError: unsupported operand type(s) for -: 'str' and 'str'\r\n```\r\nThe problem is that `vals` (i.e., the feature array) is of dtype object.\n\n### Minimal Reproducible Example\n\n```python\n# X is a DataFrame with categorical column \"catfeature\"\r\nexplanation = explainer(X)\r\nshap.plots.scatter(explanation[:,catfeature])\n```\n\n\n### Expected Behavior\n\nQuick solution: raise a `NotImplementedError` if the vector is of dtype == object\r\nLong solution: map each feature level to a number, execute the code, show the levels on the x-axis of the plot.\n\n### Bug report checklist\n\n- [X] I have checked that this issue has not already been reported.\n- [X] I have confirmed this bug exists on the [latest release](https://github.com/slundberg/shap/releases) of shap.\n- [X] I have confirmed this bug exists on the [master branch](https://github.com/slundberg/shap/blob/master/CONTRIBUTING.md#installing-from-the-master-branch) of shap.\n- [X] I'd be interested in making a PR to fix this bug\n\n### Installed Versions\n\n0.42.1",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3135/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3135/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

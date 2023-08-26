@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1546",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1546/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1546/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1546/events",
+  "html_url": "https://github.com/shap/shap/pull/1546",
+  "id": 728818761,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NTA5NDUyODc5",
+  "number": 1546,
+  "title": "feature: Added AdaBoostClassifier and its test_sum_match",
+  "user": {
+    "login": "diarmaidfinnerty",
+    "id": 15366181,
+    "node_id": "MDQ6VXNlcjE1MzY2MTgx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/15366181?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/diarmaidfinnerty",
+    "html_url": "https://github.com/diarmaidfinnerty",
+    "followers_url": "https://api.github.com/users/diarmaidfinnerty/followers",
+    "following_url": "https://api.github.com/users/diarmaidfinnerty/following{/other_user}",
+    "gists_url": "https://api.github.com/users/diarmaidfinnerty/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/diarmaidfinnerty/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/diarmaidfinnerty/subscriptions",
+    "organizations_url": "https://api.github.com/users/diarmaidfinnerty/orgs",
+    "repos_url": "https://api.github.com/users/diarmaidfinnerty/repos",
+    "events_url": "https://api.github.com/users/diarmaidfinnerty/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/diarmaidfinnerty/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 10,
+  "created_at": "2020-10-24T16:00:26Z",
+  "updated_at": "2022-08-10T11:13:05Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1546",
+    "html_url": "https://github.com/shap/shap/pull/1546",
+    "diff_url": "https://github.com/shap/shap/pull/1546.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1546.patch",
+    "merged_at": null
+  },
+  "body": "This commit implements the AdaBoostClassifier to the\r\nshap/explainers/_tree.py file. I have also added the corresponding\r\ntest_sum_match function in tests/explainers/test_tree.py\r\n\r\nThis is an extension of a previous pull request #1219 which\r\nwas awaiting the test in test_tree.py.\r\n\r\n**Pull Request #1219**\r\n> I had issues using AdaBoostClassifier with your package, and came across #335 and this [Stack Overflow question and answer](https://stackoverflow.com/questions/60433389/how-to-calculate-shap-values-for-adaboost-model/61108156#61108156). It seemed like the OP never added a pull request, so I figured I'd add it with the updated code that uses safe_isinstance instead.\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1546/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1546/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

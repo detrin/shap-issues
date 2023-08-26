@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/301",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/301/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/301/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/301/events",
+  "html_url": "https://github.com/shap/shap/issues/301",
+  "id": 374640714,
+  "node_id": "MDU6SXNzdWUzNzQ2NDA3MTQ=",
+  "number": 301,
+  "title": "Possible Compatibility Issues in PyTorchDeepExplainer (tested in PyTorch 1.0 Preview)",
+  "user": {
+    "login": "ceshine",
+    "id": 674501,
+    "node_id": "MDQ6VXNlcjY3NDUwMQ==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/674501?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ceshine",
+    "html_url": "https://github.com/ceshine",
+    "followers_url": "https://api.github.com/users/ceshine/followers",
+    "following_url": "https://api.github.com/users/ceshine/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ceshine/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ceshine/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ceshine/subscriptions",
+    "organizations_url": "https://api.github.com/users/ceshine/orgs",
+    "repos_url": "https://api.github.com/users/ceshine/repos",
+    "events_url": "https://api.github.com/users/ceshine/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ceshine/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 6,
+  "created_at": "2018-10-27T12:34:47Z",
+  "updated_at": "2018-11-09T18:32:57Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi, \r\n\r\nI wasn't able to run PyTorchDeepExplainer in my environment, so I followed the error messages and made some changes to it. [Here are the changes](https://github.com/ceshine/shap/commit/d7ad868c9e64ef4ddfb4d746482b4bbc287f2625). (The model I trained has a single regression output.)\r\n\r\nIt's very likely that I did not fix the problem correctly, hence no PR, just an issue here as FYI. \r\n\r\n[Example (Kaggle Kernel)](https://www.kaggle.com/ceshine/feature-importance-from-a-pytorch-model/notebook)\r\n\r\nThe error messages were (paraphrasing):\r\n\r\n- PyTorchDeepExplainer does not have the property `num_outputs`.\r\n- Cannot multiply a PyTorch tensor by a numpy array.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/301/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/301/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

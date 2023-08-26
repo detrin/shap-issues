@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1819",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1819/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1819/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1819/events",
+  "html_url": "https://github.com/shap/shap/pull/1819",
+  "id": 808118071,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NTczMjA5MDYw",
+  "number": 1819,
+  "title": "Add display_data ability to numeric vars",
+  "user": {
+    "login": "zacharyvealey",
+    "id": 45714941,
+    "node_id": "MDQ6VXNlcjQ1NzE0OTQx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/45714941?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/zacharyvealey",
+    "html_url": "https://github.com/zacharyvealey",
+    "followers_url": "https://api.github.com/users/zacharyvealey/followers",
+    "following_url": "https://api.github.com/users/zacharyvealey/following{/other_user}",
+    "gists_url": "https://api.github.com/users/zacharyvealey/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/zacharyvealey/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/zacharyvealey/subscriptions",
+    "organizations_url": "https://api.github.com/users/zacharyvealey/orgs",
+    "repos_url": "https://api.github.com/users/zacharyvealey/repos",
+    "events_url": "https://api.github.com/users/zacharyvealey/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/zacharyvealey/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2021-02-15T02:28:48Z",
+  "updated_at": "2022-06-07T14:25:59Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/1819",
+    "html_url": "https://github.com/shap/shap/pull/1819",
+    "diff_url": "https://github.com/shap/shap/pull/1819.diff",
+    "patch_url": "https://github.com/shap/shap/pull/1819.patch",
+    "merged_at": null
+  },
+  "body": "Hi @slundberg,\r\n\r\nThanks so much for maintaining such an amazing package!!\r\n\r\nThis PR adds display_data functionality for numeric features in scatter plots for variables that have been scaled or transformed. In the current implementation, adding untransformed values to shap_values.display_data produced:\r\n\r\n![image](https://user-images.githubusercontent.com/45714941/107898750-8e23d080-6f0a-11eb-82e9-3b0f27987db8.png)\r\n![image](https://user-images.githubusercontent.com/45714941/107898888-e1961e80-6f0a-11eb-950b-b6c086a9cb7f.png)\r\n\r\n￼\r\nThe code in this PR uses the display_data, if available, for the bottom axis, and adds a top axis with the values used in the input:\r\n￼\r\n![image](https://user-images.githubusercontent.com/45714941/107898901-e955c300-6f0a-11eb-827e-440accec295f.png)\r\n\r\nOther small fixes include adding cmap inputs into the in-function dependence_legacy calls, as well as specifying the fontdict key directly in set_xticklabels which removes a matplotlib warning.\r\n\r\nI look forward to hearing any thoughts/suggestion!",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1819/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1819/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/395",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/395/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/395/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/395/events",
+  "html_url": "https://github.com/shap/shap/issues/395",
+  "id": 400440178,
+  "node_id": "MDU6SXNzdWU0MDA0NDAxNzg=",
+  "number": 395,
+  "title": "Interpretation the Feature Effect plot",
+  "user": {
+    "login": "YXSIO",
+    "id": 6912870,
+    "node_id": "MDQ6VXNlcjY5MTI4NzA=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6912870?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/YXSIO",
+    "html_url": "https://github.com/YXSIO",
+    "followers_url": "https://api.github.com/users/YXSIO/followers",
+    "following_url": "https://api.github.com/users/YXSIO/following{/other_user}",
+    "gists_url": "https://api.github.com/users/YXSIO/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/YXSIO/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/YXSIO/subscriptions",
+    "organizations_url": "https://api.github.com/users/YXSIO/orgs",
+    "repos_url": "https://api.github.com/users/YXSIO/repos",
+    "events_url": "https://api.github.com/users/YXSIO/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/YXSIO/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 11,
+  "created_at": "2019-01-17T20:00:17Z",
+  "updated_at": "2020-04-09T18:04:59Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "In the horizontal axis, if we look at the range below 45, there is some overlapping between the blue and red for this single feature. I am wondering what does it indicate? Does it means that the feature value in this range will have both positive and negative impact to the output?\r\n \r\nAlso, when x-axis = 30 for example, what is the corresponding value of the y-axis? Is the corresponding y-axis a single value or a range covered by the upper and lower boundary?\r\n\r\n![44](https://user-images.githubusercontent.com/6912870/51345244-51e1c580-1a4f-11e9-9fc3-24540b52e7f6.png)\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/395/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/395/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

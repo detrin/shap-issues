@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2960",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2960/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2960/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2960/events",
+  "html_url": "https://github.com/shap/shap/issues/2960",
+  "id": 1739999982,
+  "node_id": "I_kwDOBHDcK85ntkru",
+  "number": 2960,
+  "title": "Random floating-point errors in GitHub Actions",
+  "user": {
+    "login": "dsgibbons",
+    "id": 82195909,
+    "node_id": "MDQ6VXNlcjgyMTk1OTA5",
+    "avatar_url": "https://avatars.githubusercontent.com/u/82195909?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dsgibbons",
+    "html_url": "https://github.com/dsgibbons",
+    "followers_url": "https://api.github.com/users/dsgibbons/followers",
+    "following_url": "https://api.github.com/users/dsgibbons/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dsgibbons/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dsgibbons/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dsgibbons/subscriptions",
+    "organizations_url": "https://api.github.com/users/dsgibbons/orgs",
+    "repos_url": "https://api.github.com/users/dsgibbons/repos",
+    "events_url": "https://api.github.com/users/dsgibbons/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dsgibbons/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    },
+    {
+      "id": 5577305596,
+      "node_id": "LA_kwDOBHDcK88AAAABTG7t_A",
+      "url": "https://api.github.com/repos/shap/shap/labels/ci",
+      "name": "ci",
+      "color": "006b75",
+      "default": false,
+      "description": "Relating to Continuous Integration / GitHub Actions"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 8,
+  "created_at": "2023-06-03T23:52:13Z",
+  "updated_at": "2023-07-08T19:30:58Z",
+  "closed_at": null,
+  "author_association": "COLLABORATOR",
+  "active_lock_reason": null,
+  "body": "Copied from https://github.com/dsgibbons/shap/issues/98\r\n\r\nWe have seen GitHub Actions randomly fail occasionally due to floating-point precision issues. See, for example:\r\n\r\n- https://github.com/dsgibbons/shap/actions/runs/5085485586/attempts/1 (EDIT: py3.8, `tests/explainers/test_deep.py::test_pytorch_mnist_cnn`)\r\n- https://github.com/dsgibbons/shap/actions/runs/5135384415/attempts/1 (EDIT: py3.11, `tests/explainers/test_deep.py::test_pytorch_single_output`)\r\n\r\nIn both cases, the tests passed after being re-run with no source code changes. We should consider either increasing some of the floating-point tolerances, or investigate why we are seeing such large random deviations in `test_deep.py`.\r\n\r\n## List of flaky tests\r\n\r\nHere's a list of all the flaky tests we know of so far (feel free to edit). \r\n\r\n- [ ] `test_tf_keras_linear` with seed `256`\r\n- [ ] `test_single_tree_compare_with_kernel_shap` with seed `434`\r\n- [ ] `test_single_tree_nonlinear_transformations` with seed `116`\r\n- [ ] `test_xgboost_classifier_independent_margin` with seed `364`\r\n- [ ] `test_gradient.py::test_pytorch_mnist_cnn` with seed `24`\r\n- [ ] `test_deep.py::test_pytorch_mnist_cnn` with seed `212`\r\n- [ ] `test_pytorch_single_output`\r\n- [ ] `test_xgboost_direct` with seed `28`\r\n- [ ] `test_several_trees` with seed `411`\r\n- [ ] `test_shape_values_linear_many_features` with seed `94` (**this test seems particular egregious, it's failing 59 out of the first 100 seeds**)",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2960/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2960/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

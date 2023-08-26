@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1406",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1406/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1406/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1406/events",
+  "html_url": "https://github.com/shap/shap/issues/1406",
+  "id": 691511409,
+  "node_id": "MDU6SXNzdWU2OTE1MTE0MDk=",
+  "number": 1406,
+  "title": "Gradient Explainer; LookupError: gradient registry has no entry for: shap_StridedSlice",
+  "user": {
+    "login": "skomatin",
+    "id": 33140018,
+    "node_id": "MDQ6VXNlcjMzMTQwMDE4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/33140018?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/skomatin",
+    "html_url": "https://github.com/skomatin",
+    "followers_url": "https://api.github.com/users/skomatin/followers",
+    "following_url": "https://api.github.com/users/skomatin/following{/other_user}",
+    "gists_url": "https://api.github.com/users/skomatin/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/skomatin/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/skomatin/subscriptions",
+    "organizations_url": "https://api.github.com/users/skomatin/orgs",
+    "repos_url": "https://api.github.com/users/skomatin/repos",
+    "events_url": "https://api.github.com/users/skomatin/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/skomatin/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    },
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 17,
+  "created_at": "2020-09-02T23:48:15Z",
+  "updated_at": "2023-06-06T05:14:29Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I am running the following code:\r\n\r\n```\r\nimport shap \r\n\r\nexplainer = shap.GradientExplainer(model, x_train)\r\nshap_values = explainer.shap_values(x_test[:10])\r\n```\r\n\r\nI run into the following error:\r\n```\r\nLookupError: gradient registry has no entry for: shap_StridedSlice\r\n```\r\nHere is a summary of my model:\r\n```\r\nModel: \"sequential_6\"\r\n_________________________________________________________________\r\nLayer (type)                 Output Shape              Param #   \r\n=================================================================\r\nsimple_rnn_6 (SimpleRNN)     (None, 10, 1)             12        \r\n_________________________________________________________________\r\ndense_6 (Dense)              (None, 10, 1)             2         \r\n_________________________________________________________________\r\nflatten (Flatten)            (None, 10)                0         \r\n=================================================================\r\nTotal params: 14\r\nTrainable params: 14\r\nNon-trainable params: 0\r\n_________________________________________________________________\r\n```\r\nMy SHAP and TensorFlow versions are\r\n\r\n* **shap**: 0.35.0\r\n* **tensorflow**: 2.3.0\r\n\r\n[Error log](https://gist.github.com/skomatin/82a41f273277807fcbeecfe1632ac23c)",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1406/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1406/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

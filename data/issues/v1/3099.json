@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3099",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3099/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3099/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3099/events",
+  "html_url": "https://github.com/shap/shap/issues/3099",
+  "id": 1808548440,
+  "node_id": "I_kwDOBHDcK85rzEJY",
+  "number": 3099,
+  "title": "BUG:  multi-dimensional features. ambiguous Boolean definition of array ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()",
+  "user": {
+    "login": "mustafaghaliUnity",
+    "id": 72842150,
+    "node_id": "MDQ6VXNlcjcyODQyMTUw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/72842150?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mustafaghaliUnity",
+    "html_url": "https://github.com/mustafaghaliUnity",
+    "followers_url": "https://api.github.com/users/mustafaghaliUnity/followers",
+    "following_url": "https://api.github.com/users/mustafaghaliUnity/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mustafaghaliUnity/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mustafaghaliUnity/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mustafaghaliUnity/subscriptions",
+    "organizations_url": "https://api.github.com/users/mustafaghaliUnity/orgs",
+    "repos_url": "https://api.github.com/users/mustafaghaliUnity/repos",
+    "events_url": "https://api.github.com/users/mustafaghaliUnity/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mustafaghaliUnity/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2023-07-17T20:17:51Z",
+  "updated_at": "2023-08-17T13:07:13Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "### Issue Description\r\n\r\nI have dataset with embeddings/vector features, when I run the kernal explainer shap values methods with these features I run into the issue of `ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()` the stack trace of the issue as shown below\r\n\r\n```python\r\n---------------------------------------------------------------------------\r\nValueError                                Traceback (most recent call last)\r\nCell In[4], line 5\r\n      3 data = pd.DataFrame({\"feature\": [1.0, 2.0], \"embedding_feature\": [np.array([3.0, 4.0]), np.array([5.0, 6.0])]})\r\n      4 explainer = shap.KernelExplainer(kernel_fn, data)\r\n----> 5 shap_values = explainer.shap_values(data, nsamples=2)\r\n\r\nFile ~/anaconda3/envs/myenv/lib/python3.11/site-packages/shap/explainers/_kernel.py:190, in Kernel.shap_values(self, X, **kwargs)\r\n    188 if self.keep_index:\r\n    189     data = convert_to_instance_with_index(data, column_name, index_value[i:i + 1], index_name)\r\n--> 190 explanations.append(self.explain(data, **kwargs))\r\n    191 if kwargs.get(\"gc_collect\", False):\r\n    192     gc.collect()\r\n\r\nFile ~/anaconda3/envs/myenv/lib/python3.11/site-packages/shap/explainers/_kernel.py:217, in Kernel.explain(self, incoming_instance, **kwargs)\r\n    213 match_instance_to_data(instance, self.data)\r\n    215 # find the feature groups we will test. If a feature does not change from its\r\n    216 # current value then we know it doesn't impact the model\r\n--> 217 self.varyingInds = self.varying_groups(instance.x)\r\n    218 if self.data.groups is None:\r\n    219     self.varyingFeatureGroups = np.array([i for i in self.varyingInds])\r\n\r\nFile ~/anaconda3/envs/myenv/lib/python3.11/site-packages/shap/explainers/_kernel.py:417, in Kernel.varying_groups(self, x)\r\n    415             continue\r\n    416         x_group = x_group.todense()\r\n--> 417     num_mismatches = np.sum(np.frompyfunc(self.not_equal, 2, 1)(x_group, self.data.data[:, inds]))\r\n    418     varying[i] = num_mismatches > 0\r\n    419 varying_indices = np.nonzero(varying)[0]\r\n\r\nFile ~/anaconda3/envs/myenv/lib/python3.11/site-packages/shap/explainers/_kernel.py:404, in Kernel.not_equal(i, j)\r\n    402     return 0 if np.isclose(i, j, equal_nan=True) else 1\r\n    403 else:\r\n--> 404     return 0 if i == j else 1\r\n\r\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\r\n```\r\n\r\n### Minimal Reproducible Example\r\n\r\n```python\r\nimport shap\r\nimport pandas as pd\r\nimport numpy as np\r\n\r\ndef kernel_fn(inp):\r\n    return np.array([1.0])\r\ndata = pd.DataFrame({\"feature\": [1.0, 2.0], \"embedding_feature\": [np.array([3.0, 4.0]), np.array([5.0, 6.0])]})\r\nexplainer = shap.KernelExplainer(kernel_fn, data)\r\nshap_values = explainer.shap_values(data, nsamples=2)\r\n```\r\n\r\n\r\n### Expected Behavior\r\n\r\nReplacing the line  `return 0 if i == j else 1` [here](https://github.com/slundberg/shap/blob/b9f29ccff43dc704428608645065ad740d84d653/shap/explainers/_kernel.py#L458) \r\nwith `np.all(return 0 if i == j else 1)`  seems to solve the problem.\r\nWould be grateful for any feedback on this.\r\n\r\n### Bug report checklist\r\n\r\n- [X] I have checked that this issue has not already been reported.\r\n- [X] I have confirmed this bug exists on the [latest release](https://github.com/slundberg/shap/releases) of shap.\r\n- [X] I have confirmed this bug exists on the [master branch](https://github.com/slundberg/shap/blob/master/CONTRIBUTING.md#installing-from-the-master-branch) of shap.\r\n- [X] I'd be interested in making a PR to fix this bug\r\n\r\n### Installed Versions\r\n\r\n`0.42.1`",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3099/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3099/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

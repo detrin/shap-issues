@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/3101",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/3101/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/3101/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/3101/events",
+  "html_url": "https://github.com/shap/shap/issues/3101",
+  "id": 1809932262,
+  "node_id": "I_kwDOBHDcK85r4V_m",
+  "number": 3101,
+  "title": "Incorrect force plot representation",
+  "user": {
+    "login": "Seeth92",
+    "id": 122962721,
+    "node_id": "U_kgDOB1RDIQ",
+    "avatar_url": "https://avatars.githubusercontent.com/u/122962721?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Seeth92",
+    "html_url": "https://github.com/Seeth92",
+    "followers_url": "https://api.github.com/users/Seeth92/followers",
+    "following_url": "https://api.github.com/users/Seeth92/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Seeth92/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Seeth92/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Seeth92/subscriptions",
+    "organizations_url": "https://api.github.com/users/Seeth92/orgs",
+    "repos_url": "https://api.github.com/users/Seeth92/repos",
+    "events_url": "https://api.github.com/users/Seeth92/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Seeth92/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    },
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2023-07-18T13:24:02Z",
+  "updated_at": "2023-07-18T14:09:59Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "### Issue Description\n\nHi, I am working on a binary classification problem and have used SHAP library to interpret the feature importance. Using the force plot, I am able to get the features (positive and negative) driving towards a particular prediction. However, the length of the bars in the force plot seem to give an incorrect representation of the corresponding probability. For instance, if the probability is 0.01, then the bars of negative features (blue) should be longer, pushing the prediction to a probability of 0.01, whereas the bars of positive features (red) should be negligible. This does not seem to be the case in my plot. \r\n\r\nModel: LGBM Classifier (Default)\r\nTraining data dimensions: (78005, 42)\r\nTest data dimensions: (25010, 42)\r\n  \n\n### Minimal Reproducible Example\n\n```python\nimport shap\r\nexp1 = shap.TreeExplainer(model)\r\nshap_val = exp1.shap_values(X_test_burst)\r\nshap.initjs()\r\nshap.plots.force(exp1.expected_value[1], shap_val[1][20], X_test_burst.iloc[20,:], link='logit')\n```\n\n\n### Expected Behavior\n\n\r\n![image](https://github.com/shap/shap/assets/122962721/4bd8ac07-e2dd-4c51-98ac-5bb0e5c0f2d4)\r\n\r\nDue to confidential reasons, feature names have been hidden\n\n### Bug report checklist\n\n- [X] I have checked that this issue has not already been reported.\n- [X] I have confirmed this bug exists on the [latest release](https://github.com/slundberg/shap/releases) of shap.\n- [ ] I have confirmed this bug exists on the [master branch](https://github.com/slundberg/shap/blob/master/CONTRIBUTING.md#installing-from-the-master-branch) of shap.\n- [ ] I'd be interested in making a PR to fix this bug\n\n### Installed Versions\n\n0.42.1",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/3101/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/3101/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

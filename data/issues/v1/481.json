@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/481",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/481/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/481/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/481/events",
+  "html_url": "https://github.com/shap/shap/issues/481",
+  "id": 418264861,
+  "node_id": "MDU6SXNzdWU0MTgyNjQ4NjE=",
+  "number": 481,
+  "title": "Problem in LIGHTGBM  and CatBoost using TreeExplainer with model_output = \"probibility\"",
+  "user": {
+    "login": "SaadAhmed96",
+    "id": 30757857,
+    "node_id": "MDQ6VXNlcjMwNzU3ODU3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/30757857?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/SaadAhmed96",
+    "html_url": "https://github.com/SaadAhmed96",
+    "followers_url": "https://api.github.com/users/SaadAhmed96/followers",
+    "following_url": "https://api.github.com/users/SaadAhmed96/following{/other_user}",
+    "gists_url": "https://api.github.com/users/SaadAhmed96/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/SaadAhmed96/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/SaadAhmed96/subscriptions",
+    "organizations_url": "https://api.github.com/users/SaadAhmed96/orgs",
+    "repos_url": "https://api.github.com/users/SaadAhmed96/repos",
+    "events_url": "https://api.github.com/users/SaadAhmed96/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/SaadAhmed96/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 6,
+  "created_at": "2019-03-07T11:36:28Z",
+  "updated_at": "2023-07-10T16:54:20Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I have created the following LighGBM model but I cant get it to work with the TreeExplainer when I use model_output = \"probability\".  \r\n\r\n![image](https://user-images.githubusercontent.com/30757857/53954024-c56e8d80-40f6-11e9-8411-d63862c70a18.png)\r\n\r\nException                                 Traceback (most recent call last)\r\n<ipython-input-47-3c9f8bfb46b0> in <module>()\r\n      1 \r\n----> 2 explainer_3 = shap.TreeExplainer(model_3, model_output = \"probability\", data = X_train,  feature_dependence = \"independent\")\r\n      3 shap_values_3 = explainer_3.shap_values(X)\r\n\r\nD:\\Anaconda\\lib\\site-packages\\shap\\explainers\\tree.py in __init__(self, model, data, model_output, feature_dependence)\r\n    109                 raise Exception(msg)\r\n    110             elif self.model.objective is None:\r\n--> 111                 raise Exception(\"Model does have a known objective! When model_output is not \\\"margin\\\" then we need to know the model's objective\")\r\n    112 \r\n    113         # A bug in XGBoost fixed in v0.81 makes XGBClassifier fail to give margin outputs\r\n\r\nException: Model does have a known objective! When model_output is not \"margin\" then we need to know the model's objective\r\n\r\n\r\nSame happens when I try to do it with CatBoost despite the fact I have specified objective = \"MultiClass\" there as well. Any particlular reason why is this happening or how can I  get it to work on my system.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/481/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/481/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

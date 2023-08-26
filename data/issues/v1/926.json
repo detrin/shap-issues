@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/926",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/926/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/926/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/926/events",
+  "html_url": "https://github.com/shap/shap/issues/926",
+  "id": 532464457,
+  "node_id": "MDU6SXNzdWU1MzI0NjQ0NTc=",
+  "number": 926,
+  "title": "Explaining LSTM predictions for model using Dropout as a Bayesian Approximation",
+  "user": {
+    "login": "ahmadaneeque",
+    "id": 12843680,
+    "node_id": "MDQ6VXNlcjEyODQzNjgw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/12843680?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ahmadaneeque",
+    "html_url": "https://github.com/ahmadaneeque",
+    "followers_url": "https://api.github.com/users/ahmadaneeque/followers",
+    "following_url": "https://api.github.com/users/ahmadaneeque/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ahmadaneeque/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ahmadaneeque/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ahmadaneeque/subscriptions",
+    "organizations_url": "https://api.github.com/users/ahmadaneeque/orgs",
+    "repos_url": "https://api.github.com/users/ahmadaneeque/repos",
+    "events_url": "https://api.github.com/users/ahmadaneeque/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ahmadaneeque/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2019-12-04T05:46:14Z",
+  "updated_at": "2019-12-27T19:55:14Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "what i am trying to do is implement this  https://arxiv.org/pdf/1506.02142.pdf model and also want (shap.DeepExplainer) SHAP explanation i am getting\r\n\r\nAssertionError                            Traceback (most recent call last)\r\n<ipython-input-32-7b7b3034f5be> in <module>\r\n----> 1 shap_values = e.shap_values(np.array([X_test[-1]]))\r\n\r\n~/anaconda3/envs/hosh_env/lib/python3.7/site-packages/shap/explainers/deep/__init__.py in shap_values(self, X, ranked_outputs, output_rank_order)\r\n    117         were chosen as \"top\".\r\n    118         \"\"\"\r\n--> 119         return self.explainer.shap_values(X, ranked_outputs, output_rank_order)\r\n\r\n~/anaconda3/envs/hosh_env/lib/python3.7/site-packages/shap/explainers/deep/deep_tf.py in shap_values(self, X, ranked_outputs, output_rank_order, check_additivity)\r\n    283             for l in range(len(X)):\r\n    284                 diffs = model_output[:, l] - self.expected_value[l] - output_phis[l].sum(axis=tuple(range(1, output_phis[l].ndim)))\r\n--> 285                 assert np.abs(diffs).max() < 1e-4, \"Explanations do not sum up to the model's output! Please post as a github issue.\"\r\n    286         if not self.multi_output:\r\n    287             return output_phis[0]\r\n\r\nAssertionError: Explanations do not sum up to the model's output! Please post as a github issue.\r\n\r\nmy code is works without dropout layer ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/926/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/926/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

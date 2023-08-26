@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2915",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2915/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2915/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2915/events",
+  "html_url": "https://github.com/shap/shap/pull/2915",
+  "id": 1699590716,
+  "node_id": "PR_kwDOBHDcK85P9wnD",
+  "number": 2915,
+  "title": "Fix GradientExplainer when tabular data is passed, instead of image",
+  "user": {
+    "login": "renero",
+    "id": 2209821,
+    "node_id": "MDQ6VXNlcjIyMDk4MjE=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2209821?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/renero",
+    "html_url": "https://github.com/renero",
+    "followers_url": "https://api.github.com/users/renero/followers",
+    "following_url": "https://api.github.com/users/renero/following{/other_user}",
+    "gists_url": "https://api.github.com/users/renero/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/renero/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/renero/subscriptions",
+    "organizations_url": "https://api.github.com/users/renero/orgs",
+    "repos_url": "https://api.github.com/users/renero/repos",
+    "events_url": "https://api.github.com/users/renero/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/renero/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2023-05-08T06:06:03Z",
+  "updated_at": "2023-05-08T06:06:03Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2915",
+    "html_url": "https://github.com/shap/shap/pull/2915",
+    "diff_url": "https://github.com/shap/shap/pull/2915.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2915.patch",
+    "merged_at": null
+  },
+  "body": "When tabular data is used, instead of images, the attribute `self.features` raise an exception because the shape of the first element (`data[0]`) is not a tuple, but a single element, with the number of feature in it.\r\n\r\nAn additional check is introduced to allow for tabular data, with 2D tensors.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2915/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2915/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

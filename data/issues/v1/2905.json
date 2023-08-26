@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2905",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2905/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2905/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2905/events",
+  "html_url": "https://github.com/shap/shap/issues/2905",
+  "id": 1681647041,
+  "node_id": "I_kwDOBHDcK85kO-XB",
+  "number": 2905,
+  "title": "Using Shap in case of data when all features are not applicable",
+  "user": {
+    "login": "datascienceenthu1",
+    "id": 16183661,
+    "node_id": "MDQ6VXNlcjE2MTgzNjYx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/16183661?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/datascienceenthu1",
+    "html_url": "https://github.com/datascienceenthu1",
+    "followers_url": "https://api.github.com/users/datascienceenthu1/followers",
+    "following_url": "https://api.github.com/users/datascienceenthu1/following{/other_user}",
+    "gists_url": "https://api.github.com/users/datascienceenthu1/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/datascienceenthu1/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/datascienceenthu1/subscriptions",
+    "organizations_url": "https://api.github.com/users/datascienceenthu1/orgs",
+    "repos_url": "https://api.github.com/users/datascienceenthu1/repos",
+    "events_url": "https://api.github.com/users/datascienceenthu1/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/datascienceenthu1/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901334,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzQ=",
+      "url": "https://api.github.com/repos/shap/shap/labels/question",
+      "name": "question",
+      "color": "cc317c",
+      "default": true,
+      "description": null
+    }
+  ],
+  "state": "closed",
+  "locked": true,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 0,
+  "created_at": "2023-04-24T16:29:46Z",
+  "updated_at": "2023-07-20T22:30:01Z",
+  "closed_at": "2023-07-20T22:30:01Z",
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Suppose we train a single binary classification model on 3 cohorts C1, C2, C3. Suppose feature F1 is available only in C1, is super predictive but is not available or populated at all in C2 and C3. (In the model for F1- let's say we give a default value  for Cohorts C2 and C3 )\r\nWhen we calculate Shap value of features for a record from Cohort C2, we get a Shap value for F1.  \r\n1.\tIs there a way to prevent feature F1 from being considered at all for data from C2/C3 ? \r\n2.\tIf not how do we rationalize this ? The Shap value for a record belonging to C2 would be arrived at by testing multiple possible values for F1, which in reality would not be taken at all in C2 and C3.\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2905/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2905/timeline",
+  "performed_via_github_app": null,
+  "state_reason": "completed"
+}

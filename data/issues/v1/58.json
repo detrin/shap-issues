@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/58",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/58/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/58/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/58/events",
+  "html_url": "https://github.com/shap/shap/issues/58",
+  "id": 315158722,
+  "node_id": "MDU6SXNzdWUzMTUxNTg3MjI=",
+  "number": 58,
+  "title": "Support summary_plot for categorical features",
+  "user": {
+    "login": "annaveronika",
+    "id": 6569559,
+    "node_id": "MDQ6VXNlcjY1Njk1NTk=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6569559?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/annaveronika",
+    "html_url": "https://github.com/annaveronika",
+    "followers_url": "https://api.github.com/users/annaveronika/followers",
+    "following_url": "https://api.github.com/users/annaveronika/following{/other_user}",
+    "gists_url": "https://api.github.com/users/annaveronika/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/annaveronika/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/annaveronika/subscriptions",
+    "organizations_url": "https://api.github.com/users/annaveronika/orgs",
+    "repos_url": "https://api.github.com/users/annaveronika/repos",
+    "events_url": "https://api.github.com/users/annaveronika/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/annaveronika/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    },
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 34,
+  "created_at": "2018-04-17T17:29:20Z",
+  "updated_at": "2022-02-24T10:54:21Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "We have implemented shap_values in catboost (http://catboost.yandex or https://github.com/catboost/catboost), it works really cool, thank you very much!\r\nIt'll be on pypi in tomorrow's release.\r\n\r\nOne problem with visualization is that you cannot visualize summary_plot if some features are categorical.\r\nI suggest in this case to draw all the dots in gray color for example. It will still make a lot of sense, because you see the effect of categorical feature value on the objects in the train dataset.\r\n\r\nHere is a code example that fails:\r\n```\r\nX_adult,y_adult = shap.datasets.adult(display=True)\r\ncat_features = [1, #Work\r\n                    3,#Marital status\r\n                    4,#Occupation\r\n                    5,#Relationship\r\n                    6,#Race\r\n                    7,#Sex\r\n                    11 #Country\r\n]\r\nfrom catboost import *\r\nmodel = CatBoostClassifier(\r\n    iterations=300, learning_rate=0.1, random_seed=123,\r\n    max_ctr_complexity=1, # Currently we don't calculate shap values for models with categorical feature combinations.\r\n                          # This will be changed in one of the next releases.\r\n)\r\nmodel.fit(X_adult, y_adult, cat_features=cat_features, verbose=False)\r\nshap_values = model.get_feature_importance(data=Pool(X_adult, y_adult, cat_features=cat_features), fstr_type='ShapValues')\r\nshap.summary_plot(shap_values, X_adult)\r\n```\r\n\r\nWe have also added a tutorial to our github, it uses a summary_plot for cat features, and it's informative (are you ok with us taking the first part from Shap values?): https://github.com/catboost/catboost/blob/master/catboost/tutorials/advanced_tutorials/shap_values_tutorial.ipynb",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/58/reactions",
+    "total_count": 4,
+    "+1": 4,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/58/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

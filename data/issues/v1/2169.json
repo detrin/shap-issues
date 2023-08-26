@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2169",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2169/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2169/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2169/events",
+  "html_url": "https://github.com/shap/shap/pull/2169",
+  "id": 993332528,
+  "node_id": "MDExOlB1bGxSZXF1ZXN0NzMxNTM2MDgz",
+  "number": 2169,
+  "title": "[BUGFIX] ignore_inds should not be tuple",
+  "user": {
+    "login": "peterdhansen",
+    "id": 19173854,
+    "node_id": "MDQ6VXNlcjE5MTczODU0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19173854?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/peterdhansen",
+    "html_url": "https://github.com/peterdhansen",
+    "followers_url": "https://api.github.com/users/peterdhansen/followers",
+    "following_url": "https://api.github.com/users/peterdhansen/following{/other_user}",
+    "gists_url": "https://api.github.com/users/peterdhansen/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/peterdhansen/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/peterdhansen/subscriptions",
+    "organizations_url": "https://api.github.com/users/peterdhansen/orgs",
+    "repos_url": "https://api.github.com/users/peterdhansen/repos",
+    "events_url": "https://api.github.com/users/peterdhansen/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/peterdhansen/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2021-09-10T15:15:38Z",
+  "updated_at": "2022-06-16T16:37:31Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2169",
+    "html_url": "https://github.com/shap/shap/pull/2169",
+    "diff_url": "https://github.com/shap/shap/pull/2169.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2169.patch",
+    "merged_at": null
+  },
+  "body": "ignore_inds doesn't work unless there is only one index to ignore\r\n\r\nnp.where returns a tuple the same length as the number of dimensions of the array.\r\nsince the array has 1 dimension, we need to take the first index\r\n\r\n## Example Error\r\n```\r\nipdb> i in ignore_inds\r\n*** ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\r\nipdb> ignore_inds\r\n(array([ 1,  5,  7, 12, 20, 27, 30, 33, 34, 36, 40, 41, 42, 43, 44, 45, 47,\r\n       48, 49], dtype=int64),)\r\n```",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2169/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2169/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2743",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2743/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2743/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2743/events",
+  "html_url": "https://github.com/shap/shap/issues/2743",
+  "id": 1424685860,
+  "node_id": "I_kwDOBHDcK85U6vsk",
+  "number": 2743,
+  "title": "Figures in Documentation are broken links",
+  "user": {
+    "login": "cogerk",
+    "id": 9560816,
+    "node_id": "MDQ6VXNlcjk1NjA4MTY=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/9560816?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/cogerk",
+    "html_url": "https://github.com/cogerk",
+    "followers_url": "https://api.github.com/users/cogerk/followers",
+    "following_url": "https://api.github.com/users/cogerk/following{/other_user}",
+    "gists_url": "https://api.github.com/users/cogerk/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/cogerk/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/cogerk/subscriptions",
+    "organizations_url": "https://api.github.com/users/cogerk/orgs",
+    "repos_url": "https://api.github.com/users/cogerk/repos",
+    "events_url": "https://api.github.com/users/cogerk/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/cogerk/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    },
+    {
+      "id": 5747603641,
+      "node_id": "LA_kwDOBHDcK88AAAABVpV4uQ",
+      "url": "https://api.github.com/repos/shap/shap/labels/good%20first%20issue",
+      "name": "good first issue",
+      "color": "33DC11",
+      "default": true,
+      "description": "This is a fix that might be easier for someone to do as a first contribution"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2022-10-26T20:57:58Z",
+  "updated_at": "2023-07-30T02:38:59Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Your docs and articles are well written and very helpful, thank you! I was reading the following but was having a hard time following it 100% because the figures appear to be broken?  Thanks for your amazing work on this package!\r\n\r\nhttps://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%C2%A0insights.html",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2743/reactions",
+    "total_count": 2,
+    "+1": 2,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2743/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

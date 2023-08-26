@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/480",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/480/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/480/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/480/events",
+  "html_url": "https://github.com/shap/shap/issues/480",
+  "id": 418219250,
+  "node_id": "MDU6SXNzdWU0MTgyMTkyNTA=",
+  "number": 480,
+  "title": "TreeEnsemble instance has no attribute 'values' in LightGBM",
+  "user": {
+    "login": "prabod",
+    "id": 6927348,
+    "node_id": "MDQ6VXNlcjY5MjczNDg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6927348?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/prabod",
+    "html_url": "https://github.com/prabod",
+    "followers_url": "https://api.github.com/users/prabod/followers",
+    "following_url": "https://api.github.com/users/prabod/following{/other_user}",
+    "gists_url": "https://api.github.com/users/prabod/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/prabod/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/prabod/subscriptions",
+    "organizations_url": "https://api.github.com/users/prabod/orgs",
+    "repos_url": "https://api.github.com/users/prabod/repos",
+    "events_url": "https://api.github.com/users/prabod/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/prabod/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    },
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 33,
+  "created_at": "2019-03-07T09:53:54Z",
+  "updated_at": "2023-07-08T13:52:09Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I got following error while running shap_interaction_values. but shap_values is running fine.\r\nI tried with both lgb 2.2.2 and 2.2.3 with shap 0.28.5 it returns the same error.\r\n\r\n----> 1 shap_interaction_values = explainer.shap_interaction_values(train_features)\r\n\r\n/home/prabod/anaconda2/lib/python2.7/site-packages/shap/explainers/tree.pyc in shap_interaction_values(self, X, y, tree_limit)\r\n    334 \r\n    335         if tree_limit < 0 or tree_limit > self.model.values.shape[0]:\r\n--> 336             tree_limit = self.model.values.shape[0]\r\n    337 \r\n    338         # run the core algorithm using the C extension\r\n\r\nAttributeError: TreeEnsemble instance has no attribute 'values'",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/480/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/480/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/548",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/548/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/548/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/548/events",
+  "html_url": "https://github.com/shap/shap/issues/548",
+  "id": 432141390,
+  "node_id": "MDU6SXNzdWU0MzIxNDEzOTA=",
+  "number": 548,
+  "title": "SHAP DeepExplainer has no attribute 'get_session' with TF 2.0",
+  "user": {
+    "login": "olivierblais1",
+    "id": 49530217,
+    "node_id": "MDQ6VXNlcjQ5NTMwMjE3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/49530217?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/olivierblais1",
+    "html_url": "https://github.com/olivierblais1",
+    "followers_url": "https://api.github.com/users/olivierblais1/followers",
+    "following_url": "https://api.github.com/users/olivierblais1/following{/other_user}",
+    "gists_url": "https://api.github.com/users/olivierblais1/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/olivierblais1/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/olivierblais1/subscriptions",
+    "organizations_url": "https://api.github.com/users/olivierblais1/orgs",
+    "repos_url": "https://api.github.com/users/olivierblais1/repos",
+    "events_url": "https://api.github.com/users/olivierblais1/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/olivierblais1/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 17,
+  "created_at": "2019-04-11T17:17:45Z",
+  "updated_at": "2020-08-24T15:26:38Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "I just deployed a tf.keras model using tensorflow 2.0 and I would like to use DeepExplainer but it creates an error message considering that \r\n\r\n```\r\nimport shap\r\nexplainer = shap.DeepExplainer(model_pred, df[1][2])\r\n```\r\n\r\nWhen I run DeepExplainer (shap==0.28.5) with my tensorflow 2.0 model (which does not have a session anymore) I get this error message:\r\n> \r\n> ---------------------------------------------------------------------------\r\n> AttributeError                            Traceback (most recent call last)\r\n> <ipython-input-153-96880de52504> in <module>\r\n>       3 # select a set of background examples to take an expectation over\r\n>       4 #background = trainX[np.random.choice(trainX.shape[0], 500, replace=False)]\r\n> ----> 5 explainer = shap.DeepExplainer(model_pred, df[1][2])\r\n> \r\n> /anaconda3/lib/python3.6/site-packages/shap/explainers/deep.py in __init__(self, model, data, session, learning_phase_flags)\r\n>     127         # ...this will catch the one that keras uses\r\n>     128         # we need to find them since we want to make sure learning phase flags are set to False\r\n> --> 129         if learning_phase_flags is None:\r\n>     130             self.learning_phase_ops = []\r\n>     131             for op in self.session.graph.get_operations():\r\n> \r\n> AttributeError: module 'tensorflow.python.keras.api._v2.keras.backend' has no attribute 'get_session'",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/548/reactions",
+    "total_count": 11,
+    "+1": 5,
+    "-1": 0,
+    "laugh": 1,
+    "hooray": 1,
+    "confused": 0,
+    "heart": 1,
+    "rocket": 2,
+    "eyes": 1
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/548/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

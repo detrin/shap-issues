@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/577",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/577/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/577/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/577/events",
+  "html_url": "https://github.com/shap/shap/issues/577",
+  "id": 441284938,
+  "node_id": "MDU6SXNzdWU0NDEyODQ5Mzg=",
+  "number": 577,
+  "title": "KernelExplainer for Multiclass XGBoost model - returns NaN Value Error",
+  "user": {
+    "login": "pogoetic",
+    "id": 1137067,
+    "node_id": "MDQ6VXNlcjExMzcwNjc=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1137067?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/pogoetic",
+    "html_url": "https://github.com/pogoetic",
+    "followers_url": "https://api.github.com/users/pogoetic/followers",
+    "following_url": "https://api.github.com/users/pogoetic/following{/other_user}",
+    "gists_url": "https://api.github.com/users/pogoetic/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/pogoetic/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/pogoetic/subscriptions",
+    "organizations_url": "https://api.github.com/users/pogoetic/orgs",
+    "repos_url": "https://api.github.com/users/pogoetic/repos",
+    "events_url": "https://api.github.com/users/pogoetic/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/pogoetic/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 5,
+  "created_at": "2019-05-07T15:05:30Z",
+  "updated_at": "2023-07-23T04:04:25Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi - I love SHAP! So I have read that TreeExplainer does not currently handle Mutliclass XGBoost models with a 'probability' output type but thats what I'm trying to generate, so i'm trying to use SHAP with KernelExplainer. I have 3 classes and my input data for SHAP is a 100 row sample with no inf, -inf, or NaN. Ideally, I would see the SHAP plots add up to a probability of 1.0. \r\n\r\nHowever, I get this error: \r\n\r\n`ValueError: Input contains NaN, infinity or a value too large for dtype('float64').`\r\n\r\nHere is a code snippet i'm working with: \r\n```\r\nimport shap\r\n\r\n## kernel shap sends data as numpy array which has no column names, so we fix it\r\ndef xgb_predict(data_asarray):\r\n    data_asframe =  pd.DataFrame(data_asarray, columns=X_train.columns)\r\n    return model.predict(data_asframe)\r\n\r\nexplainer = shap.KernelExplainer(xgb_predict, link='logit', data=X_test.iloc[:100])\r\nshap_values = explainer.shap_values(X_test.iloc[1])\r\nshap.initjs()\r\nshap.force_plot(explainer.expected_value[0], shap_values[0][0], X_test.iloc[1])\r\n```\r\n\r\nWhat am I doing wrong here? Is it the same issue as with TreeExplainer where the logit transform is not yet implemented in SHAP? Thank you! ",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/577/reactions",
+    "total_count": 5,
+    "+1": 5,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/577/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

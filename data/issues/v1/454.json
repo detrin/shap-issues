@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/454",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/454/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/454/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/454/events",
+  "html_url": "https://github.com/shap/shap/issues/454",
+  "id": 412942724,
+  "node_id": "MDU6SXNzdWU0MTI5NDI3MjQ=",
+  "number": 454,
+  "title": "Xgboost objective = reg:tweedie, shap values and expected value much lower than predicted",
+  "user": {
+    "login": "MLAlex1",
+    "id": 46068300,
+    "node_id": "MDQ6VXNlcjQ2MDY4MzAw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/46068300?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/MLAlex1",
+    "html_url": "https://github.com/MLAlex1",
+    "followers_url": "https://api.github.com/users/MLAlex1/followers",
+    "following_url": "https://api.github.com/users/MLAlex1/following{/other_user}",
+    "gists_url": "https://api.github.com/users/MLAlex1/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/MLAlex1/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/MLAlex1/subscriptions",
+    "organizations_url": "https://api.github.com/users/MLAlex1/orgs",
+    "repos_url": "https://api.github.com/users/MLAlex1/repos",
+    "events_url": "https://api.github.com/users/MLAlex1/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/MLAlex1/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 8,
+  "created_at": "2019-02-21T14:09:27Z",
+  "updated_at": "2020-08-03T16:00:05Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi,\r\nfirst of all thanks for the package, it makes a great job and is very helpful.\r\nNevertheless, i faced a problem using for a regression problem (xgboost) \"objective = reg:tweedie\". The shap values are very low as well as the base value.\r\nIf i take the first row of my data,  expected value = 6.90, sum of first row of shap values is  -0.20194533 and\r\nthe predicted value for the response variable is 813.8072.\r\nI tried to change the objective to a reg:linear and now it makes sense, for the first values the sum of shap values = predcited - base value.\r\n\r\nTo you know how can i fix the problem if i want to use tweedie reg objective?\r\n\r\nThanks in advance.\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/454/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/454/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

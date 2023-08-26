@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1054",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1054/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1054/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1054/events",
+  "html_url": "https://github.com/shap/shap/issues/1054",
+  "id": 567996360,
+  "node_id": "MDU6SXNzdWU1Njc5OTYzNjA=",
+  "number": 1054,
+  "title": "shapley kernel proof (nips supplement)",
+  "user": {
+    "login": "emilyjia",
+    "id": 21993952,
+    "node_id": "MDQ6VXNlcjIxOTkzOTUy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/21993952?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/emilyjia",
+    "html_url": "https://github.com/emilyjia",
+    "followers_url": "https://api.github.com/users/emilyjia/followers",
+    "following_url": "https://api.github.com/users/emilyjia/following{/other_user}",
+    "gists_url": "https://api.github.com/users/emilyjia/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/emilyjia/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/emilyjia/subscriptions",
+    "organizations_url": "https://api.github.com/users/emilyjia/orgs",
+    "repos_url": "https://api.github.com/users/emilyjia/repos",
+    "events_url": "https://api.github.com/users/emilyjia/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/emilyjia/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 805514462,
+      "node_id": "MDU6TGFiZWw4MDU1MTQ0NjI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/paper",
+      "name": "paper",
+      "color": "1e88e5",
+      "default": false,
+      "description": null
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2020-02-20T01:42:12Z",
+  "updated_at": "2023-06-04T08:36:53Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Do you have more detail for the proof? Through some simulations I get that\r\n\r\n$$X^TWX = \\frac{M}{M-1}I + cJ$$ instead of $$X^TWX = \\frac{1}{M-1}I + cJ$$\r\n\r\n(The inverse in the paper is that of the correctly computed X^TWX.) Do you know if there is a not-bashy mathematical argument to see that X^TWX takes that form M/M-1 I + cJ? \r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1054/reactions",
+    "total_count": 2,
+    "+1": 2,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1054/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

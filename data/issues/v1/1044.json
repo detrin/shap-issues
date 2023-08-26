@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1044",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1044/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1044/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1044/events",
+  "html_url": "https://github.com/shap/shap/issues/1044",
+  "id": 564601628,
+  "node_id": "MDU6SXNzdWU1NjQ2MDE2Mjg=",
+  "number": 1044,
+  "title": "Error when using KernelExplainer to explain a Tensorflow DNNLinearCombinedClassifier",
+  "user": {
+    "login": "typhoonzero",
+    "id": 13348433,
+    "node_id": "MDQ6VXNlcjEzMzQ4NDMz",
+    "avatar_url": "https://avatars.githubusercontent.com/u/13348433?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/typhoonzero",
+    "html_url": "https://github.com/typhoonzero",
+    "followers_url": "https://api.github.com/users/typhoonzero/followers",
+    "following_url": "https://api.github.com/users/typhoonzero/following{/other_user}",
+    "gists_url": "https://api.github.com/users/typhoonzero/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/typhoonzero/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/typhoonzero/subscriptions",
+    "organizations_url": "https://api.github.com/users/typhoonzero/orgs",
+    "repos_url": "https://api.github.com/users/typhoonzero/repos",
+    "events_url": "https://api.github.com/users/typhoonzero/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/typhoonzero/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    },
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2020-02-13T10:57:40Z",
+  "updated_at": "2020-02-27T07:13:46Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "The model is trained using a Tensorflow `DNNLinearCombinedClassifier` with `tf.feature_column.numeric_column` and `tf.feature_column.categorical_column_with_hash_buckets`, then explain thi model using this file: https://github.com/sql-machine-learning/sqlflow/blob/develop/python/sqlflow_submitter/tensorflow/explain.py then some error reported below. I've tried to cast the values to `numpy.int64` when construct the dataframe, but the error still exist.\r\n\r\nUsing `DNNClassifier` can get correct result though.\r\n\r\n```\r\nsqlflow_submitter/tensorflow/explain.py\", line 155, in predict\r\n    [p['probabilities'][-1] for p in estimator.predict(input_fn)])\r\n  File \"/usr/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/estimator.py\", line 622, in predict\r\n    features, None, ModeKeys.PREDICT, self.config)\r\n  File \"/usr/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/estimator.py\", line 1149, in _call_model_fn\r\n    model_fn_results = self._model_fn(features=features, **kwargs)\r\n  File \"/usr/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/canned/dnn_linear_combined.py\", line 650, in _model_fn\r\n    linear_sparse_combiner=linear_sparse_combiner)\r\n  File \"/usr/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/canned/dnn_linear_combined.py\", line 343, in _dnn_linear_combined_model_fn\r\n    dnn_logits = dnn_logit_fn(features=features, mode=mode)\r\n  File \"/usr/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/canned/dnn.py\", line 109, in dnn_logit_fn\r\n    return dnn_model(features, mode)\r\n  File \"/usr/lib64/python2.7/site-packages/tensorflow_core/python/keras/engine/base_layer.py\", line 854, in __call__\r\n    outputs = call_fn(cast_inputs, *args, **kwargs)\r\n  File \"/usr/lib64/python2.7/site-packages/tensorflow_core/python/autograph/impl/api.py\", line 237, in wrapper\r\n    raise e.ag_error_metadata.to_exception(e)\r\nValueError: in converted code:\r\n    relative to /usr:\r\n\r\n    lib/python2.7/site-packages/tensorflow_estimator/python/estimator/canned/dnn.py:252 call  *\r\n        net = self._input_layer(features)\r\n    lib64/python2.7/site-packages/tensorflow_core/python/keras/engine/base_layer.py:854 __call__\r\n        outputs = call_fn(cast_inputs, *args, **kwargs)\r\n    lib64/python2.7/site-packages/tensorflow_core/python/feature_column/dense_features.py:133 call\r\n        self._state_manager)\r\n    lib64/python2.7/site-packages/tensorflow_core/python/feature_column/feature_column_v2.py:3163 get_dense_tensor\r\n        transformation_cache, state_manager)\r\n    lib64/python2.7/site-packages/tensorflow_core/python/feature_column/feature_column_v2.py:3533 get_sparse_tensors\r\n        transformation_cache.get(self, state_manager), None)\r\n    lib64/python2.7/site-packages/tensorflow_core/python/feature_column/feature_column_v2.py:2598 get\r\n        transformed = column.transform_feature(self, state_manager)\r\n    lib64/python2.7/site-packages/tensorflow_core/python/feature_column/feature_column_v2.py:3511 transform_feature\r\n        return self._transform_input_tensor(input_tensor)\r\n    lib64/python2.7/site-packages/tensorflow_core/python/feature_column/feature_column_v2.py:3489 _transform_input_tensor\r\n        prefix='column_name: {} input_tensor'.format(self.key))\r\n    lib64/python2.7/site-packages/tensorflow_core/python/feature_column/utils.py:58 assert_string_or_int\r\n        '{} dtype must be string or integer. dtype: {}.'.format(prefix, dtype))\r\n\r\n    ValueError: column_name: c1 input_tensor dtype must be string or integer. dtype: <dtype: 'float64'>.\r\n\r\n```",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1044/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1044/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

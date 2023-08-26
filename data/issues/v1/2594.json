@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2594",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2594/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2594/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2594/events",
+  "html_url": "https://github.com/shap/shap/pull/2594",
+  "id": 1271827828,
+  "node_id": "PR_kwDOBHDcK845r7ku",
+  "number": 2594,
+  "title": "Refactor (isort, black)",
+  "user": {
+    "login": "alexisdrakopoulos",
+    "id": 33128441,
+    "node_id": "MDQ6VXNlcjMzMTI4NDQx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/33128441?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/alexisdrakopoulos",
+    "html_url": "https://github.com/alexisdrakopoulos",
+    "followers_url": "https://api.github.com/users/alexisdrakopoulos/followers",
+    "following_url": "https://api.github.com/users/alexisdrakopoulos/following{/other_user}",
+    "gists_url": "https://api.github.com/users/alexisdrakopoulos/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/alexisdrakopoulos/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/alexisdrakopoulos/subscriptions",
+    "organizations_url": "https://api.github.com/users/alexisdrakopoulos/orgs",
+    "repos_url": "https://api.github.com/users/alexisdrakopoulos/repos",
+    "events_url": "https://api.github.com/users/alexisdrakopoulos/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/alexisdrakopoulos/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2022-06-15T08:00:25Z",
+  "updated_at": "2022-06-16T05:30:44Z",
+  "closed_at": null,
+  "author_association": "CONTRIBUTOR",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2594",
+    "html_url": "https://github.com/shap/shap/pull/2594",
+    "diff_url": "https://github.com/shap/shap/pull/2594.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2594.patch",
+    "merged_at": null
+  },
+  "body": "# Refactoring Coding Style (Black/Isort)\r\n\r\nWhat do we think about starting to use tools such as [black](https://github.com/psf/black) and [isort](https://github.com/PyCQA/isort) for readability/maintainability purposes?\r\n\r\nI think this is a good part of our first steps towards a more maintainable code base that follows modern pythonic standards.\r\n\r\n## What this PR contains\r\n- I ran `isort .` on the codebase\r\n- I ran `black shap tests` on the codebase\r\n- I added static checkers on our CICD pipeline to check that the `shap` and `tests` directories are compliant\r\n\r\n## 18 thousand changes? why?....\r\n\r\nI'm looking to open a PR that adds static typing to help make SHAP a little more robust, however tasks like that would be easier if we had a standardised code style (enforced by tools such as black and isort).\r\n\r\nPros:\r\n- Standardised code style that's become quite pythonic in recent years (almost everyone uses black)\r\n- Cleaner/More readable code/imports\r\n\r\nCons:\r\n- Annoying to current devs who would have painful merge conflicts\r\n\r\n## What current PR owners should do INSTEAD of merging\r\n\r\nrun the following on their code base:\r\n```\r\nisort .\r\nblack shap tests\r\n```\r\nThis would reduce merge conflicts significantly.",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2594/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2594/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

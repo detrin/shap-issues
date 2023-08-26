@@ -1,0 +1,82 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2880",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2880/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2880/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2880/events",
+  "html_url": "https://github.com/shap/shap/issues/2880",
+  "id": 1630393611,
+  "node_id": "I_kwDOBHDcK85hLdUL",
+  "number": 2880,
+  "title": "  AttributeError: module 'shap.models' has no attribute 'TeacherForcingLogits'",
+  "user": {
+    "login": "dancbeaulieu",
+    "id": 80985777,
+    "node_id": "MDQ6VXNlcjgwOTg1Nzc3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/80985777?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dancbeaulieu",
+    "html_url": "https://github.com/dancbeaulieu",
+    "followers_url": "https://api.github.com/users/dancbeaulieu/followers",
+    "following_url": "https://api.github.com/users/dancbeaulieu/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dancbeaulieu/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dancbeaulieu/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dancbeaulieu/subscriptions",
+    "organizations_url": "https://api.github.com/users/dancbeaulieu/orgs",
+    "repos_url": "https://api.github.com/users/dancbeaulieu/repos",
+    "events_url": "https://api.github.com/users/dancbeaulieu/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dancbeaulieu/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901332,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzI=",
+      "url": "https://api.github.com/repos/shap/shap/labels/help%20wanted",
+      "name": "help wanted",
+      "color": "128A0C",
+      "default": true,
+      "description": "Indicates that a maintainer wants help on an issue or pull request"
+    },
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2023-03-18T16:08:02Z",
+  "updated_at": "2023-07-08T10:03:24Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hello,\r\n\r\nI am using Shap 0.41.0, the latest at the time of writing this. I think there needs to be a code update to run_masker so that instead of calling:\r\n`wrapped_model = shap.models.TeacherForcingLogits(f, similarity_model=model, similarity_tokenizer=tokenizer)`\r\nThe team might want to change it to:\r\n`wrapped_model = shap.models.TeacherForcing.get_teacher_forced_logits(f, similarity_model=model, similarity_tokenizer=tokenizer)`\r\n \r\nHere is the error I was getting:\r\n---------------------------------------------------------------------------\r\nAttributeError                            Traceback (most recent call last)\r\nCell In[10], line 2\r\n      1 # SHAP explanation using masking option \"blur(pixel_size, pixel_size)\" for blurring\r\n----> 2 shap_values = run_masker(X, mask_value=\"blur(56,56)\")\r\n\r\nCell In[9], line 50, in run_masker(X, mask_value, max_evals, batch_size, fixed_context)\r\n     47 masker = shap.maskers.Image(mask_value, X[index].shape)\r\n     49 # wrap model with TeacherForcingLogits class\r\n---> 50 wrapped_model = shap.models.TeacherForcingLogits(f, similarity_model=model, similarity_tokenizer=tokenizer)\r\n     52 # build a partition explainer with wrapped_model and image masker\r\n     53 explainer = shap.Explainer(wrapped_model, masker) \r\n\r\nAttributeError: module 'shap.models' has no attribute 'TeacherForcingLogits'",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2880/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2880/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/1196",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/1196/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/1196/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/1196/events",
+  "html_url": "https://github.com/shap/shap/issues/1196",
+  "id": 611550214,
+  "node_id": "MDU6SXNzdWU2MTE1NTAyMTQ=",
+  "number": 1196,
+  "title": "SHAP can calculate shap value using sklearn CalibratedClassifierCV  ?",
+  "user": {
+    "login": "cejwlim11",
+    "id": 58390417,
+    "node_id": "MDQ6VXNlcjU4MzkwNDE3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/58390417?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/cejwlim11",
+    "html_url": "https://github.com/cejwlim11",
+    "followers_url": "https://api.github.com/users/cejwlim11/followers",
+    "following_url": "https://api.github.com/users/cejwlim11/following{/other_user}",
+    "gists_url": "https://api.github.com/users/cejwlim11/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/cejwlim11/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/cejwlim11/subscriptions",
+    "organizations_url": "https://api.github.com/users/cejwlim11/orgs",
+    "repos_url": "https://api.github.com/users/cejwlim11/repos",
+    "events_url": "https://api.github.com/users/cejwlim11/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/cejwlim11/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2020-05-04T00:58:55Z",
+  "updated_at": "2023-06-14T13:42:03Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hello, \r\nThanks for very useful and powerful package!\r\n\r\nI'm curious that SHAP can support 'sklearn's CalibratedClassifierCV model'.\r\n\r\nI made a LightGBM model and calibrated the model.\r\nSo my final model is Calibrated LightGBM model.\r\n\r\nAnd I tried to calculate shap values using SHAP,\r\nthere was an error : 'CalibratedClassifierCV' object is not callable.\r\n\r\nBelow is my code.\r\n\r\n### LGBM model\r\nmodel_LGBM = lgbm.LGBMClassifier( params )\r\n\r\n### Calibration\r\nfrom sklearn.calibration import CalibratedClassifierCV\r\nmodel_calibrated = CalibratedClassifierCV( model_LGBM )\r\nmodel_calibrated.fit( training_X, trainning_Y )\r\n\r\n### SHAP\r\nimport shap\r\nexplainer = shap.TreeExplainer( model_calibrated, data = training_X, ... )\r\nshap_values = explainer.shap_values( training_X, ... )\r\n\r\nError : 'CalibratedClassifierCV' object is not callable.\r\n\r\n\r\nIs there any possibility that I can calculate shap values using CalibratedClassifierCV model?\r\n\r\n\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/1196/reactions",
+    "total_count": 8,
+    "+1": 8,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/1196/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

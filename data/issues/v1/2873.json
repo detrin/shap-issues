@@ -1,0 +1,81 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2873",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2873/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2873/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2873/events",
+  "html_url": "https://github.com/shap/shap/pull/2873",
+  "id": 1615008032,
+  "node_id": "PR_kwDOBHDcK85LjrcM",
+  "number": 2873,
+  "title": "Replace sample dataset on readme",
+  "user": {
+    "login": "serkef",
+    "id": 3225779,
+    "node_id": "MDQ6VXNlcjMyMjU3Nzk=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/3225779?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/serkef",
+    "html_url": "https://github.com/serkef",
+    "followers_url": "https://api.github.com/users/serkef/followers",
+    "following_url": "https://api.github.com/users/serkef/following{/other_user}",
+    "gists_url": "https://api.github.com/users/serkef/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/serkef/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/serkef/subscriptions",
+    "organizations_url": "https://api.github.com/users/serkef/orgs",
+    "repos_url": "https://api.github.com/users/serkef/repos",
+    "events_url": "https://api.github.com/users/serkef/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/serkef/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 5579656496,
+      "node_id": "LA_kwDOBHDcK88AAAABTJLNMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/documentation",
+      "name": "documentation",
+      "color": "D2EFC1",
+      "default": true,
+      "description": "Relating to readthedocs, notebooks, and exposition in docstrings"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2023-03-08T10:08:53Z",
+  "updated_at": "2023-07-23T13:51:35Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "draft": false,
+  "pull_request": {
+    "url": "https://api.github.com/repos/shap/shap/pulls/2873",
+    "html_url": "https://github.com/shap/shap/pull/2873",
+    "diff_url": "https://github.com/shap/shap/pull/2873.diff",
+    "patch_url": "https://github.com/shap/shap/pull/2873.patch",
+    "merged_at": null
+  },
+  "body": "`load_boston` has been removed from scikit-learn since version 1.2. Replacing it with California housing sample dataset\r\n\r\nSolves #2844 , #2322",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2873/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2873/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

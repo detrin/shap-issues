@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/954",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/954/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/954/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/954/events",
+  "html_url": "https://github.com/shap/shap/issues/954",
+  "id": 537954064,
+  "node_id": "MDU6SXNzdWU1Mzc5NTQwNjQ=",
+  "number": 954,
+  "title": "sklearn RF Bus error with TreeExplainer",
+  "user": {
+    "login": "parrt",
+    "id": 178777,
+    "node_id": "MDQ6VXNlcjE3ODc3Nw==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/178777?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/parrt",
+    "html_url": "https://github.com/parrt",
+    "followers_url": "https://api.github.com/users/parrt/followers",
+    "following_url": "https://api.github.com/users/parrt/following{/other_user}",
+    "gists_url": "https://api.github.com/users/parrt/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/parrt/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/parrt/subscriptions",
+    "organizations_url": "https://api.github.com/users/parrt/orgs",
+    "repos_url": "https://api.github.com/users/parrt/repos",
+    "events_url": "https://api.github.com/users/parrt/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/parrt/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901329,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMjk=",
+      "url": "https://api.github.com/repos/shap/shap/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": "Indicates an unexpected problem or unintended behaviour"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2019-12-14T19:24:12Z",
+  "updated_at": "2022-04-14T12:43:19Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi Scott! Heh, when playing around with timing, I get a bus error with the league of legends dataset and small RF (using small backing set).\r\n\r\n```\r\n$ python league.py\r\nRF fit time with 1229705 records and 5 trees = 16.59s\r\nBus error: 10\r\n```\r\n\r\nI ran your notebook and saved league data as feather for fast reloading then ran this script:\r\n\r\n```python\r\nimport pandas as pd\r\nfrom sklearn.ensemble import RandomForestClassifier\r\nfrom sklearn.model_selection import train_test_split\r\n\r\nfrom timeit import default_timer as timer\r\n\r\nimport shap\r\n\r\ndf = pd.read_feather(\"data/league.feather\")\r\nX = df.drop('win', axis=1)\r\ny = df['win']\r\n\r\n# create train/validation split\r\nXt, Xv, yt, yv = train_test_split(X,y, test_size=0.2)\r\n\r\nntrees = 5\r\nrf = RandomForestClassifier(n_estimators=ntrees, n_jobs=-1)\r\nstart = timer()\r\nrf.fit(Xt, yt)\r\nstop = timer()\r\nprint(f\"RF fit time with {len(Xt)} records and {ntrees} trees = {(stop-start):.2f}s\")\r\n\r\nXv_ = Xv[:100] # try with 100 records only\r\nXt_ = Xt[:100]\r\nstart = timer()\r\nexplainer = shap.TreeExplainer(rf, Xt_, feature_perturbation=\"interventional\")\r\nshap_values = explainer.shap_values(Xv_)\r\nstop = timer()\r\nprint(f'''TreeExplainer(rf, feature_perturbation=\"interventional\") time on RF with {len(Xv)} test records = {(stop-start):.2f}s''')\r\n```",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/954/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/954/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

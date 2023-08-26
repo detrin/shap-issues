@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2822",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2822/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2822/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2822/events",
+  "html_url": "https://github.com/shap/shap/issues/2822",
+  "id": 1517924922,
+  "node_id": "I_kwDOBHDcK85aebI6",
+  "number": 2822,
+  "title": "Displaying two beeswarm plots side by side in the same figure using matplotlib",
+  "user": {
+    "login": "pmoriano",
+    "id": 11506808,
+    "node_id": "MDQ6VXNlcjExNTA2ODA4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/11506808?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/pmoriano",
+    "html_url": "https://github.com/pmoriano",
+    "followers_url": "https://api.github.com/users/pmoriano/followers",
+    "following_url": "https://api.github.com/users/pmoriano/following{/other_user}",
+    "gists_url": "https://api.github.com/users/pmoriano/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/pmoriano/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/pmoriano/subscriptions",
+    "organizations_url": "https://api.github.com/users/pmoriano/orgs",
+    "repos_url": "https://api.github.com/users/pmoriano/repos",
+    "events_url": "https://api.github.com/users/pmoriano/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/pmoriano/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 2,
+  "created_at": "2023-01-03T21:14:45Z",
+  "updated_at": "2023-06-25T10:08:52Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hello,\r\n\r\nI wonder how to place two independent beeswarm plots into the same figure but in different axes. I am using matplotlib version `3.4.2`, shap version `0.39.0`, and Python `3.8`. I am trying using a single figure and two axes but realize that the beeswarm method does not handle the axis as parameter (error: `TypeError: beeswarm() got an unexpected keyword argument 'ax'`). Any recommendation is welcome. Thanks in advance.\r\n\r\n```\r\nfrom matplotlib import pyplot as plt\r\nimport shap\r\n\r\nfig, axes = plt.subplots(1, 2, figsize=(35, 7), gridspec_kw = {\"wspace\":1.0}) \r\n\r\nshap.plots.beeswarm(explainer_a(X_test_a), max_display=10, ax = axes[0])\r\nshap.plots.beeswarm(explainer_b(X_test_b), max_display=10, ax = axes[1])\r\n\r\nplt.show()\r\n```",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2822/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2822/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

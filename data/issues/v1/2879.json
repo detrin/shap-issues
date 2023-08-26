@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/2879",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/2879/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/2879/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/2879/events",
+  "html_url": "https://github.com/shap/shap/issues/2879",
+  "id": 1630289459,
+  "node_id": "I_kwDOBHDcK85hLD4z",
+  "number": 2879,
+  "title": "[New Features] Output figures as interactive web components with plotly.py",
+  "user": {
+    "login": "zhanghx0905",
+    "id": 50790281,
+    "node_id": "MDQ6VXNlcjUwNzkwMjgx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/50790281?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/zhanghx0905",
+    "html_url": "https://github.com/zhanghx0905",
+    "followers_url": "https://api.github.com/users/zhanghx0905/followers",
+    "following_url": "https://api.github.com/users/zhanghx0905/following{/other_user}",
+    "gists_url": "https://api.github.com/users/zhanghx0905/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/zhanghx0905/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/zhanghx0905/subscriptions",
+    "organizations_url": "https://api.github.com/users/zhanghx0905/orgs",
+    "repos_url": "https://api.github.com/users/zhanghx0905/repos",
+    "events_url": "https://api.github.com/users/zhanghx0905/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/zhanghx0905/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901331,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzE=",
+      "url": "https://api.github.com/repos/shap/shap/labels/enhancement",
+      "name": "enhancement",
+      "color": "84b6eb",
+      "default": true,
+      "description": "Indicates new feature requests"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2023-03-18T11:43:10Z",
+  "updated_at": "2023-08-14T06:54:02Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "Hi, I am using shap to visualize machine learning models in my project. I would like to show them on a web page, but shap itself only provides HTML components for the force plot.\r\n\r\nTo solve this problem, I rewrote some plotting functions using plotly.py which were originally written in `matplotlib`. \r\nYou can see my results here [shap-interactive-plots](https://github.com/zhanghx0905/shap-interactive-plots).\r\nWith the help of plotly.py, I can embed the images into web pages as interactive components.\r\n\r\n![](https://raw.githubusercontent.com/zhanghx0905/shap-interactive-plots/main/doc/dependence.png)\r\n\r\nOf course, my implementation is not very general. I don't know if you still have plans to refine the drawing functionality of shap. But I think plotly is a very promising option.\r\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/2879/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/2879/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}

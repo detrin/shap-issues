@@ -1,0 +1,73 @@
+{
+  "url": "https://api.github.com/repos/shap/shap/issues/316",
+  "repository_url": "https://api.github.com/repos/shap/shap",
+  "labels_url": "https://api.github.com/repos/shap/shap/issues/316/labels{/name}",
+  "comments_url": "https://api.github.com/repos/shap/shap/issues/316/comments",
+  "events_url": "https://api.github.com/repos/shap/shap/issues/316/events",
+  "html_url": "https://github.com/shap/shap/issues/316",
+  "id": 379071025,
+  "node_id": "MDU6SXNzdWUzNzkwNzEwMjU=",
+  "number": 316,
+  "title": "TreeExplainer expected_value is `None`?",
+  "user": {
+    "login": "katrienbaert",
+    "id": 37445263,
+    "node_id": "MDQ6VXNlcjM3NDQ1MjYz",
+    "avatar_url": "https://avatars.githubusercontent.com/u/37445263?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/katrienbaert",
+    "html_url": "https://github.com/katrienbaert",
+    "followers_url": "https://api.github.com/users/katrienbaert/followers",
+    "following_url": "https://api.github.com/users/katrienbaert/following{/other_user}",
+    "gists_url": "https://api.github.com/users/katrienbaert/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/katrienbaert/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/katrienbaert/subscriptions",
+    "organizations_url": "https://api.github.com/users/katrienbaert/orgs",
+    "repos_url": "https://api.github.com/users/katrienbaert/repos",
+    "events_url": "https://api.github.com/users/katrienbaert/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/katrienbaert/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 486901330,
+      "node_id": "MDU6TGFiZWw0ODY5MDEzMzA=",
+      "url": "https://api.github.com/repos/shap/shap/labels/todo",
+      "name": "todo",
+      "color": "cccccc",
+      "default": false,
+      "description": "This issue had an outstanding action to take."
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 4,
+  "created_at": "2018-11-09T08:43:44Z",
+  "updated_at": "2021-11-02T15:04:57Z",
+  "closed_at": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "body": "First of all, thanks for creating this wonderful module, it's been really helpful already!\r\n\r\nI'm back to using SHAP for explaining predictions from my xgboost model and have an issue that the TreeExplainer is returning `None` as `expected_value`.  The `shap_values` are calculated fine.\r\nThis happens today both in version 0.24.0 (which didn't have the __version__ attribute yet) and 0.25.1, but worked fine in version 0.24.0 a couple of weeks ago (Sept 21st). \r\nPython version 3.7 (may have been 3.6 on Sept 21st).\r\n\r\n```python\r\nprint(shap.__version__)\r\n# create TreeExplainer\r\nprint(type(model))\r\nshap_explainer = shap.TreeExplainer(model)\r\nshap_expected_value = shap_explainer.expected_value\r\nprint(shap_expected_value) \r\n# extract shape values\r\nshap_values = shap_explainer.shap_values(X)\r\nprint(shap_values)\r\n```\r\nhas output \r\n```python\r\n0.25.1\r\n<class 'xgboost.core.Booster'>\r\nNone\r\n[[ 0.00000000e+00  1.15434974e-02  2.74908263e-02 -1.61563791e-02\r\n  -2.40031220e-02  4.00882438e-02  6.08998537e-03  8.60848557e-03\r\n  -1.20777711e-02  1.96460057e-02  7.34563684e-03  1.82318385e-03\r\n   4.45002178e-03  4.41195589e-04 -4.07342683e-04 -4.96894820e-03\r\n...\r\n```\r\n\r\nThis is not a blocker since I can calculate the expected value myself, but I guess this is not an expected behaviour? Or am I completely missing out on something?\r\n\r\nThanks for your feedback!",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/shap/shap/issues/316/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/shap/shap/issues/316/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null
+}
