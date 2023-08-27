@@ -32,21 +32,40 @@
   "labels": [
 
   ],
-  "state": "open",
+  "state": "closed",
   "locked": false,
   "assignee": null,
   "assignees": [
 
   ],
   "milestone": null,
-  "comments": 1,
+  "comments": 3,
   "created_at": "2021-10-05T13:56:12Z",
-  "updated_at": "2022-06-28T19:43:17Z",
-  "closed_at": null,
+  "updated_at": "2023-08-27T01:45:29Z",
+  "closed_at": "2023-08-27T01:45:29Z",
   "author_association": "NONE",
   "active_lock_reason": null,
   "body": "Hello,\r\nI'm having this error when I try to generate shap_values for a LightGBM model that have categorical input features:\r\n![image](https://user-images.githubusercontent.com/32578022/136035871-283cb4f5-1263-4ab8-93ff-9043449a8465.png)\r\n\r\nHere you have a simple code to reproduce the warning:\r\n```\r\ndf = pd.DataFrame({'A': ['Foo', 'Bar', 'Foo', 'Baz'], 'B': [1, 1, 0, 1], 'C': [1, 0, 1, 1]})\r\ndf['A'] = df['A'].astype('category')\r\nlgb_train = lgb.Dataset(df[['A', 'B']], df['C'])\r\n\r\ngbm = lgb.train({'objective': 'binary', 'min_data': 1, 'min_data_in_bin': 1},\r\n                lgb_train,\r\n                num_boost_round=1)\r\n\r\nshap.initjs()\r\nexplainer = shap.TreeExplainer(gbm)\r\nshap_values = explainer.shap_values(df[['A', 'B']].values)\r\n```\r\n\r\nmy shap version: '0.39.0'\r\nAlso, it works if I provide directly the dataframe instead of the values but idk why then.",
-  "closed_by": null,
+  "closed_by": {
+    "login": "thatlittleboy",
+    "id": 30731072,
+    "node_id": "MDQ6VXNlcjMwNzMxMDcy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/30731072?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/thatlittleboy",
+    "html_url": "https://github.com/thatlittleboy",
+    "followers_url": "https://api.github.com/users/thatlittleboy/followers",
+    "following_url": "https://api.github.com/users/thatlittleboy/following{/other_user}",
+    "gists_url": "https://api.github.com/users/thatlittleboy/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/thatlittleboy/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/thatlittleboy/subscriptions",
+    "organizations_url": "https://api.github.com/users/thatlittleboy/orgs",
+    "repos_url": "https://api.github.com/users/thatlittleboy/repos",
+    "events_url": "https://api.github.com/users/thatlittleboy/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/thatlittleboy/received_events",
+    "type": "User",
+    "site_admin": false
+  },
   "reactions": {
     "url": "https://api.github.com/repos/shap/shap/issues/2208/reactions",
     "total_count": 0,
@@ -61,5 +80,5 @@
   },
   "timeline_url": "https://api.github.com/repos/shap/shap/issues/2208/timeline",
   "performed_via_github_app": null,
-  "state_reason": null
+  "state_reason": "completed"
 }

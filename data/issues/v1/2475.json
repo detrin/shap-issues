@@ -30,7 +30,15 @@
     "site_admin": false
   },
   "labels": [
-
+    {
+      "id": 5579086640,
+      "node_id": "LA_kwDOBHDcK88AAAABTIobMA",
+      "url": "https://api.github.com/repos/shap/shap/labels/awaiting%20feedback",
+      "name": "awaiting feedback",
+      "color": "DCA1FD",
+      "default": false,
+      "description": "Indicates that further information is required from the issue creator"
+    }
   ],
   "state": "open",
   "locked": false,
@@ -39,9 +47,9 @@
 
   ],
   "milestone": null,
-  "comments": 0,
+  "comments": 1,
   "created_at": "2022-04-03T10:16:30Z",
-  "updated_at": "2022-04-03T10:16:30Z",
+  "updated_at": "2023-08-27T01:42:25Z",
   "closed_at": null,
   "author_association": "NONE",
   "active_lock_reason": null,

@@ -32,21 +32,40 @@
   "labels": [
 
   ],
-  "state": "open",
+  "state": "closed",
   "locked": false,
   "assignee": null,
   "assignees": [
 
   ],
   "milestone": null,
-  "comments": 6,
+  "comments": 7,
   "created_at": "2021-03-22T22:14:18Z",
-  "updated_at": "2022-01-13T17:12:54Z",
-  "closed_at": null,
+  "updated_at": "2023-08-27T01:40:46Z",
+  "closed_at": "2023-08-27T01:40:46Z",
   "author_association": "NONE",
   "active_lock_reason": null,
   "body": "This issue is happening inside the docker container. \r\n\r\nDockerfile content:\r\n\r\nFROM continuumio/miniconda3:4.8.2\r\nWORKDIR /app\r\nCOPY requirements.txt /app/\r\nCOPY lib/ /app/lib/\r\nRUN pip install -r requirements.txt\r\nCOPY . /app/\r\nENTRYPOINT [\"python\", \"-m\", \"api\"]\r\n\r\n\r\nrequirements.txt is having dependencies pinned:\r\n\r\nnumpy==1.17.3\r\nshap==0.36.0\r\n\r\n\r\nException from shap.\r\n\r\nC extension was not built during install!\r\nTraceback (most recent call last):\r\n  File \"/opt/conda/lib/python3.7/runpy.py\", line 193, in _run_module_as_main\r\n    \"__main__\", mod_spec)\r\n  File \"/opt/conda/lib/python3.7/runpy.py\", line 85, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/app/dd/__main__.py\", line 136, in <module>\r\n    main()\r\n  File \"/opt/conda/lib/python3.7/site-packages/click/core.py\", line 764, in __call__\r\n    return self.main(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.7/site-packages/click/core.py\", line 717, in main\r\n    rv = self.invoke(ctx)\r\n  File \"/opt/conda/lib/python3.7/site-packages/click/core.py\", line 956, in invoke\r\n    return ctx.invoke(self.callback, **ctx.params)\r\n  File \"/opt/conda/lib/python3.7/site-packages/click/core.py\", line 555, in invoke\r\n    return callback(*args, **kwargs)\r\n  File \"/app/dd/__main__.py\", line 121, in main\r\n    run_training_and_eval_pipeline(data_layer, NODES)\r\n  File \"/opt/conda/lib/python3.7/site-packages/ai_factory/pipeline/pipeline.py\", line 27, in run_training_and_eval_pipeline\r\n    offline_training_pipeline_dag.run()\r\n  File \"/opt/conda/lib/python3.7/site-packages/ai_factory/dag/dag.py\", line 49, in run\r\n    func_returns = [node() for node in self.nodes]\r\n  File \"/opt/conda/lib/python3.7/site-packages/ai_factory/dag/dag.py\", line 49, in <listcomp>\r\n    func_returns = [node() for node in self.nodes]\r\n  File \"/opt/conda/lib/python3.7/site-packages/ai_factory/functional_pipeline_utils/wrappers.py\", line 65, in _in\r\n    data = fn(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.7/site-packages/ai_factory/functional_pipeline_utils/wrappers.py\", line 99, in _in\r\n    data = fn(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.7/site-packages/ai_factory/functional_pipeline_utils/wrappers.py\", line 116, in _in\r\n    data = fn(*data_args)\r\n  File \"/app/dd/nodes/modelling/model_generation.py\", line 157, in generate_model\r\n    model=final_model, data=all_scf_training_data, features_list=feature_names, path_to_model=path_to_root_folder\r\n  File \"/app/dd/nodes/modelling/model_explanation.py\", line 53, in explain_model\r\n    model, data=data[features_list], model_output=\"probability\", feature_perturbation=\"interventional\"\r\n  File \"/opt/conda/lib/python3.7/site-packages/shap/explainers/_tree.py\", line 136, in __init__\r\n    self.model = TreeEnsemble(model, self.data, self.data_missing, model_output)\r\n  File \"/opt/conda/lib/python3.7/site-packages/shap/explainers/_tree.py\", line 650, in __init__\r\n    self.trees = [SingleTree(e.tree_, normalize=True, scaling=scaling, data=data, data_missing=data_missing) for e in model.estimators_]\r\n  File \"/opt/conda/lib/python3.7/site-packages/shap/explainers/_tree.py\", line 650, in <listcomp>\r\n    self.trees = [SingleTree(e.tree_, normalize=True, scaling=scaling, data=data, data_missing=data_missing) for e in model.estimators_]\r\n  File \"/opt/conda/lib/python3.7/site-packages/shap/explainers/_tree.py\", line 1096, in __init__\r\n    assert_import(\"cext\")\r\n  File \"/opt/conda/lib/python3.7/site-packages/shap/utils/_general.py\", line 23, in assert_import\r\n    raise e\r\n  File \"/opt/conda/lib/python3.7/site-packages/shap/explainers/_tree.py\", line 22, in <module>\r\n    from .. import _cext\r\nImportError: numpy.core.multiarray failed to import",
-  "closed_by": null,
+  "closed_by": {
+    "login": "thatlittleboy",
+    "id": 30731072,
+    "node_id": "MDQ6VXNlcjMwNzMxMDcy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/30731072?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/thatlittleboy",
+    "html_url": "https://github.com/thatlittleboy",
+    "followers_url": "https://api.github.com/users/thatlittleboy/followers",
+    "following_url": "https://api.github.com/users/thatlittleboy/following{/other_user}",
+    "gists_url": "https://api.github.com/users/thatlittleboy/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/thatlittleboy/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/thatlittleboy/subscriptions",
+    "organizations_url": "https://api.github.com/users/thatlittleboy/orgs",
+    "repos_url": "https://api.github.com/users/thatlittleboy/repos",
+    "events_url": "https://api.github.com/users/thatlittleboy/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/thatlittleboy/received_events",
+    "type": "User",
+    "site_admin": false
+  },
   "reactions": {
     "url": "https://api.github.com/repos/shap/shap/issues/1895/reactions",
     "total_count": 3,
@@ -61,5 +80,5 @@
   },
   "timeline_url": "https://api.github.com/repos/shap/shap/issues/1895/timeline",
   "performed_via_github_app": null,
-  "state_reason": null
+  "state_reason": "completed"
 }
